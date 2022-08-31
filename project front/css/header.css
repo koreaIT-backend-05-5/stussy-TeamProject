@@ -1,0 +1,26 @@
+.top_bar{
+	font-family: "Helvetica Neue",Arial,sans-serif;
+	font-size: 11px;
+	display: flex;
+	position: fixed;
+	/* background-color: black; */
+	padding-top: 20px;
+}
+.top_left{
+	margin-left: 10px;
+	padding-top: 10px;
+}
+.top_left ul{
+	list-style: none;
+	display: flex;
+}
+.top_left li{
+	padding-right:20px;
+}
+#right{
+	width: 1200px;
+	margin: 0 auto;
+}
+.category:hover{
+	color: black;
+}
