@@ -1,0 +1,28 @@
+.footer_main{
+	padding-top: 20px;
+}
+.footer_text{
+	font-size: 12px;
+    display: flex;
+}
+.footer_text ul{
+	display: flex;
+}
+.footer_mid{
+	padding-left: 600px;
+}
+.footer_right{
+	padding-left: 10px;
+}
+.footer_right_mid{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.footer_menu {
+    display: flex;
+    margin-left: 300px;
+}
+.footer_bot{
+	padding-top: 10px;
+    text-align: center;
+}
