@@ -25,38 +25,29 @@
     background-color: antiquewhite;
 }
 
-/* content */
- /* .collection-area {
-    display: flex;
-    justify-content: center;
-
-    
-
-}  */
-
 .collection-products {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
     width: 100%;
-    height: 700px;
-    padding: 0 87.5px;
+    height: 1000px;
     margin-top: 90px;
-    
 }
 
 .collection-product {
-    width: 336.5px;
-    height: 356.35px;
     display: flex;
-    
- 
-  
+    justify-content: center;
+    align-items: center;
+    width: 434.5px;
 }
 
 .collection-product img {
-    width: 301.05px;
-    height: 301.05px;
+    width: 389.5px;
+}
+
+.a-tag {
+    color: #000;
+    text-decoration: none;
 }
 
 .card-title {
@@ -73,7 +64,6 @@
 
 .collection-linking {
     width: 100%;
-    height: 52.65px;
 }
 
 .collection-linking p {
