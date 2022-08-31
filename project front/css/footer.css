@@ -1,28 +1,28 @@
-.footer_main{
+.footer-main{
 	padding-top: 20px;
 }
-.footer_text{
+.footer-text{
 	font-size: 12px;
     display: flex;
 }
-.footer_text ul{
+.footer-text ul{
 	display: flex;
 }
-.footer_mid{
+.footer-mid{
 	padding-left: 600px;
 }
-.footer_right{
+.footer-text{
 	padding-left: 10px;
 }
-.footer_right_mid{
+.footer-text{
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.footer_menu {
+.footer-menu {
     display: flex;
     margin-left: 300px;
 }
-.footer_bot{
+.footer-bot{
 	padding-top: 10px;
     text-align: center;
 }

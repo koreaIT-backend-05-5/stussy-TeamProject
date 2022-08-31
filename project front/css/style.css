@@ -3,7 +3,13 @@
 	margin: 0;
 	/* background-color: black; */
 	text-decoration: none;
-	color: whitesmoke;
+	color: black;
 	list-style-type: none;
 	font-family: "Helvetica Neue",Arial,sans-serif;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
 }
