@@ -36,9 +36,25 @@ h2 {
 h1 {
     font-size: 14px;
     float: left;
+    margin-bottom: 15px;
 }
+
 #input-name {
-    width: 100%;
+    width: 960px;
     height: 30px;
+    padding: 7px;
     display: block;
+}
+
+#input-email {
+    width: 465px;
+    height: 30px;
+    padding: 7px;
+    margin: 5px 10px 5px 0px;
+}
+
+#input-order {
+    width: 465px;
+    height: 30px;
+    padding: 7px;
 }
