@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.manager-main {
+.support-main {
     width: 1260px;
     height: 594px;
     margin: 0 auto;
@@ -15,7 +15,7 @@ h2 {
     font-size: 11px;
 }
 
-.manager-box {
+.support-box {
     width: 1260px;
     height: 567px;
     display: flex;
@@ -42,7 +42,7 @@ h2 {
     font-size: 11px;
 }
 
-.manager-content {
+.support-content {
     width: 976px;
     height: 567px;
     background-color: blue;
