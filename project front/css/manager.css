@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.support-main {
+.manager-main {
     width: 1260px;
     height: 594px;
     margin: 0 auto;
@@ -15,7 +15,7 @@ h2 {
     font-size: 11px;
 }
 
-.support-box {
+.manager-box {
     width: 1260px;
     height: 567px;
     display: flex;
@@ -42,7 +42,7 @@ h2 {
     font-size: 11px;
 }
 
-.support-content {
+.manager-content {
     width: 976px;
     height: 567px;
     background-color: blue;
@@ -52,24 +52,4 @@ h1 {
     font-size: 14px;
     float: left;
     margin-bottom: 15px;
-}
-
-#input-name {
-    width: 960px;
-    height: 30px;
-    padding: 7px;
-    display: block;
-}
-
-#input-email {
-    width: 465px;
-    height: 30px;
-    padding: 7px;
-    margin: 5px 10px 5px 0px;
-}
-
-#input-order {
-    width: 465px;
-    height: 30px;
-    padding: 7px;
 }
