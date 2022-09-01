@@ -1,0 +1,78 @@
+#wrap {
+    width: 100%;
+}
+
+.delivery-main {
+    width: 1260px;
+    height: 597px;
+    margin: 0 auto;
+}
+
+.delivery-box {
+    width: 1260px;
+    height: 567px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.menu-list {
+    float: left;
+    width: 244px;
+    height: 567px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    background-color: rebeccapurple;
+}
+
+.menu-list li {
+    text-align: left;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+/* information 상세페이지 */
+.delivery-content {
+    width: 976px;
+    height: 567px;
+    background-color: aqua;
+}
+
+.delivery-content h1 {
+    font-size: 12px;
+    text-align: left;
+}
+
+.delivery-info {
+    font-size: 11px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.delivery-info a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.delivery-info p{
+    margin-bottom: 10px;
+}
+
+.delivery-info ul {
+    padding-left: 60px;
+    margin-bottom: 10px;
+}
+
+.delivery-info li {
+    list-style: circle;
+}
+

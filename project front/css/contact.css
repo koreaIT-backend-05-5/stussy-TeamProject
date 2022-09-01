@@ -1,0 +1,150 @@
+#wrap {
+    width: 100%;
+}
+
+.contact-main {
+    width: 1260px;
+    height: 597px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    width: 1260px;
+    height: 567px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.menu-list {
+    float: left;
+    width: 244px;
+    height: 567px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    background-color: rebeccapurple;
+}
+
+.menu-list li {
+    text-align: left;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+/* support 상세 페이지 - contact */
+.contact-content {
+    width: 976px;
+    height: 567px;
+    background-color: blue;
+}
+
+h1 {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#input-name {
+    width: 956px;
+    padding: 7px;
+    display: block;
+}
+
+.input-box{
+    display: flex;
+    margin-top: 10px;
+}
+
+#input-email {
+    width: 465px;
+    padding: 7px;
+    margin-right: 10px;
+}
+
+#input-order {
+    width: 465px;
+    padding: 7px;
+}
+
+.contact-choice {
+    margin-top: 10px;
+}
+
+.contact-choice select{
+    width: 974px;
+    height: 33px;
+}
+
+textarea{
+    width: 974px;
+    margin-top: 10px;
+}
+
+button {
+    width: 974px;
+    height: 33px;
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #c3cad8;
+    opacity: 0.9;
+    text-decoration: underline;
+}
+/* support 상세 페이지 - info */
+.contact-info1{
+    font-size: 11px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.contact-info1 p{
+    text-align: left;
+}
+
+.contact-info1 p a {
+    text-decoration: underline;
+}
+
+.contact-info1 li{
+    list-style: circle;
+    margin-left: 60px;
+}
+
+.contact-info1 li a {
+    text-decoration: underline;
+}
+
+.contact-info2 {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+.contact-info2 p a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.contact-info3{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+}
