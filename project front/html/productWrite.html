@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productWrite.css">
+    <title>product-write</title>
+</head>
+<body>
+    <div>
+        <div class="product-write-main">
+            <h2>CUSTOMER SUPPORT</h2>
+            <div class="product-write-box">
+                <nav class="menu-list">
+                    <ul>
+                        <li>회원관리</li>
+                        <li>상품관리</li>
+                        <li>주문목록관리</li>
+                        <li>문의사항관리</li>
+                    </ul>
+                </nav>
+                <div class="product-write-content">
+                    <h2>상품등록</h2>
+                    <form id="form01" name="form01" enctype="multipart/form-data" method="post">
+                        <table>
+                            <tr>
+                                <td>상품명</td>
+                                <td><input type="text" name="productName" id="productName"></td>
+                            </tr>
+                            <tr>
+                                <td>가격</td>
+                                <td><input type="text" name="productPrice" id="productPrice"></td>
+                            </tr>
+                            <tr>
+                                <td>상품설명</td>
+                                <td><textarea name="productDesc" id="productDesc" cols="60" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>상품이미지</td>
+                                <td><input type="file" name="productPhoto" id="productPhoto"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="button" value="등록" id="add-btn">
+                                    <input type="button" value="목록" id="list-btn">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

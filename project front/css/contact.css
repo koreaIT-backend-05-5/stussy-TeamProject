@@ -45,7 +45,6 @@ h2 {
 .contact-content {
     width: 976px;
     height: 567px;
-    background-color: blue;
 }
 
 h1 {
@@ -106,6 +105,7 @@ button:hover{
     opacity: 0.9;
     text-decoration: underline;
 }
+
 /* support 상세 페이지 - info */
 .contact-info1{
     font-size: 11px;
