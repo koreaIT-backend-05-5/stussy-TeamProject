@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/buy/buyPage.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/e740067d1c.js" crossorigin="anonymous"></script>
+    <title>결제페이지</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="contents">
+            <div class="main">
+                <div class="main-header">
+                    <a href="">
+                        <img class="logo" src="/images/logo.jpg" alt="">
+                    </a>
+                    <div class="nav">
+                        <ul class="nav-list">
+                            <li>
+                               <a href="" style="text-decoration:none">CART</a>     
+                               <i class="fa-solid fa-chevron-right"></i>                           
+                            </li>
+                            <li>
+                               <a class="a-tag" href="">INFORMATION</a>
+                               <i class="fa-solid fa-chevron-right"></i>
+                            </li>
+                            <li>
+                               <a class="a-tag" href="">SHIPPING</a> 
+                               <i class="fa-solid fa-chevron-right"></i>
+                            </li>
+                            <li>
+                               <a class="a-tag" href="">PAYMENT</a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-contents">
+                    <div class="conection-info">
+                        <div class="info-title">
+                            <h2>CONECTION INFORMATION</h2>
+                            <span>계정으로 로그인하기</span>
+                        </div>
+                        <div class="email-check">
+                            <input placeholder="   이메일" id="checkout-email">
+                        </div>
+                        <div class="check-box">
+                            <input type="checkbox">
+                            <label class="checkbox-label" for="">발매 정보 및 뉴스레터 구독</label>
+                        </div>
+                    </div>
+                    <div class="main-section">
+                        <div class="section-header">
+                            <h2 class="section-title">SHIPPING ADDRESS</h2>
+                        </div>
+                        <div class="country-input">
+                            <select name="" id="checkout-country">
+                                <option value="대한민국">대한민국</option>
+                            </select>
+                        </div>
+                        <div class="name">
+                            <input class="l-name" type="text" placeholder="   성" >
+                            <input class="f-name" type="text" placeholder="   이름">
+                        </div>
+                    
+                        <div class="address">
+                            <input class="address01"  type="text" placeholder="   우편번호">
+                            <button class="address-btn"><p>주소찾기</p></button>
+                        </div> 
+                        
+                        <div class="address">
+                            <input class="address03"  type="text" placeholder="   시/도">
+                            <input class="address04"  type="text" placeholder="   구/군/시">
+                        </div>  
+                        
+                        <div class="address">
+                            <input class="address05" type="text" placeholder="   주소">
+                        </div> 
+                        <div class="address06">
+                            <input class="address-input" type="text" placeholder="   아파트, 동/호수 등">
+                        </div>
+                        <div class="messge-error01">
+                            <p>아파트 동·호수 필수적으로 입력해야 하는 사항입니다.</p>
+                        </div>
+                        <div class="phone">
+                            <input class="input-phone" type="text" placeholder="   전화번호">
+                        </div>
+                        <div class="messge-error02">
+                            <p>국가 번호 없이 010-XXXX-XXXX 방식으로 전화번호를 입력해주세요. 줄표는 (-) 자동으로 표시됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="info-save">
+                        <input type="checkbox">
+                        <p>주문자 정보 저장</p>
+                    </div>
+                    <div class="step-footer">
+                        <div class="b-cart">
+                            <i class="fa-solid fa-chevron-left" viewBox="0 0 10 10"></i>
+                            <span class="step-span">카트로 돌아가기</span>
+                        </div>
+                        <button class="step-button"><p>배송 계속하기</p> </button>
+                    </div>
+                    <div class="messge-error03">
+                        <p>아파트 동/ 호수 필수입니다. ‘주소찾기' 검색기를 이용해서 다음 단계로 이동 가능합니다.</p>
+                    </div>
+                    <div class="main-footer">
+                        <ul class="policy-list">
+                            <li>REFUND POLICY</li>
+                            <li>SHIPPING POLICY</li>
+                            <li>PRIVACY POLICY</li>
+                            <li>TERMS OF SERVICE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-bar">
+                <div class="order-product">
+                    <img class="product-img" src="/images/b-tee01.jpg" alt="">
+                    <div class="product-info">
+                        <p class="product-name">GUMBALL TEE</p>
+                        <p class="product-size">Black / S-</p>
+                    </div>
+                    <div class="price">
+                        <p class="product-price">₩62,000</p>
+                    </div>
+                </div>
+                <div class="total-price">
+                    <div>
+                        <div class="total-line01">
+                            <p class="total-line-name">총 상품금액</p>
+                            <p class="total-line-price">₩62,000</p>
+                        </div>
+                        <div class="total-line02">
+                            <p class="total-line-name">배송비</p>
+                            <p class="total-line-next">다음 단계에서 계산됨</p>
+                        </div>
+                        <div class="total-line03">
+                            <p class="total-line-name" style="font-size: 12px;">총 결제금액</p>
+                            <div>
+                                <span class="span">KRW</span>
+                                <span>₩62,000</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="messege">
+                    <p>7만원 이상 무료배송</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
