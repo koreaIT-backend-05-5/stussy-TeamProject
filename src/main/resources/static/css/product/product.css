@@ -46,7 +46,6 @@
     flex-direction: column;
     width: 644px;
     box-sizing: border-box;
-    background-color: blue;
 }
 
 .product-imgs img {
@@ -59,9 +58,7 @@
     padding: 60px 15px 0px;
     position: sticky;
     top: 150px;
-    /* left: 0;
-    right: 0;
-    bottom: 0; */
+    
    
 }
 
@@ -199,8 +196,6 @@
     font-size: 11px;
     text-align: center;
 }
-
-
 
 /* footer */
 .footer {
