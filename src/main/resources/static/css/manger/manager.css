@@ -81,23 +81,23 @@ table {
     width: 90%;
     border-collapse: collapse;
     border: 0.5px solid #141414;
-  }
+}
 
-  th {
+th {
     font-size: 11px;
     height: 30px;
     border: 0.5px solid #141414;
     padding: 5px;
-  }
+}
 
-  td {
+td {
     font-size: 11px;
     height: 20px;
     border: 0.5px solid #141414;
     padding: 5px;
-  }
+}
 
-  .list-btn {
+.list-btn {
 	display: flex;
 	justify-content: center;
     margin-top: 380px;
