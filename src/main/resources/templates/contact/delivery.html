@@ -5,16 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/manger/delivery.css">
+    <link rel="stylesheet" href="/static/css/contact/delivery.css">
     <title>stussy-contact</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="wrap">
         <div class="delivery-main">
-            <h2>CUSTOMER SERVICE</h2>
+            <h2>CUSTOMER SUPPORT</h2>
             <div class="delivery-box">
                 <nav class="menu-list">
-                    
+                    <ul>
+                        <li><a href="#">내 계정</a></li>
+                        <li><a href="#">문의</a></li>
+                        <li><a href="#">배송지연안내</a></li>
+                        <li><a href="#">주문 및 배송정보</a></li>
+                        <li><a href="#">장바구니</a></li>
+                    </ul>
                 </nav>
                 <div class="delivery-content">
                     <h1>FALL '22 & CONVERSE CHUCK 70 HI 배송지연 공지</h1>
@@ -39,5 +48,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

@@ -12,4 +12,9 @@ public class ApiController {
 	public String loadmain() {
 		return "main/main";
 	}
+	
+	@GetMapping("/account")
+	public String accountInfo() {
+		return "products/product-detail";
+	}
 }

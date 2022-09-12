@@ -30,8 +30,8 @@
 }
 
 .h-info-box-1 {
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .h-info-box-1 > h1 {
@@ -113,12 +113,12 @@ section {
     border-color: var(--sub-font-color);
 }
 
-.left-menu-list > ul > li > p {
+.left-menu-list > ul > li > a {
     font-weight: 300;
+    font-size: 11px;
 }
 
-.left-menu-list > ul > li > p:hover {
-    cursor: pointer;
+.left-menu-list > ul > li > a:hover {
     text-decoration: underline;
 }
 

@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/account/account-dashboard.css">
     <title>stussy-account-dashboard</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="wrap">
         <div class="account-main">
             <h2>ACCOUNT DASHBOARD</h2>
             <div class="account-box">
                 <nav class="menu-list">
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><a href="#">내 계정</a></li>
+                        <li><a href="#">주소록</a></li>
+                        <li><a href="#">문의</a></li>
+                        <li><a href="#">로그아웃</a></li>
                     </ul>
                 </nav>
                 <div class="account-content">
@@ -67,5 +70,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

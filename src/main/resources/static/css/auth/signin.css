@@ -123,6 +123,7 @@ main {
 
     width: 472px;
     height: 70px;
+    font-size: 11px;
 }
 
 .account-click-btn {
@@ -203,12 +204,12 @@ main {
     align-items: center;
 }
 
-.find-password > p {
+.find-password > a {
     color: var(--sub-font-color);
+    font-size: 11px;
 }
 
-.find-password > p:hover {
-    cursor: pointer;
+.find-password > a:hover {
     text-decoration: underline;
 }
 

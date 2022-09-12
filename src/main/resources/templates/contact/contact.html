@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/contact/contact.css">
     <title>stussy-contact</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="wrap">
         <div class="contact-main">
             <h2>CUSTOMER SUPPORT</h2>
             <div class="contact-box">
                 <nav class="menu-list">
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><a href="#">내 계정</a></li>
+                        <li><a href="#">문의</a></li>
+                        <li><a href="#">배송지연안내</a></li>
+                        <li><a href="#">주문 및 배송정보</a></li>
+                        <li><a href="#">장바구니</a></li>
                     </ul>
                 </nav>
                 <div class="contact-content">
@@ -64,5 +68,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

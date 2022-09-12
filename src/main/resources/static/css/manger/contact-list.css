@@ -2,17 +2,17 @@
     width: 100%;
 }
 
-.manager-main {
+.contact-list-main {
     width: 1260px;
     height: 594px;
     margin: 0 auto;
 }
 
-h2 {
+.contact-list-main > h2 {
     text-align: center;
     margin-bottom: 15px;
     padding: 0 10px;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .manager-box {
@@ -21,7 +21,7 @@ h2 {
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .menu-list {
@@ -29,8 +29,7 @@ h2 {
     width: 244px;
     height: 567px;
     padding: 0 10px;
-    background-color: rebeccapurple;
-    
+    /* background-color: rebeccapurple; */
 }
 
 .menu-list li {
@@ -40,6 +39,10 @@ h2 {
     margin-bottom: 10px;
     box-sizing: border-box;
     font-size: 11px;
+}
+
+.menu-list li a:hover {
+    text-decoration-line: underline;
 }
 
 .contact-list-content {

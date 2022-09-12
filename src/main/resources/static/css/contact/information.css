@@ -29,7 +29,7 @@ h2 {
     height: 567px;
     padding: 0 10px;
     margin-bottom: 20px;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 
 .menu-list li {
@@ -41,11 +41,15 @@ h2 {
     font-size: 11px;
 }
 
+.menu-list li a:hover {
+    text-decoration-line: underline;
+}
+
 /* information 상세페이지 */
 .delivery-content {
     width: 976px;
     height: 567px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .delivery-content h1 {

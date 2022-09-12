@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="/static/css/buy/buyPage.css">
     <script src="https://kit.fontawesome.com/e740067d1c.js" crossorigin="anonymous"></script>
     <title>결제페이지</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div class="wrap">
         <div class="contents">
             <div class="main">
                 <div class="main-header">
                     <a href="">
-                        <img class="logo" src="/images/logo.jpg" alt="">
+                        <img class="logo" src="/images/logo.jpg" alt="로고">
                     </a>
                     <div class="nav">
                         <ul class="nav-list">
@@ -153,5 +156,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

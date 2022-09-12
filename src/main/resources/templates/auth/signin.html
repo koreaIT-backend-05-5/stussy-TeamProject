@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stussy signin</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/auth/signin.css">
+    <title>stussy signin</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="container">
-        <header>
-            <div class="header-info-1">
-                <p>배송 지연 안내</p>
-            </div>
-            <div class="header-info-2">
-                <div class="h-info-box-1">
-                    <h1>
-                        <img src="/image/header/logo.png" alt="logo">
-                    </h1>
-                    <div class="nav-info">
-                        <p class="nav-click-menu">SHOP</p>
-                    </div>
-                </div>
-                <div class="h-info-box-2">
-                    <p>SEARCH</p>
-                    <p>BAG</p>
-                    <img src="/image/header/korea-mark.png" alt="">
-                </div>
-            </div>
-        </header>
         <main>
             <article class="account-page-menu">
                 <div class="account-title">                  
@@ -39,18 +22,17 @@
                     <div class="signup-info-area">
                         <div class="signup-info">
                             <div class="account-info-title">
-                                <p>NEW CUSTOMERS</p>
+                                <p>회원가입</p>
                             </div>
                             <ul>
                                 <li>
                                     <p>
-                                        By creating an account with our store, you will be able to move through the checkout process<br>
-                                        faster, store multiple shipping addresses, view and track your orders in your account and more.
+                                        회원가입을 하시면, 주문 조회와 개인정보 관리 및 빠른 체크아웃 등 다양한 혜택을 누리실 수 있습니다.
                                     </p>
                                 </li>
                                 <li>
                                     <form action="">
-                                        <button class="account-click-btn">CREATE ACCOUNT</button>
+                                        <button class="account-click-btn">신규가입</button>
                                     </form>
                                 </li>
                             </ul>
@@ -59,7 +41,7 @@
                     <div class="signin-info-area">
                         <div class="signin-info">
                             <div class="account-info-title">
-                                <p>REGISTERED CUSTOMERS</p>  
+                                <p>로그인</p>  
                             </div>
                             <div class="login-box-info">
                                 <form>
@@ -69,10 +51,10 @@
                             </div>
                             <div class="login-btn-info">
                                 <div class="find-password">
-                                    <p>Forgot your password?</p>
+                                    <a href="#">비밀번호 찾기</a>
                                 </div>
                                 <form action="">
-                                    <button class="account-click-btn">CREATE ACCOUNT</button>
+                                    <button class="account-click-btn">로그인</button>
                                 </form>
                             </div>
                         </div>
@@ -80,7 +62,7 @@
                 </section>
             </article>
         </main>
-        <footer></footer>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

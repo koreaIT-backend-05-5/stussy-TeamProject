@@ -2,20 +2,20 @@
     width: 100%;
 }
 
-.product-write-main {
+.product-update-main {
     width: 1260px;
     height: 594px;
     margin: 0 auto;
 }
 
-.product-write-main h2{
+.product-update-main > h2{
     text-align: center;
     margin-bottom: 15px;
     padding: 0 10px;
-    font-size: 11px;
+    font-size: 15px;
 }
 
-.product-write-box {
+.product-wrupdateite-box {
     width: 1260px;
     height: 567px;
     display: flex;
@@ -29,8 +29,7 @@
     width: 244px;
     height: 567px;
     padding: 0 10px;
-    background-color: rebeccapurple;
-    
+    /* background-color: rebeccapurple; */
 }
 
 .menu-list li {
@@ -42,26 +41,30 @@
     font-size: 11px;
 }
 
+.menu-list li a:hover {
+    text-decoration-line: underline;
+}
+
 /* 상품등록 표 css */
-.product-write-content {
+.product-update-content {
     width: 976px;
     height: 567px;
     text-align: left;
     /* background-color: blue; */
 }
 
-.product-write-content h2 {
+.product-update-content h2 {
     text-align: left;
     margin-bottom: 10px;
     font-size: 13px;
 }
 
-.product-write-content table {
+.product-update-content table {
     width: 600px;
     border: 1px solid #000;
 }
 
-.product-write-content tr td {
+.product-update-content tr td {
     border: 1px solid #000;
     font-size: 11px;
     

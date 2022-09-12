@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/product/product-detail.css">
     <title>tee01Page</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div class="wrap">
-        <!-- header -->
-        <div class="header">
-            <div class="header-promo">배송 지연 안내</div>
-            <div class="main-header"></div>
-        </div>
-
         <!-- contents -->
         <div class="product-section-area">
             <div class="section-product">
@@ -35,12 +32,11 @@
                         <img src="/images/tee03.jpg"alt="tee03">
                     </div>
                     <div class="product-size">
-                       <p>S</p>
-                       <p>M</p>
-                       <p>L</p>
-                       <p>XL</p>
-                       <p>XXL</p>
-
+                        <p>S</p>
+                        <p>M</p>
+                        <p>L</p>
+                        <p>XL</p>
+                        <p>XXL</p>
                     </div>
                     <div class="product-button">
                         <button type="submit" class="add-btn">
@@ -65,7 +61,7 @@
             </div>
             <div>
                 <h1  class="related-products-title">SUGGESTED</h1>
-           </div>
+            </div>
             <div class="releted-area">
                 <ul class="releted-products">
                     <li class="releted-product">
@@ -98,11 +94,8 @@
                     </li>
                 </ul>
             </div>
-        
-        <!-- footer -->
-        <div class="footer">
-            
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

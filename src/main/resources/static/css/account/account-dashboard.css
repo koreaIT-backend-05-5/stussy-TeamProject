@@ -21,7 +21,7 @@ h2 {
     display: flex;
     /* text-align: center; */
     justify-content: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .menu-list {
@@ -29,7 +29,7 @@ h2 {
     width: 244px;
     height: 567px;
     padding: 0 10px;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     
 }
 
@@ -40,6 +40,11 @@ h2 {
     margin-bottom: 10px;
     box-sizing: border-box;
     font-size: 11px;
+}
+
+.menu-list a:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* account dashbord */

@@ -108,11 +108,12 @@ section {
     border-color: var(--sub-font-color);
 }
 
-.left-menu-list > ul > li > p {
+.left-menu-list > ul > li {
     font-weight: 300;
+    font-size: 11px;
 }
 
-.left-menu-list > ul > li > p:hover {
+.left-menu-list > ul > li > a:hover {
     cursor: pointer;
     text-decoration: underline;
 }

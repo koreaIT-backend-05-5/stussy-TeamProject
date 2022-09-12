@@ -29,7 +29,7 @@ h2 {
     width: 244px;
     height: 567px;
     padding: 0 10px;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     
 }
 
@@ -42,10 +42,14 @@ h2 {
     font-size: 11px;
 }
 
+.menu-list li a:hover {
+    text-decoration-line: underline;
+}
+
 .support-content {
     width: 976px;
     height: 567px;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 h1 {

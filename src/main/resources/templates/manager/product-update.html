@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/manger/product-write.css">
+    <link rel="stylesheet" href="/static/css/manger/product-update.css">
     <title>product-write</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div>
-        <div class="product-write-main">
-            <h2>CUSTOMER SUPPORT</h2>
-            <div class="product-write-box">
+        <div class="product-update-main">
+            <h2>관리자페이지</h2>
+            <div class="product-update-box">
                 <nav class="menu-list">
                     <ul>
-                        <li>회원관리</li>
-                        <li>상품관리</li>
-                        <li>주문목록관리</li>
-                        <li>문의사항관리</li>
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#">주문목록관리</a></li>
+                        <li><a href="#">문의사항관리</a></li>
                     </ul>
                 </nav>
-                <div class="product-write-content">
+                <div class="product-update-content">
                     <h2>상품등록</h2>
                     <form id="form01" name="form01" enctype="multipart/form-data" method="post">
                         <table>
@@ -53,7 +56,7 @@
                 </div>
             </div>
         </div>
-        
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

@@ -8,15 +8,12 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/product/product-main.css">
     <title>teePage</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div class="wrap">
-        <!-- header -->
-        <div class="header">
-            <div class="header-promo">배송 지연 안내</div>
-            <div class="main-header"></div>
-        </div>
-
         <!-- contents  -->
         <div>
             <ul class="collection-products">
@@ -113,9 +110,7 @@
                 <p>Next Collection - Headwear</p>
             </div>
         </div>
-        <div class="footer">
-            
-        </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

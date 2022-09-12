@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/manger/manager-main.css">
     <title>manager-main</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="wrap">
         <div class="manager-main">
-            <h2>CUSTOMER SUPPORT</h2>
+            <h2>관리자페이지</h2>
             <div class="manager-box">
                 <nav class="menu-list">
                     <ul>
-                        <li>회원관리</li>
-                        <li>상품관리</li>
-                        <li>주문목록관리</li>
-                        <li>문의사항관리</li>
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#">주문목록관리</a></li>
+                        <li><a href="#">문의사항관리</a></li>
                     </ul>
                 </nav>
                 <div class="manager-content">
@@ -28,5 +31,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

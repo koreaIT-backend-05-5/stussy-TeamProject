@@ -1,35 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stussy signin</title>
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/account-addresses-info.css">
+    <link rel="stylesheet" href="/static/css/account/account-addresses-info.css">
+    <title>stussy signin</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
 <body>
+    <th:block th:replace="/fragment/header"></th:block>
     <div id="container">
-        <header>
-            <div class="header-info-1">
-                <p>배송 지연 안내</p>
-            </div>
-            <div class="header-info-2">
-                <div class="h-info-box-1">
-                    <h1>
-                        <img src="/image/header/logo.png" alt="logo">
-                    </h1>
-                    <div class="nav-info">
-                        <p class="nav-click-menu">SHOP</p>
-                    </div>
-                </div>
-                <div class="h-info-box-2">
-                    <p>SEARCH</p>
-                    <p>BAG</p>
-                    <img src="/image/header/korea-mark.png" alt="">
-                </div>
-            </div>
-        </header>
         <main>
             <article class="account-addresses-info-menu">
                 <div class="account-addresses-info-title">                  
@@ -38,10 +21,10 @@
                 <section>
                     <div class="left-menu-list">
                         <ul>
-                            <li><p>내 계정</p></li>
-                            <li><p>주소록</p></li>
-                            <li><p>문의</p></li>
-                            <li><p>로그아웃</p></li>
+                            <li><a href="#">내 계정</a></li>
+                            <li><a href="#">주소록</a></li>
+                            <li><a href="#">문의</a></li>
+                            <li><a href="#">로그아웃</a></li>
                         </ul>
                     </div>
                     <div class="account-addresses-update-info">
@@ -78,7 +61,7 @@
                             <li class="national-select-box input-height">
                                 <div class="nation-select-area">
                                     <select name="nation" id="" class="nation-select-box">
-                                       <option value="">대한민국</option>
+                                        <option value="">대한민국</option>
                                     </select>
                                     <p class="nation-txt">국가/지역</p>
                                 </div>
@@ -130,7 +113,7 @@
                 </section>
             </article>
         </main>
-        <footer></footer>
     </div>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>
