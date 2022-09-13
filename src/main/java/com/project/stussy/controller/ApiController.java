@@ -15,6 +15,6 @@ public class ApiController {
 	
 	@GetMapping("/account")
 	public String accountInfo() {
-		return "account/account-dashboard";
+		return "cart/cart";
 	}
 }
