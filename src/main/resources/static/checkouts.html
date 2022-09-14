@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkouts</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/checkouts.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/checkouts.css">
 </head>
 <body>
     <div id="container">
@@ -67,10 +67,14 @@
                             <input type="text" class="name-input-box short-input-box" placeholder="이름">
                         </div>
                         <div class="user-info-main-zipcode-input user-info-main-short-box">
-                            <input type="text" class="zipcode-input-box" placeholder="우편번호">
-                            <button class="find-addresses-btn">주소찾기</button>
+                            <input type="text" id="update-addresses_postcode" placeholder="우편번호" class="zipcode-input-box">
+                            <form action="">
+                                <label class="find-addresses-btn">
+                                    <input type="button" onclick="updateAddresses_Postcode()" value="주소찾기">
+                                </label>
+                            </form>
                         </div>
-                        <div class="user-info-main-region user-info-main-short-box">
+                        <div class="user-info-main-region user-info-main-select">
                             <select name="" id="">
                                 <option value="">강원도</option>
                                 <option value="">경기도</option>
@@ -87,13 +91,12 @@
                                 <option value="">전라남도</option>
                                 <option value="">전라북도</option>
                                 <option value="">제주특별자치도</option>
-                                <option value="">충청남도</option>
+                                <option value="">충청남도</option>  
                                 <option value="">충청북도</option>
                             </select>
-                            <input type="text" class="region-input-box short-input-box" placeholder="구/군/시">
                         </div>
                         <div class="user-info-main-detail-region user-info-main-select">
-                            <input type="text" class="detail-region-input-box long-input-box" placeholder="주소">
+                            <input type="text" id="addresses-txt" class="detail-region-input-box long-input-box" placeholder="주소" disabled>
                         </div>
                         <div class="user-info-main-house-region user-info-main-select">
                             <input type="text" class="house-region-input-box long-input-box" placeholder="아파트,동/호수 등">
@@ -168,5 +171,7 @@
                 </section>
         </article>
     </div>
+    <script type="text/javascript" src="/static/js/checkouts.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

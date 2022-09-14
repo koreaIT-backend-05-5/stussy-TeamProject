@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkouts</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/checkouts-card.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/checkouts-card.css">
 </head>
 <body>
     <div id="container">
@@ -15,7 +15,7 @@
                 <div class="checkouts-card-info">
                     <div class="card-info-header">
                         <h1 class="card-info-hedaer-logo">
-                            <img src="/images/checktous-card/logo.png" alt="">
+                            <img src="/static/images/checktous-card/logo.png" alt="">
                         </h1>
                         <ul class="card-info-order-proceeding">
                             <li class="order-proceeding-txt">카트</li>
@@ -31,17 +31,30 @@
                         <div class="card-info-main-user-profile-area">
                             <ul class="card-info-main-profile">
                                 <li>연락처</li>
-                                <li>izx43@naver.com</li>
+                                <li class="card-info-main-userid">
+                                    <form action="">
+                                        <input type="text" disabled placeholder="izx43@naver.com">
+                                    </form>
+                                </li>
                                 <li>변경</li>
                             </ul>
                             <ul class="card-info-main-shipping-arrival">
                                 <li>배송 도착지</li>
-                                <li>????</li>
+                                <li class="card-info-main-user-addresses-info">
+                                    <form action="">
+                                        <input type="text" disabled placeholder="부산 ??????????">
+                                    </form>
+                                </li>
                                 <li>변경</li>
                             </ul>
                             <ul class="card-info-main-way-shipping">
                                 <li>방법</li>
-                                <li>일반택배 · ₩2,500</li>
+                                <li>
+                                    <form action="" class="shipping-type-name">
+                                        <p>일반택배 ·</p>
+                                        <input type="text" disabled placeholder="2500원">
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                         <div class="card-info-main-security-box">
@@ -51,84 +64,28 @@
                             </div>
                             <div class="card-info-main-card-type-list">
                                 <div>
-                                    <img src="/images/checktous-card/card-type.png" alt="">
+                                    <img src="/static/images/checktous-card/card-type.png" alt="">
                                 </div>
                             </div>
                             <div class="card-info-main-card-content">
-                                <img src="/images/checktous-card/checkouts-card-main-security.png" alt="">
+                                <img src="/static/images/checktous-card/checkouts-card-main-security.png" alt="">
                                 <p>"주문 완료 " 을 클릭한 후, 주문을 안전하게 완료하기 위해 KG Inicis (New) 로 다시 연결됩니다.</p>
                             </div>
                         </div>
                         <div class="card-info-main-claim-address">
                             <div class="card-info-main-claim-address-txt card-info-main-txt">
-                                <h2>청구 주소</h2>
-                                <p>카드 또는 결제 방식에 일치하는 주소를 선택하십시오.</p>
+                                <h2>배송 방법</h2>
                             </div>
                             <ul class="card-info-main-diffrence-addresses-box-area">
-                                <li class="same-shipping-addresses-btn">
-                                    <input type="radio" id="same-shipping-addresses" name="addresses" checked>
-                                    <label for="same-shipping-addresses">배송 주소와 같음</label>
-                                </li>
-                                <li class="diffrence-shipping-addresses-btn">
-                                    <input type="radio" id="diffrence-shipping-addresses" name="addresses">
-                                    <label for="diffrence-shipping-addresses">다른 청구 주소 사용</label>
-                                </li>
-                                <div class="diffrence-addresses-info-area">
-                                    <div class="diffrence-addresses-info">
-                                        <div class="diffrence-addresses-main">
-                                            <div class="diffrence-addresses-select-box">
-                                                <select name="" id="" class="">
-                                                    <option value="">다른 주소 입력하기</option>
-                                                    <option value="">대한민국</option>
-                                                </select>
-                                            </div>
-                                            <div class="diffrence-addresses-nation-select-box diffrence-addresses-select-box">
-                                                <select name="" id="" class="nation-select-box">
-                                                    <option value="">대한민국</option>
-                                                </select>
-                                                <div class="nation-txt">국가/지역</div>
-                                            </div>
-                                            <div class="diffrence-addresses-name-input diffrence-addresse-short-box">
-                                                <input type="text" class="name-input-box short-input-box" placeholder="성">
-                                                <input type="text" class="name-input-box short-input-box" placeholder="이름">
-                                            </div>
-                                            <div class="diffrence-addresses-zipcode-input diffrence-addresse-short-box">
-                                                <input type="text" class="zipcode-input-box" placeholder="우편번호">
-                                            </div>
-                                            <div class="diffrence-addresses-region diffrence-addresse-short-box">
-                                                <select name="" id="">
-                                                    <option value="">강원도</option>
-                                                    <option value="">경기도</option>
-                                                    <option value="">경상남도</option>
-                                                    <option value="">경상북도</option>
-                                                    <option value="">광주광역시</option>
-                                                    <option value="">대구광역시</option>
-                                                    <option value="">대전광역시</option>
-                                                    <option value="">부산광역시</option>
-                                                    <option value="">서울특별시</option>
-                                                    <option value="">세종특별자치시</option>
-                                                    <option value="">울산광역시</option>
-                                                    <option value="">인천광역시</option>
-                                                    <option value="">전라남도</option>
-                                                    <option value="">전라북도</option>
-                                                    <option value="">제주특별자치도</option>
-                                                    <option value="">충청남도</option>
-                                                    <option value="">충청북도</option>
-                                                </select>
-                                                <input type="text" class="region-input-box short-input-box" placeholder="구/군/시">
-                                            </div>
-                                            <div class="user-info-main-detail-region diffrence-addresses-select-box">
-                                                <input type="text" class="detail-region-input-box long-input-box" placeholder="주소">
-                                            </div>
-                                            <div class="user-info-main-house-region diffrence-addresses-select-box">
-                                                <input type="text" class="house-region-input-box long-input-box" placeholder="아파트,동/호수 등">
-                                            </div>
-                                            <div class="user-info-main-phone diffrence-addresses-select-box">
-                                                <input type="text" class="phone-input-box long-input-box" placeholder="전화번호">
-                                            </div>
-                                        </div>
+                                <li class="shipping-type-btn">
+                                    <div>
+                                        <input type="radio" id="shipping-type-btn" name="addresses" checked>
+                                        <label for="shipping-type-btn">일반 배송</label>
                                     </div>
-                                </div>
+                                    <form action="">
+                                        <input type="text" placeholder="?" class="shipping-type" disabled>
+                                    </form>
+                                </li>
                             </ul>
                             <div class="card-info-main-footer">
                                 <ul class="card-main-footer-btns">
@@ -140,7 +97,6 @@
                                         <button class="complete-shipping-btn">주문 완료</button>
                                     </li>
                                 </ul>
-                                <p>유의사항: 배송지를 영어로 기입하셨을 경우 주문이 취소될 수 있습니다. (시/도 제외).</p>
                             </div>
                             <div class="card-info-footer">
                                 <ul>
@@ -197,7 +153,7 @@
                 </div>
             </section>
         </article>
-        <script type="text/javascript" src="/js/checkouts-card.js"></script>
+        <script type="text/javascript" src="/static/js/checkouts-card.js"></script>
     </div>
 </body>
 </html>

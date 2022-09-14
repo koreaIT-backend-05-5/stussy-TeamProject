@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>account-addresses</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/account-addresses.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/account-addresses.css">
 </head>
 <body>
     <div id="container">
@@ -82,16 +82,20 @@
                                     </form>
                                 </li>
                                 <li class="addresses-txt-box">
-                                    <div>주소</div>
+                                    <div>
+                                        <input type="text" id="addresses-txt" placeholder="주소" disabled>
+                                    </div>
                                 </li>
                                 <li class="find-addresses-btn-area">
                                     <form action="">
-                                        <button class="find-addresses-btn">주소찾기</button>
+                                        <label class="find-addresses-btn">
+                                            <input type="button" onclick="findAddresses_Postcode()" value="주소찾기">
+                                        </label>
                                     </form>
                                 </li>
                                 <li class="detail-addresses-input input-height">
                                     <form class="addresses-info-long-input">
-                                        <input type="text" placeholder="상세주소 필수 (아파트,동/ 호수 등)">
+                                        <input type="text" id="find-detailAddress-txt" placeholder="상세주소 필수 (아파트,동/ 호수 등)">
                                     </form>
                                 </li>
                                 <li class="home-essential-txt visible">
@@ -129,12 +133,7 @@
                                 </li>
                                 <li class="region-addresses-input input-height">
                                     <form class="addresses-info-short-input">
-                                        <input type="text" placeholder="구/군/시">
-                                        <input type="text" placeholder="우편번호">
-                                    </form>
-                                </li>
-                                <li class="tel-input input-height">
-                                    <form class="tel-input-box">
+                                        <input type="text" id="find-addresses_postcode" placeholder="우편번호" class="addresses-postcode">
                                         <input type="text" placeholder="전화번호">
                                     </form>
                                 </li>
@@ -162,16 +161,20 @@
                                     </form>
                                 </li>
                                 <li class="addresses-txt-box">
-                                    <div>주소</div>
+                                    <div>
+                                        <input type="text" id="create-addresses-txt" placeholder="주소" disabled>
+                                    </div>
                                 </li>
                                 <li class="find-addresses-btn-area">
                                     <form action="">
-                                        <button class="find-addresses-btn">주소찾기</button>
+                                        <label class="find-addresses-btn">
+                                            <input type="button" onclick="createAddresses_Postcode()" value="주소찾기">
+                                        </label>
                                     </form>
                                 </li>
                                 <li class="detail-addresses-input input-height">
                                     <form class="addresses-info-long-input">
-                                        <input type="text" placeholder="상세주소 필수 (아파트,동/ 호수 등)">
+                                        <input type="text" id="create-detailAddress-txt" placeholder="상세주소 필수 (아파트,동/ 호수 등)">
                                     </form>
                                 </li>
                                 <li class="home-essential-txt visible">
@@ -207,13 +210,8 @@
                                     </div>
                                 </li>
                                 <li class="region-addresses-input input-height">
-                                    <form class="addresses-info-short-input">
-                                        <input type="text" placeholder="구/군/시">
-                                        <input type="text" placeholder="우편번호">
-                                    </form>
-                                </li>
-                                <li class="tel-input input-height">
-                                    <form class="tel-input-box">
+                                    <form class="addresses-info-short-input">   
+                                        <input type="text" id="create-addresses_postcode" placeholder="우편번호" class="addresses-postcode">
                                         <input type="text" placeholder="전화번호">
                                     </form>
                                 </li>
@@ -233,7 +231,8 @@
             </article>
         </main>
         <footer></footer>
-        <script type="text/javascript" src="/js/account-addresses.js"></script>
+        <script type="text/javascript" src="/static/js/account-addresses.js"></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     </div>
 </body>
 </html>
