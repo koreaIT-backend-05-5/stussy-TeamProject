@@ -43,20 +43,21 @@
                             <div class="account-info-title">
                                 <p>로그인</p>  
                             </div>
+                            
                             <div class="login-box-info">
-                                <form>
-                                    <input type="text" placeholder="Email">
-                                    <input type="text" placeholder="Password">
+                                <form method="post" action="/auth/signin">
+                                    <input type="text" name="username" placeholder="Email">
+                                    <input type="password" name="password" placeholder="Password">
+                                    
+                                    <div class="login-btn-info">
+                                        <div class="find-password">
+                                            <a href="#">비밀번호 찾기</a>
+                                        </div>
+                                        <button class="account-click-btn">로그인</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="login-btn-info">
-                                <div class="find-password">
-                                    <a href="#">비밀번호 찾기</a>
-                                </div>
-                                <form action="">
-                                    <button class="account-click-btn">로그인</button>
-                                </form>
-                            </div>
+                            
                         </div>
                     </div>
                 </section>

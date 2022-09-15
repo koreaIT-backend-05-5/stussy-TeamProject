@@ -127,13 +127,10 @@ main {
 }
 
 .account-click-btn {
-    width: 472px;
+    width: 484px;
     height: 34px;
-
+    
     border: 1px solid var(--sub-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     background-color: var(--sub-color);
 

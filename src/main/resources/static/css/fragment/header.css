@@ -1,68 +1,118 @@
 header{
 	width: 100%;
-}
-
-.top-info {
+ }
+ 
+ .top-info {
 	width: 100%;
 	height: 33px;
 	background-color: black;
 	text-align: center;
-}
-
-.top-info h5 {
+ }
+ 
+ .top-info h5 {
 	padding-top: 8px;
 	color: whitesmoke;
-}
-.top-bar{
+ }
+ .top-bar{
 	width: 100%;
 	height: 60px;
 	font-family: "Helvetica Neue",Arial,sans-serif;
 	font-size: 11px;
 	display: flex;
 	/* position: fixed; */
-}
-
-.logo {
+ }
+ 
+ .logo {
 	margin-left: 20px;
-}
-
-.logo img {
+ }
+ 
+ .logo img {
 	width: 60px;
 	height: 60px;
-}
-
-.top-left{
+ }
+ 
+ .top-left{
 	margin-left: 20px;
 	padding-top: 20px;
-}
-
-.top-left ul{
+ }
+ 
+ .top-left ul{
 	list-style: none;
-	display: flex;	
-}
-.top-left li{
+	display: flex;   
+ }
+ 
+ .top-left li{
 	padding-right:20px;
-}
+ }
 
-.top-right{
-	width: 620px;
-	height: 60px;
-	margin-left: 1500px;
-}
+ .top-left>ul>li a:hover,
+ .top-left>ul>li a:focus {
+	text-decoration: underline;
+	font-weight: 600;
+	 color: #141414;
+ }
 
-.top-right ul {
-	display: flex;
+ /*<<<<메뉴 내리기>>>*/
+ .subbox{
+	width: 300px;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 65px;
+	z-index: 10;
+	transition: all 0.5;
+	display: block;
+ }
+ 
+  .subbox-visible {
+ 	display: none;
+ }
+ 
+ .subbox-mega {
+	 display: flex;
+	 position: relative;
+	 box-sizing: border-box;
+	 margin: 30px 0 0 100px;
+ }
+ 
+ .subbox-children {
+	 display: flex;
+	 flex-direction: column; 
+	 font-size: 15px;
+ }
+
+ .subbox-child {
+	margin-top: 10px;
+	font-size: 12px;
+ }
+ 
+ .top-right{
+ 	display:flex;
+ 	justify-content: flex-end;
 	align-items: center;
-	padding-top: 20px;
-}
-
-.top-right li{
+	width: 100%;
+ }
+ 
+ .top-right ul {
+	display: flex;
+	
+ }
+ 
+ .top-right li{
 	display: inline-block;
 	padding-right: 20px;
-	padding-top: 20px;
-}
+ }
 
-.category{
-	color: black;
-	font-size: 13px;
-}
+ .subbox-child a:hover,
+ .subbox-child a:focus {
+	text-decoration: underline;
+	font-weight: 600;
+	color: #141414;
+ }
+
+ .category {
+	font-size: 12px;
+	font-weight: 400;
+ }
+

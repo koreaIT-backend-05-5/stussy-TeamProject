@@ -1,4 +1,4 @@
-package com.project.stussy.controller;
+package com.project.stussy.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,11 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/api")
-public class ApiController {
+public class PageController {
 
-	@GetMapping("/main")
+	@GetMapping({"/", "/main"})
 	public String loadmain() {
 		return "main/main";
+	}
+	
+	@GetMapping("/auth/signin")
+	public String loadSignin() {
+		return "auth/signin";
+	}
+	
+	@GetMapping("/auth/signup")
+	public String loadSignup() {
+		return "auth/signup";
 	}
 	
 	@GetMapping("/account")

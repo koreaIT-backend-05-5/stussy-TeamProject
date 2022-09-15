@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/head :: head}"></head>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/main/main.css">
-    <title>stussy-main</title>
-    <th:block th:replace="/fragment/head"></th:block>
-    <th:block th:replace="/fragment/footer-head"></th:block>
+	<link rel="stylesheet" href="/static/css/main/main.css">
+    <title>스투시 | stussy korea</title>
 </head>
 <body>
-    <th:block th:replace="/fragment/header"></th:block>
+    <header th:replace="~{fragment/header :: header}"></header>
     <main class="imgs"> 
         <article class="main-left">
             <ul>
@@ -36,6 +32,6 @@
             </ul>
         </article>
     </main>    
-    <th:block th:replace="/fragment/footer"></th:block>
+    <footer th:replace="~{fragment/footer :: footer}"></footer>
 </body>
 </html>
