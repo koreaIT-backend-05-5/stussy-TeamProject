@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/auth/signup.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <title>stussy signin</title>
     <th:block th:replace="/fragment/head"></th:block>
     <th:block th:replace="/fragment/footer-head"></th:block>
@@ -24,19 +25,19 @@
                     </div>
                     <div class="name-box-info">
                         <form>
-                            <input type="text" placeholder="이름">
-                            <input type="text" placeholder="성">
+                            <input name="name" placeholder="이름">
+                            <!-- <input type="text" placeholder="성"> -->
                         </form>
                     </div>
                     <div class="signup-box-info">
                         <form>
-                            <input type="text" placeholder="이메일">
-                            <input type="text" placeholder="비밀번호">
+                            <input type="email" name="email" placeholder="이메일">
+                            <input type="password" name="password" placeholder="비밀번호">
                         </form>
                     </div>
                     <div class="signup-btn-info">
                         <form action="">
-                            <button class="create-click-btn">확인</button>
+                            <button type="button" class="create-click-btn">가입하기</button>
                         </form>
                         <div class="back-to-login-btn">
                             <a href="#">로그인으로 돌아가기</a>
@@ -47,5 +48,6 @@
         </main>
     </div>
     <th:block th:replace="/fragment/footer"></th:block>
+    <script type="text/javascript" src="/static/js/auth/signup.js"></script>
 </body>
 </html>

@@ -119,9 +119,8 @@ main {
     height: 60px;
 }
 
-.name-box-info input:nth-child(1), 
-.name-box-info input:nth-child(2){
-    width: 231px;
+.name-box-info input {
+    width: 460px;
     height: 34px;
     padding-left: 10px;
 
