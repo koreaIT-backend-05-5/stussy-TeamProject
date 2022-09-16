@@ -1,0 +1,205 @@
+.wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;;
+}
+
+/* .header {
+    width: 100%;
+    height: 92.65px;
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index: 99;
+}
+
+.header-promo {
+    width: 100%;
+    height: 32.65px;
+    background-color: black;
+
+} */
+
+.main-header {
+    width: 100%;
+    height: 60px;
+    background-color: antiquewhite;
+}
+
+.product-section-area {
+    width: 100%;
+    margin-top: 92px;
+}
+
+.section-product {
+    display: flex;
+    justify-content: center;
+    width: 1280px;
+    
+    margin: 0 117.6px;
+    
+}
+
+.product-imgs {
+    display: flex;
+    flex-direction: column;
+    width: 644px;
+    box-sizing: border-box;
+}
+
+.product-imgs img {
+    width: 644px;
+}
+
+.product-information {
+    width: 350px;
+    height: 520px;
+    padding: 60px 15px 0px;
+    position: sticky;
+    top: 150px;
+    
+   
+}
+
+.product-title {
+    margin: 0 0 15px;
+    width: 320px;
+    height: 12.65px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-price {
+    width: 320px;
+    height: 12.65px;
+    font-size: 11px;   
+    margin: 0 0 15px; 
+}
+
+.swich {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -10px;
+    width: 320px;
+    height: 60px;
+}
+
+.swich img {
+    margin-left: 5px;
+
+    width: 45px;
+    height: 45px;
+}
+
+.product-size {
+    display: flex;
+    margin: 0 0 0 -10px;
+    width: 320px;
+    height: 60px;
+    
+}
+
+.product-size p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 11px;
+    
+    font-weight: 600;
+    border: 1px solid black;
+}
+
+.product-button {
+    width: 320px;
+    height: 109px;
+    margin-top: 15px;
+}
+
+.add-btn {
+    width: 320px;
+    height: 44.65px;
+    background-color: black; 
+}
+
+.add-btn-span {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.buy-btn-span {
+    font-size: 13px;
+    color: #000;
+    font-weight: 700;
+}
+
+.buy-btn {
+    margin-top: 10px;
+    width: 320px;
+    height: 44.65px;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.product-details {
+    width: 320px;
+    margin: 40px 0px 0px;
+    margin-bottom: 10px;
+}
+
+.tee-kind {
+    font-size: 11px;
+    margin: 0 0 5px;
+}
+
+.product-details strong {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-details p {
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+.related-products-title {
+    font-size: 11px;
+    text-align: center;
+}
+
+
+.releted-products {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 439.3px;
+}
+
+.releted-products img {
+    width: 344px;
+    height: 344px; 
+}
+
+.card-title {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.releted-product p {
+    margin-top: 5px;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* footer */
+/* .footer {
+    width: 100%;
+    height: 219.66px;
+    background-color: chartreuse;
+} */

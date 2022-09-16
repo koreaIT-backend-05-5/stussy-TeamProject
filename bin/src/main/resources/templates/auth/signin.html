@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/auth/signin.css">
+    <title>stussy signin</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div id="container">
+        <main>
+            <article class="account-page-menu">
+                <div class="account-title">                  
+                    <p>ACCOUNT</p>
+                </div>
+                <section class="account-info-area">
+                    <div class="signup-info-area">
+                        <div class="signup-info">
+                            <div class="account-info-title">
+                                <p>회원가입</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>
+                                        회원가입을 하시면, 주문 조회와 개인정보 관리 및 빠른 체크아웃 등 다양한 혜택을 누리실 수 있습니다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <form action="">
+                                        <button class="account-click-btn">신규가입</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="signin-info-area">
+                        <div class="signin-info">
+                            <div class="account-info-title">
+                                <p>로그인</p>  
+                            </div>
+                            
+                            <div class="login-box-info">
+                                <form method="post" action="/auth/signin">
+                                    <input type="text" name="username" placeholder="Email">
+                                    <input type="password" name="password" placeholder="Password">
+                                    
+                                    <div class="login-btn-info">
+                                        <div class="find-password">
+                                            <a href="#">비밀번호 찾기</a>
+                                        </div>
+                                        <button class="account-click-btn">로그인</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+    <th:block th:replace="/fragment/footer"></th:block>
+</body>
+</html>

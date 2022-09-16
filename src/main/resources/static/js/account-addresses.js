@@ -18,7 +18,6 @@ updateBtn.onclick = () => {
     } else {
         updateAddressesArea.style.display = 'none'
     }
-     
 }
 
 addAddressesBtn.onclick = () => {

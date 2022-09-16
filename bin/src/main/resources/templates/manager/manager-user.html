@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/manger/manager-user.css">
+    <title>manager-main</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div id="wrap">
+        <div class="manager-user-main">
+            <h2>관리자페이지</h2>
+            <div class="manager-box">
+                <nav class="menu-list">
+                    <ul>
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#">주문목록관리</a></li>
+                        <li><a href="#">문의사항관리</a></li>
+                    </ul>
+                </nav>
+                <div class="manager-content">
+                    <div class="manager-header">
+                        <div class="manager-search">
+                            <select class="search-select">
+                                <option value="number">번호</option>
+                                <option value="name">이름</option>
+                                <option value="phone">휴대폰</option>
+                            </select>
+                            <input type="text" class="search-input">
+                            <button type="button" class="search-button">검색</button>
+                        </div>
+                    </div>
+                        <article>
+                            <table>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>번호</th>
+                                    <th>아이디</th>
+                                    <th>이름</th>
+                                    <th>이메일</th>
+                                    <th>휴대폰</th>
+                                    <th>가입일</th>
+                                    <th>관리</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>zxcxv10</td>
+                                    <td>장원영</td>
+                                    <td>zxcv10@nanver.com</td>
+                                    <td>010-2028-3850</td>
+                                    <td>2022-09-01</td>
+                                    <td><button>삭제</button></td>
+                                </tr>
+                            </table>
+                             <div class="list-btn">
+                                <div class="page-buttons">
+                                    <button type="button" class="page-button">&lt;</button>
+                                    <button type="button" class="page-button">1</button>
+                                    <button type="button" class="page-button">2</button>
+                                    <button type="button" class="page-button">3</button>
+                                    <button type="button" class="page-button">4</button>
+                                    <button type="button" class="page-button">5</button>
+                                    <button type="button" class="page-button">&gt;</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <th:block th:replace="/fragment/footer"></th:block>
+</body>
+</html>

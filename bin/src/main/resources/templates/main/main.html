@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/head :: head}"></head>
+<head>
+	<link rel="stylesheet" href="/static/css/main/main.css">
+    <title>스투시 | stussy korea</title>
+</head>
+<body>
+    <header th:replace="~{fragment/header :: header}"></header>
+    <main class="imgs"> 
+        <article class="main-left">
+            <ul>
+                <div class="img-box">
+                    <a href="#"><img src="/static/images/newarrival.jpg" alt="pic" class="new"></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="/static/images/shorts.jpg" alt="pic" class="new"></a>
+                </div>
+            </ul>
+            <ul>
+                <div class="img-box2">
+                    <a href="#"><img src="/static/images/tops&shirts.jpg" alt="pic" class="new2"></a>
+                </div>
+            </ul>
+            <ul>
+                <div class="img-box">
+                    <a href="#"><img src="/static/images/sweats.jpg" alt="pic" class="new"></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="/static/images/headwear.jpg" alt="pic" class="new"></a>
+                </div>
+            </ul>
+        </article>
+    </main>    
+    <footer th:replace="~{fragment/footer :: footer}"></footer>
+</body>
+</html>

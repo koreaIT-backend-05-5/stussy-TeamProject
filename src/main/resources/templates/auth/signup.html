@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/auth/signup.css">
+    <title>stussy signin</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div id="container">
+        <main>
+            <article class="signup-page-menu">
+                <div class="account-title">                  
+                    <p>ACCOUNT</p>
+                </div>
+                <section class="signup-info">
+                    <div class="signup-info-title">
+                        <p>신규 회원가입</p>  
+                    </div>
+                    <div class="name-box-info">
+                        <form>
+                            <input type="text" placeholder="이름">
+                            <input type="text" placeholder="성">
+                        </form>
+                    </div>
+                    <div class="signup-box-info">
+                        <form>
+                            <input type="text" placeholder="이메일">
+                            <input type="text" placeholder="비밀번호">
+                        </form>
+                    </div>
+                    <div class="signup-btn-info">
+                        <form action="">
+                            <button class="create-click-btn">확인</button>
+                        </form>
+                        <div class="back-to-login-btn">
+                            <a href="#">로그인으로 돌아가기</a>
+                        </div>  
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+    <th:block th:replace="/fragment/footer"></th:block>
+</body>
+</html>
