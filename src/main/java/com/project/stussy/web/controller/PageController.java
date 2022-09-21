@@ -11,18 +11,31 @@ public class PageController {
 		return "main/main";
 	}
 	
-	@GetMapping("/auth/signin")
+	@GetMapping("/signin")
 	public String loadSignin() {
 		return "auth/signin";
 	}
 	
-	@GetMapping("/auth/signup")
+	@GetMapping("/signup")
 	public String loadSignup() {
 		return "auth/signup";
+	}
+	
+	@GetMapping("/product-main")
+	public String product() {
+		return "products/product-main";
+	}
+	@GetMapping("/product-detail")
+	public String productdetail() {
+		return "products/product-detail";
 	}
 	
 	@GetMapping("/account")
 	public String accountInfo() {
 		return "cart/cart";
+	}
+	@GetMapping("/buy")
+	public String buy() {
+		return "buy/buyPage";
 	}
 }
