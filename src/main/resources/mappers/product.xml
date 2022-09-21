@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.project.stussy.domain.product.ProductRepository">
+  		<insert id="SaveProduct" parameterType="hashmap">
+  			insert into
+  				product_mst
+  			values(
+  					0,
+  			#{product_category},
+			#{product_name},
+			#{product_price},
+			#{product_explanation},
+			#{product_count},
+			now(),
+			now()
+  			)
+  		</insert>
+  		
+  		
+  </mapper>

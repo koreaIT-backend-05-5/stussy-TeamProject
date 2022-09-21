@@ -19,7 +19,9 @@ public class AuthFailureHandler implements AuthenticationFailureHandler {
 		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		response.getWriter().print("<html><head></head><body><script>alert(\"이메일 또는 비밀번호가 잘못되었습니다.\");history.back();</script></body></html>");
+		response.getWriter().print("<html><head></head><body>"
+				+ "<script>alert(\"이메일 또는 비밀번호를 확인하세요.\");history.back();</script>"
+				+ "</body></html>");
 	}
 		
 	

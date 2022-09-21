@@ -28,7 +28,19 @@
                 <div class="product-update-content">
                     <h2>상품등록</h2>
                     <form id="form01" name="form01" enctype="multipart/form-data" method="post">
-                        <table>
+                        <table class="table">
+                            <div class="inputArea"> 
+                                <label>분류</label>
+                                <select class="category1">
+                                 <option value="">전체</option>
+                                 <option value="">TEE</option>
+                                 <option value="">TEE</option>
+                                 <option value="">TEE</option>
+                                 <option value="">TEE</option>
+                                 <option value="">TEE</option>
+                                 <option value="">TEE</option>
+                                </select>
+                               </div>
                             <tr>
                                 <td>상품명</td>
                                 <td><input type="text" name="productName" id="productName"></td>
@@ -39,16 +51,18 @@
                             </tr>
                             <tr>
                                 <td>상품설명</td>
-                                <td><textarea name="productDesc" id="productDesc" cols="60" rows="10"></textarea></td>
+                                <td>
+                                    <textarea></textarea>
+                                </td>
                             </tr>
                             <tr>
                                 <td>상품이미지</td>
-                                <td><input type="file" name="productPhoto" id="productPhoto"></td>
+                                <td><input type="file"name="file" multiple="multiple" accept=".jpg, .jpeg, .png, .gif"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
-                                    <input type="button" value="등록" id="add-btn">
-                                    <input type="button" value="목록" id="list-btn">
+                               	 	<button type="button" class="product-button submit" >등록</button>
+                                	<button type="button" class="product-button cancel" onclick="location.href='/prodoct-list';" >목록</button>
                                 </td>
                             </tr>
                         </table>
@@ -57,6 +71,8 @@
             </div>
         </div>
     </div>
+    
+    
     <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

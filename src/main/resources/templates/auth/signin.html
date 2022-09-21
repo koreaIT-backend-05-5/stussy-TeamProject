@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/auth/signin.css">
     <title>stussy signin</title>
@@ -32,7 +33,7 @@
                                 </li>
                                 <li>
                                     <form action="">
-                                        <button class="account-click-btn">신규가입</button>
+                                        <button type="button" class="account-click-btn"  onclick="location.href='/auth/signup';">신규가입</button>
                                     </form>
                                 </li>
                             </ul>
@@ -46,20 +47,23 @@
                             
                             <div class="login-box-info">
                                 <form method="post" action="/auth/signin">
-                                    <input type="text" name="username" placeholder="Email">
+                                    <input type="email" name="useremail" placeholder="Email">
                                     <input type="password" name="password" placeholder="Password">
                                     
                                     <div class="login-btn-info">
                                         <div class="find-password">
                                             <a href="#">비밀번호 찾기</a>
                                         </div>
-                                        <button class="account-click-btn">로그인</button>
+                                        <div class="auth-Btn">
+                                        
+                                        <button type="submit" class="account-click-btn" >로그인</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
-                            
                         </div>
                     </div>
+             
                 </section>
             </article>
         </main>

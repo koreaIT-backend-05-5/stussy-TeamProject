@@ -6,8 +6,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.filter.CorsFilter;
 
 import com.project.stussy.config.auth.AuthFailureHandler;
+
+import lombok.RequiredArgsConstructor;
 
 @EnableWebSecurity
 @Configuration
@@ -21,18 +24,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeHttpRequests()
-//			.antMatchers("/", "/main/**") 		
-//			.authenticated()				
+		http.authorizeRequests()
+			.antMatchers("/api/v1/grant/test/user/**")
+			.access("hasRole('ROLE_USER') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+			
+			.antMatchers("/api/v1/grant/test/manager/**")
+			.access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+			
+			.antMatchers("/api/v1/grant/test/admin/**")
+			.access("hasRole('ROLE_ADMIN')")
+				
 			.anyRequest()					
 			.permitAll()
 			
 			.and()
 			
 			.formLogin()
-			.loginPage("/api/auth/signin")
+			.usernameParameter("useremail")
+			.loginPage("/auth/signin")
 			.loginProcessingUrl("/auth/signin")
 			.failureHandler(new AuthFailureHandler())
-			.defaultSuccessUrl("/api/main");
+			.defaultSuccessUrl("/main");
 	}
 }
