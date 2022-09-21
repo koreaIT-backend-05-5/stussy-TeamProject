@@ -22,7 +22,7 @@ public class ApiController {
 	
 	@GetMapping("/signup")
 	public String signup() {
-		return "auth/signup";
+		return "products/product-detail";
 	}
 	
 	@PostMapping("/signup")
