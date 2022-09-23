@@ -1,21 +1,16 @@
 package com.project.stussy.web.dto.product;
 
-import java.util.List;
-
-import org.springframework.web.multipart.MultipartFile;
-
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
-public class AddProductReqDto {
+public class GetProductListDto {
 	private int productCode;
+	private String fileName;
 	private String productCategory;
 	private String productName;
 	private String productPrice;
 	private String productExplanation;
-	private String productSize;
-	private List<MultipartFile> file;
-
-
-
+	
 }

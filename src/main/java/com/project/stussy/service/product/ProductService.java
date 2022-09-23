@@ -3,12 +3,12 @@ package com.project.stussy.service.product;
 import java.util.List;
 
 import com.project.stussy.web.dto.product.AddProductReqDto;
-import com.project.stussy.web.dto.product.GetProductListResponseDto;
-import com.project.stussy.web.dto.product.GetProductReqDto;
+import com.project.stussy.web.dto.product.GetProductListDto;
 
 public interface ProductService {
-	public List<GetProductListResponseDto> getNoticeList(int page) throws Exception;
+	//등록
 	public int addProduct(AddProductReqDto addProductReqDto) throws Exception;
-	public GetProductListResponseDto getProduct(String flag, int productCode) throws Exception;
-
+	
+	//조회
+	public List<GetProductListDto> getProductList(int page) throws Exception;
 }

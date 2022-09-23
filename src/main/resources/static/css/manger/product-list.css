@@ -15,7 +15,7 @@
     font-size: 15px;
 }
 
-.product-wrupdateite-box {
+.product-updateite-box {
     width: 1260px;
     height: 567px;
     display: flex;
@@ -44,37 +44,9 @@
 }
 
 /* 상품등록 표 css */
-.product-update-content {
-    width: 976px;
-    height: 567px;
-    text-align: left;
-}
-
-.product-update-content h2 {
-    text-align: left;
-    margin-bottom: 10px;
-    font-size: 13px;
-}
-
-.product-update-content table {
-    width: 690px;
-    height: 400px;
-    border: 1px solid #000;
-}
-
-textarea {
-    width: 70%;
-    height: 300px;
-}
-
-.product-update-content tr td {
-    border: 1px solid #000;
-    font-size: 14px;
-    
-}
-
-.product-button {
-    width: 60px;
-    border: 1px solid #141414;
-    height: 25px;
+.table {
+    width: 900px;
+    height: 100px;
+    text-align: center;
+    font-size: 12px;
 }

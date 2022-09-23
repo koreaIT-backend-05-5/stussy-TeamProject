@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/manger/product-update.css">
-    <title>product-write</title>
+    <link rel="stylesheet" href="/static/css/manger/product-list.css">
+    <title>product-list</title>
     <th:block th:replace="/fragment/head"></th:block>
     <th:block th:replace="/fragment/footer-head"></th:block>
 </head>
@@ -26,26 +26,55 @@
                         <li><a href="#">문의사항관리</a></li>
                     </ul>
                 </nav>
-                <div class="product-update-content">
+
+                 
+                <div>
                     <h2>상품목록</h2>
-                    <form id="form01" name="form01" enctype="multipart/form-data" method="post">
+                    <form enctype="multipart/form-data" method="post">
                         <table class="table">
+                            
                             <tr>
+                                <td>선택</td>
                                 <td>상품코드</td>
+                                <td>이미지</td>
                                 <td>카테고리</td>
                                 <td>상품이름</td>
+                                <td>상품사이즈</td>
                                 <td>설명</td>
-                                <td>이미지</td>
                                 <td>수정/삭제</td>
                             </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                                <td>21</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="detail-button modify">수정</button>
+                                    <button type="button" class="detail-button delete">삭제</button>
+                                </td>
+                            </tr>
                         </table>
+                         <div class="list-footer">
+					        <div class="page-buttons">
+					            <button type="button" class="page-button">&lt;</button>
+					            <button type="button" class="page-button">1</button>
+					            <button type="button" class="page-button">2</button>
+					            <button type="button" class="page-button">3</button>
+					            <button type="button" class="page-button">4</button>
+					            <button type="button" class="page-button">5</button>
+					            <button type="button" class="page-button">&gt;</button>
+					        </div>
+			            </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     
-    
+    <script type="text/javascript" src="/static/js/product/product-list.js"></script>
     <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>
