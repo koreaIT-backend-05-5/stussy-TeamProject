@@ -1,18 +1,17 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <header>
+    <header  th:fragment="header">
         <div class="top-info">
             <a href="#"><h5>배송지연안내</h5></a>
         </div>
         <div class="top-bar">
             <div class="logo">
-                <a href="#"><img src="/static/images/logo.jpg"></a>
+                <a href="/main"><img src="/static/images/logo.jpg"></a>
             </div>
             <div class="top-left">
                 <ul>
                     <li><a href="#" class="category">SHOP</a></li>
                 </ul>
-                <div class="subbox">
+                <div class="subbox subbox-visible">
                     <div class="subbox-mega">
                         <ul class="subbox-children">
                             <li class="subbox-child"><a href="#">New</a></li>
@@ -33,6 +32,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="top-right">
                 <ul>
                     <li><a href="#" class="category">SEARCH</a></li>
@@ -41,6 +41,7 @@
                 </ul>
             </div>
         </div>
+    <script src="/static/js/header/header.js"></script>
     </header>
-    <script type="text/javascript" src="/static/js/fragment/header.js"></script>
+ 
 </html>

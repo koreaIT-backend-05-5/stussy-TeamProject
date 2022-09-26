@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.project.stussy.domain.user.UserRepository">
+  		<insert id="save" parameterType="com.project.stussy.domain.user.User">
+  			insert into
+  				user_mst
+  			values(
+  					0,
+			#{user_name},
+			#{user_email},
+			#{user_password},
+			#{user_roles},
+			now(),
+			now()
+  			)
+  		</insert>
+  		
+  		<select id="findUserByUseremail" parameterType="String" 
+  			resultType="com.project.stussy.domain.user.User">
+  			select
+				um.user_code,
+				
+				um.user_name,
+				um.user_email,
+				um.user_password,
+				um.user_roles,
+				
+				ud.user_address,
+				ud.user_phone
+			from
+				user_mst um
+				left outer join user_dtl ud on(ud.user_code = um.user_code)
+			where
+				um.user_email = #{useremail}
+  		</select>
+  </mapper>

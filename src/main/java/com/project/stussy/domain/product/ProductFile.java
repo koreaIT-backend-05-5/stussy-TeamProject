@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductFile {
 	private int file_code;
-	private int product_code; 
-	private String file_name; 
-
+	private int product_code;
+	private String file_name;
 }

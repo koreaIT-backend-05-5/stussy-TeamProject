@@ -7,16 +7,17 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ProductRepository {
-
-	//상품 등록
+	
+	//상품,이미지 등록
 	public int saveProduct(Product product) throws Exception;
+	public int saveProductFiles(List<ProductFile> list) throws Exception;
 	
-	//이미지 등록
-	public int saveProductFiles(List<ProductFile> list) throws Exception; 
-
-	//상품 리스트 가져오기 
-	public List<Product> getProduct(Map<String, Object> map) throws Exception;
-	
+	//상품 조회
 	public List<Product> getProductList(Map<String, Object> map) throws Exception;
+	
+	//상품 수정
+	public int countIncrement(Map<String, Object> map) throws Exception;
+
+
 	
 }
