@@ -21,6 +21,8 @@ public class Product {
 	private String product_price;
 	private String product_explanation;
 	private String product_size;
+	private int product_count;
+	
 	
 	private int file_code;
 	private String file_name;
@@ -36,6 +38,7 @@ public class Product {
 				.productName(product_name)
 				.productCategory(product_category)
 				.productPrice(product_price)
+				.productSize(product_size)
 				.productExplanation(product_explanation)
 				.build();
 	}

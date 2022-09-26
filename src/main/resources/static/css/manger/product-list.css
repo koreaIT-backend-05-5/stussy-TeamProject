@@ -46,7 +46,25 @@
 /* 상품등록 표 css */
 .table {
     width: 900px;
-    height: 100px;
+    height: 200px;
     text-align: center;
     font-size: 12px;
+    margin-top: 20px;
+    border-top: 1px solid #141414;
+    
+}
+
+
+th{
+	height: 80px;
+}
+
+
+td{
+	height: 50px;
+}
+
+
+.product-img {
+	width: 40px;
 }

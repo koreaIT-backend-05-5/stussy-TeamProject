@@ -26,36 +26,40 @@
                         <li><a href="#">문의사항관리</a></li>
                     </ul>
                 </nav>
+    </div>
 
                  
                 <div>
                     <h2>상품목록</h2>
                     <form enctype="multipart/form-data" method="post">
                         <table class="table">
-                            
-                            <tr>
-                                <td>선택</td>
-                                <td>상품코드</td>
-                                <td>이미지</td>
-                                <td>카테고리</td>
-                                <td>상품이름</td>
-                                <td>상품사이즈</td>
-                                <td>설명</td>
-                                <td>수정/삭제</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>1</td>
-                                <td>21</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>
-                                    <button type="button" class="detail-button modify">수정</button>
-                                    <button type="button" class="detail-button delete">삭제</button>
-                                </td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>상품코드</th>
+                                    <th>이미지</th>
+                                    <th>카테고리</th>
+                                    <th>가격</th>
+                                    <th>상품사이즈</th>
+                                    <th>설명</th>
+                                    <th>수정/삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+	                            <tr  class="product-row">
+	                                <td><input type="checkbox"></td>
+	                                <td>1</td>
+	                                <td class="product-img">123</td>
+	                                <td>PANTS</td>
+	                                <td>청바지</td>
+	                                <td>M</td>
+	                                <td>청바지</td>
+	                                <td>
+	                                    <button type="button" class="detail-button modify">수정</button>
+	                                    <button type="button" class="detail-button delete">삭제</button>
+	                                </td>
+	                            </tr>
+                            </tbody>
                         </table>
                          <div class="list-footer">
 					        <div class="page-buttons">
@@ -70,9 +74,6 @@
 			            </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
     
     <script type="text/javascript" src="/static/js/product/product-list.js"></script>
     <th:block th:replace="/fragment/footer"></th:block>

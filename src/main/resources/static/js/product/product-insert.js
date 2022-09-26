@@ -46,7 +46,7 @@ submitButton.onclick = () => {
 		dataType: "json",
 		success: (response) => {
 			alert(response.data + "번 상품등록 완료");
-			location.href = "/manager/product-list/" + response.data;
+		
 		},
 		error: (error) => {
 			nameerror();

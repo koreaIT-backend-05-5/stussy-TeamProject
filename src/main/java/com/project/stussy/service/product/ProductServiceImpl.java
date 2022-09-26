@@ -22,6 +22,7 @@ import com.project.stussy.domain.product.ProductFile;
 import com.project.stussy.domain.product.ProductRepository;
 import com.project.stussy.web.dto.product.AddProductReqDto;
 import com.project.stussy.web.dto.product.GetProductListDto;
+import com.project.stussy.web.dto.product.GetProductResponesDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,10 +38,11 @@ public class ProductServiceImpl implements ProductService {
 	private String filePath;
 	
 	private final ProductRepository productRepository;
-
+	
+	//상품 등록
 	@Override
 	public int addProduct(AddProductReqDto addProductReqDto) throws Exception {
-		//등록
+		
 		Predicate<String> predicate = (filename) -> !filename.isBlank();
 		
 		Product product = null;
@@ -51,8 +53,8 @@ public class ProductServiceImpl implements ProductService {
 				.product_category(addProductReqDto.getProductCategory())
 				.product_name(addProductReqDto.getProductName())
 				.product_price(addProductReqDto.getProductPrice())
-				.product_explanation(addProductReqDto.getProductExplanation())
 				.product_size(addProductReqDto.getProductSize())
+				.product_explanation(addProductReqDto.getProductExplanation())
 				.build();
 		
 		productRepository.saveProduct(product);
@@ -65,11 +67,11 @@ public class ProductServiceImpl implements ProductService {
 				String originalFilename = file.getOriginalFilename();
 				String tempFilename = UUID.randomUUID().toString().replace("-", "") + "_"+ originalFilename;
 				log.info(tempFilename);
-				Path uploadPath = Paths.get(filePath, "manager/" + tempFilename);
+				Path uploadPath = Paths.get(filePath, "product/" + tempFilename);
 				
 				File f = new File(filePath + "product");
 				if(!f.exists()) {
-					f.mkdir();
+					f.mkdir(); // 폴더 만들기
 				}
 				
 				try {
@@ -89,6 +91,7 @@ public class ProductServiceImpl implements ProductService {
 		return product.getProduct_code();
 	}
 	
+	//상품 조회
 	@Override
 	public List<GetProductListDto> getProductList(int page) throws Exception {
 		int index = (page - 1) * 10;
@@ -104,6 +107,35 @@ public class ProductServiceImpl implements ProductService {
 		});;
 		return list;
 	}
+
+
+	@Override
+	public GetProductResponesDto getProduct(String flag, int noticeCode) throws Exception {
+		GetProductResponesDto getProductResponesDto = null;
+		
+		Map<String, Object> reqMap = new HashMap<String, Object>();
+		reqMap.put("flag", flag);
+		reqMap.put("notice_code", noticeCode);
+		
+		productRepository.countIncrement(reqMap);
+		List<Product> products = productRepository.getProductList(reqMap);
+
+			
+			Product firstProduct = products.get(0);
+			
+			getProductResponesDto = GetProductResponesDto.builder()
+					.productCode(firstProduct.getProduct_code())
+					.productCategory(firstProduct.getProduct_category())
+					.productName(firstProduct.getProduct_name())
+					.productPrice(firstProduct.getProduct_price())
+					.productSize(firstProduct.getProduct_size())
+					.productExplanation(firstProduct.getProduct_explanation())
+					.productCount(firstProduct.getProduct_count())
+					.build();
+		
+	return getProductResponesDto;
+	}
+		
 
 }
 	

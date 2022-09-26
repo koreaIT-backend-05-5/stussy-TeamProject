@@ -32,6 +32,7 @@ spring:
 mybatis:
   mapper-locations:
   - /mappers/*.xml  
+  
 
 file:
   path: C:/project/workspace/git/stussy-TeamProject/upload/

@@ -42,6 +42,7 @@
 					pm.product_category,
 					pm.product_name,
 					pm.product_price,
+					pm.product_size,
 					pm.product_explanation
 				
 				FROM
@@ -51,6 +52,39 @@
 				product_code asc
 			limit #{index}, 10;		
   		</select>
+  		
+  		<update id="countIncrement" parameterType="hashmap">
+		update
+			product_mst
+		set
+			product_count = product_count + 1
+		where
+		<choose>
+			<when test='flag == null'>
+				product_count = #{product_count}
+			</when>
+			<when test='flag.equals("pre")'>
+				product_count = (
+					select
+						max(product_count)
+					from
+						product_mst
+					where
+						product_count &lt; #{product_count}
+				)
+			</when>
+			<otherwise> 
+				product_count = (
+					select
+						min(product_count)
+					from
+						product_mst
+					where
+						product_count &gt; #{product_count}
+				)
+			</otherwise>
+		</choose>
+	</update>
   		
   		
   </mapper>

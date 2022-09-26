@@ -5,14 +5,13 @@ import lombok.Data;
 
 @Builder
 @Data
-public class GetProductListDto {
+public class GetProductResponesDto {
 	private int productCode;
-	private String fileName;
 	private String productCategory;
 	private String productName;
 	private String productPrice;
 	private String productSize;
 	private String productExplanation;
-	private int totalProductCount;
+	private int productCount;
 	
 }
