@@ -12,6 +12,10 @@ public class GetProductResponesDto {
 	private String productPrice;
 	private String productSize;
 	private String productExplanation;
+	private String fileName;
 	private int productCount;
+	
+	
+
 	
 }

@@ -44,7 +44,7 @@ public class ProductController {
 		return ResponseEntity.ok(new CMRespDto<>(1, "completing add", productCode));
 	}
 	
-	//상품 조회
+	//모든 상품 조회
 	@GetMapping("/product-list/{page}")
 	public ResponseEntity<?> getProductLsit(@PathVariable int page) {
 		List<GetProductListDto> listDto = null;
@@ -59,22 +59,43 @@ public class ProductController {
 		return ResponseEntity.ok(new CMRespDto<>(1,"lookup successful", listDto));
 	}
 	
-	//상품 수정
-	@GetMapping("/{flag}/{productCode}")
-	public ResponseEntity<?> getProduct(@PathVariable String flag, @PathVariable int productCode) {
+//	@GetMapping("/{flag}/{productCode}")
+//	public ResponseEntity<?> getProduct(@PathVariable String flag, @PathVariable int productCode) {
+//		GetProductResponesDto getProductResponesDto = null;
+//		if(flag.equals("pre") || flag.equals("next")) {
+//			try {
+//				getProductResponesDto = productService.getProduct(flag, productCode);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//				return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", null));
+//			}
+//		}else {
+//			return ResponseEntity.badRequest().body(new CMRespDto<>(-1, "request failed", null));
+//		}
+//		return ResponseEntity.ok().body(new CMRespDto<>(1, "lookup successful", getProductResponesDto));
+//	}
+//	
+	
+	
+	//DB에서 수정 할 상품정보 가져오는 API
+	@GetMapping("/product-detail/{productCode}")
+	public ResponseEntity<?> getProductDetail(@PathVariable int productCode) {
 		GetProductResponesDto getProductResponesDto = null;
-		if(flag.equals("pre") || flag.equals("next")) {
-			try {
-				getProductResponesDto = productService.getProduct(flag, productCode);
-			} catch (Exception e) {
-				e.printStackTrace();
-				return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", null));
+		try {
+			getProductResponesDto = productService.getProductDetail(productCode);
+			if(getProductResponesDto == null) {
+				return ResponseEntity.badRequest().body(new CMRespDto<>(-1, "request failed", null));
 			}
-		}else {
-			return ResponseEntity.badRequest().body(new CMRespDto<>(-1, "request failed", null));
+		} catch (Exception e) {
+			e.printStackTrace();
+				return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", null));
 		}
 		return ResponseEntity.ok().body(new CMRespDto<>(1, "lookup successful", getProductResponesDto));
 	}
+	
+	//상품 수정
+	
+	//상품 삭제
 	
 
 }

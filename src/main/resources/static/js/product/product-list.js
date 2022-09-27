@@ -4,6 +4,7 @@ let nowPage = 1;
 
 load(nowPage);
 
+//db 데이터 불러오는 ajax
 function load(nowPage) {
 	
 	$.ajax({
@@ -67,5 +68,6 @@ function getList(list){
 //			//location.href = "/manager/product-list/" + productCode;
 //		}
 //	});
+
 	
 }
