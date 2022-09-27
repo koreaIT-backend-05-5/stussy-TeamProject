@@ -46,10 +46,12 @@ submitButton.onclick = () => {
 		dataType: "json",
 		success: (response) => {
 			alert(response.data + "번 상품등록 완료");
+			location.replace("/manager/product-list");
+
 		
 		},
 		error: (error) => {
-			nameerror();
+			
 			console.log(error);
 		}
 		

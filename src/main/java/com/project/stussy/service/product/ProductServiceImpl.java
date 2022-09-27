@@ -33,13 +33,13 @@ import lombok.extern.slf4j.Slf4j;
 public class ProductServiceImpl implements ProductService {
 	
 	
-	
+	//<<파일 업로드 할 주소>>
 	@Value("${file.path}")
 	private String filePath;
 	
 	private final ProductRepository productRepository;
 	
-	//상품 등록
+	//<<<상품 등록>>>
 	@Override
 	public int addProduct(AddProductReqDto addProductReqDto) throws Exception {
 		
@@ -91,7 +91,7 @@ public class ProductServiceImpl implements ProductService {
 		return product.getProduct_code();
 	}
 	
-	//상품 조회
+	//<<<상품 조회>>>
 	@Override
 	public List<GetProductListDto> getProductList(int page) throws Exception {
 		int index = (page - 1) * 10;
@@ -108,32 +108,27 @@ public class ProductServiceImpl implements ProductService {
 		return list;
 	}
 
-
+	//<<<상품 수정>>>
+	//1. 수정 할 상품 조회
 	@Override
-	public GetProductResponesDto getProduct(String flag, int noticeCode) throws Exception {
-		GetProductResponesDto getProductResponesDto = null;
+	public GetProductResponesDto getProductDetail(int productCode) throws Exception {
+		Product productEntity = null;
+		GetProductResponesDto productResponesDto = null;
 		
-		Map<String, Object> reqMap = new HashMap<String, Object>();
-		reqMap.put("flag", flag);
-		reqMap.put("notice_code", noticeCode);
+		productEntity = productRepository.getProductDetail(productCode);
 		
-		productRepository.countIncrement(reqMap);
-		List<Product> products = productRepository.getProductList(reqMap);
-
-			
-			Product firstProduct = products.get(0);
-			
-			getProductResponesDto = GetProductResponesDto.builder()
-					.productCode(firstProduct.getProduct_code())
-					.productCategory(firstProduct.getProduct_category())
-					.productName(firstProduct.getProduct_name())
-					.productPrice(firstProduct.getProduct_price())
-					.productSize(firstProduct.getProduct_size())
-					.productExplanation(firstProduct.getProduct_explanation())
-					.productCount(firstProduct.getProduct_count())
-					.build();
+		if(productEntity != null) {
+			productResponesDto = productEntity.toReqDto();
+		}
 		
-	return getProductResponesDto;
+		return productResponesDto;
+	}
+	
+	//2. 상품 수정
+	@Override
+	public GetProductResponesDto updateProduct(int productCode) throws Exception {
+		
+		return null;
 	}
 		
 

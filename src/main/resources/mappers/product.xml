@@ -15,6 +15,7 @@
 			#{product_price},
 			#{product_explanation},
 			#{product_size},
+			#{product_count},
 			now(),
 			now()
   			)
@@ -34,6 +35,7 @@
   					)
   				</foreach>
   		</insert>
+  	
   		
   		<select id="getProductList" parameterType="hashmap" resultType="com.project.stussy.domain.product.Product">
   				SELECT
@@ -52,6 +54,28 @@
 				product_code asc
 			limit #{index}, 10;		
   		</select>
+  		
+  		<select id="getProductDetail" parameterType="Integer" resultType="com.project.stussy.domain.product.Product">
+  			SELECT	
+  			pm.product_code,
+			pm.product_category,
+			pm.product_size,
+			pm.product_name,
+			pm.product_price,
+			pm.product_explanation,
+			pf.file_name
+		
+		FROM
+			product_mst pm
+			LEFT OUTER JOIN product_file pf ON(pf.product_code = pm.product_code)
+		where
+			pm.product_code = #{product_code};
+						
+  		</select>
+  		
+  		
+  			
+  		
   		
   		<update id="countIncrement" parameterType="hashmap">
 		update
@@ -85,6 +109,14 @@
 			</otherwise>
 		</choose>
 	</update>
+	
+	<delete id="remove" parameterType="Integer">
+		delete
+		from
+			product_mst
+		where
+			product_code = #{product_code}
+	</delete>
   		
   		
   </mapper>

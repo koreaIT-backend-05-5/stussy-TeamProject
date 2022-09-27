@@ -4,6 +4,7 @@ package com.project.stussy.domain.product;
 import java.time.LocalDateTime;
 
 import com.project.stussy.web.dto.product.GetProductListDto;
+import com.project.stussy.web.dto.product.GetProductResponesDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,6 +32,8 @@ public class Product {
 	private LocalDateTime update_date;
 	
 	
+	
+	//<<<DTO -> Entity>>>
 	public GetProductListDto toListDto() {
 		return GetProductListDto.builder()
 				.productCode(product_code)
@@ -42,6 +45,18 @@ public class Product {
 				.productExplanation(product_explanation)
 				.build();
 	}
+	
+	public GetProductResponesDto toReqDto() {
+		return GetProductResponesDto.builder()
+				.productCode(product_code)
+				.productCategory(product_category)
+				.productName(product_name)
+				.productPrice(product_price)
+				.productSize(product_size)
+				.productExplanation(product_explanation)
+				.fileName(file_name)
+				.build();
+	}	
 	
 	
 	
