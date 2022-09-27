@@ -17,7 +17,6 @@ public class ProductPageController {
 	public String loadProductList() {
 		return "manager/product-list";
 	}
-
 	
 	@GetMapping("/product-modify/{productCode}")
 	public String loadProductModify() {

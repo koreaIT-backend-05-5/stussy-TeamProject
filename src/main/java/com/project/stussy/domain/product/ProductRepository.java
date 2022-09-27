@@ -15,6 +15,9 @@ public interface ProductRepository {
 	//상품 조회
 	public List<Product> getProductList(Map<String, Object> map) throws Exception;
 	
+	//상품 메인페이지 전달
+	public List<Product> getProductMainList(Map<String, Object> map) throws Exception; 
+	
 	//상품 수정
 	public int countIncrement(Map<String, Object> map) throws Exception;
 
