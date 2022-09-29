@@ -62,6 +62,7 @@
 				pm.product_code,
 				pm.product_name,
 				pm.product_price,
+				pf.file_name,
 				(select 
 				   count(*)
 				 from
@@ -97,7 +98,7 @@
 				 </choose> 
 			order by
 				product_code asc
-			limit #{index}, 8;
+			limit #{index}, 16;
   		</select>
   		
   		<!-- east -->

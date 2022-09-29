@@ -166,10 +166,9 @@ public class ProductServiceImpl implements ProductService {
 					.productPrice(firstProduct.getProduct_price())
 					.productSize(firstProduct.getProduct_size())
 					.productExplanation(firstProduct.getProduct_explanation())
-					.downloadFiles(downloadFiles)
+					.fileName(firstProduct.getFile_name())
 					.build();
 		}
-		
 		
 		return getDetailRepDto; 
 	}

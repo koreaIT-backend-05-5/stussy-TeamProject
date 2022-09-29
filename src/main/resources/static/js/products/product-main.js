@@ -57,7 +57,7 @@ function getShopList(productList){
 				<div class="shop-box">
 					<div class="product-img">
 						<a>
-							${product.productCode}
+							<img src="/image/product/${product.fileName}" alt="${product.fileName}">
 						</a>
 					</div>
 					<a>

@@ -23,6 +23,7 @@ public class ProductShopController {
 	
 	private final ProductService productService;
 	
+	//shop페이지의 list 
 	@GetMapping("/list/{page}")
 	public ResponseEntity<?> getShopList(@PathVariable int page) {
 //		@RequestParam String searchFlag, @RequestParam String searchValue

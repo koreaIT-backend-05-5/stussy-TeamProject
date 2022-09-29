@@ -16,6 +16,6 @@ public class GetDetailRepDto {
 	private String productPrice; 
 	private String productSize; 
 	private String productExplanation; 
-	private List<Map<String, Object>> downloadFiles; 
+	private String fileName; 
 
 }

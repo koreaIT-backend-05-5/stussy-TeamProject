@@ -70,6 +70,7 @@ public class Product {
 				.productPrice(product_price)
 				.productSize(product_size)
 				.productExplanation(product_explanation)
+				.fileName(file_name)
 				.build();
 	}
 	
@@ -79,7 +80,7 @@ public class Product {
 				.productName(product_name)
 				.productPrice(product_price)
 				.totalProductCount(total_product_count)
-				//downloadFile(file_code)
+				.fileName(file_name)
 				.build(); 
 	}
 	

@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 1903px;
+    width: 100%;
     /* height: 800px; */
     margin-top: 90px;
     /* background-color: aqua; */
@@ -48,9 +48,13 @@
 .product-img {
     width: 400px;
     height: 390px;
-    background-color: aqua;
+    background-color: #dbdbdb;
 }
 
+.product-img img {
+    width: 400px;
+    height: 390px;
+}
 .a-tag {
     color: #000;
     text-decoration: none;

@@ -24,17 +24,20 @@ function load(uri) {
 }
 
 function getDetail(product) {
-	//const productImages = document.querySelector(".product-imgs");
 	const productTitle = document.querySelector(".product-title");
 	const productPrice = document.querySelector(".product-price span");
 	const productSize = document.querySelectorAll(".size-button");
 	const productDetails = document.querySelector(".tee-kind");
+	const productImages = document.querySelector(".product-imgs");
 	
-	//productImages.innerHTML = product.fileCode; 
 	productTitle.innerHTML = product.productName; 
 	productPrice.innerHTML = product.productPrice;
 	productSize.innerHTML = product.productSize; 
 	productDetails.innerHTML = product.productExplanation; 
+	
+	productImages.innerHTML = 
+	`<img src="/image/product/${product.fileName}" alt="${product.fileName}">
+	<img src="/image/product/${product.fileName}" alt="${product.fileName}">`;
 	
 }
 
