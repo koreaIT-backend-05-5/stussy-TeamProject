@@ -29,4 +29,12 @@ public class PageController {
 	public String imports() {
 		return "import";
 	}
+	@GetMapping("/products/main")
+	public String produtsmain() {
+		return "products/product-main";
+	}
+	@GetMapping("/contact")
+	public String contact() {
+		return "contact/contact";
+	}
 }
