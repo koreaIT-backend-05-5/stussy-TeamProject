@@ -11,20 +11,30 @@ public class PageController {
 		return "main/main";
 	}
 	
-	@GetMapping("/auth/signin")
+	@GetMapping("/signin")
 	public String loadSignin() {
 		return "auth/signin";
 	}
 	
-	@GetMapping("/auth/signup")
+	@GetMapping("/signup")
 	public String loadSignup() {
 		return "auth/signup";
+	}
+	
+	@GetMapping("/product-main")
+	public String product() {
+		return "products/product-main";
+	}
+	@GetMapping("/product-detail")
+	public String productdetail() {
+		return "products/product-detail";
 	}
 	
 	@GetMapping("/account")
 	public String accountInfo() {
 		return "cart/cart";
 	}
+<<<<<<< HEAD
 	@GetMapping("/import")
 	public String imports() {
 		return "import";
@@ -36,5 +46,10 @@ public class PageController {
 	@GetMapping("/contact")
 	public String contact() {
 		return "contact/contact";
+=======
+	@GetMapping("/buy")
+	public String buy() {
+		return "buy/buyPage";
+>>>>>>> 39ebc87ad3f22eca3f1c3bf5f760342d15aa4c22
 	}
 }
