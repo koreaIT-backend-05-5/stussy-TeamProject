@@ -19,8 +19,10 @@ public interface ProductRepository {
 	public Product getProductDetail(int product_code) throws Exception;
 	
 	//상품 수정
-	public Product updateProduct(int product_code) throws Exception;
+	public int updateProduct(Product product) throws Exception;
 	
+	//상품 삭제
+	public int deleteProduct(int product_code) throws Exception;
 
 
 	

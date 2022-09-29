@@ -24,5 +24,10 @@ public class ProductPageController {
 		return "manager/product-modify";
 	}
 	
+	@GetMapping("/product-list/{productCode}")
+	public String loadProductDelete() {
+		return "manager/product-list";
+	}
+	
 	
 }

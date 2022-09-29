@@ -74,43 +74,23 @@
   		</select>
   		
   		
-  			
-  		
-  		
-  		<update id="countIncrement" parameterType="hashmap">
+	<update id="updateProduct" parameterType="com.project.stussy.domain.product.Product">
 		update
-			product_mst
+			product_mst pm
+			left outer join product_file pf on(pf.product_code = pm.product_code)
 		set
-			product_count = product_count + 1
+			pm.product_code = #{product_code},
+			pm.product_category = #{product_category},
+			pm.product_name = #{product_name},
+			pm.product_price = #{product_price},
+			pm.product_explanation = #{product_explanation},
+			pm.product_size = #{product_size},
+			pf.file_name = #{file_name}
 		where
-		<choose>
-			<when test='flag == null'>
-				product_count = #{product_count}
-			</when>
-			<when test='flag.equals("pre")'>
-				product_count = (
-					select
-						max(product_count)
-					from
-						product_mst
-					where
-						product_count &lt; #{product_count}
-				)
-			</when>
-			<otherwise> 
-				product_count = (
-					select
-						min(product_count)
-					from
-						product_mst
-					where
-						product_count &gt; #{product_count}
-				)
-			</otherwise>
-		</choose>
+			pm.product_code = #{product_code}	
 	</update>
 	
-	<delete id="remove" parameterType="Integer">
+	<delete id="deleteProduct" parameterType="Integer">
 		delete
 		from
 			product_mst

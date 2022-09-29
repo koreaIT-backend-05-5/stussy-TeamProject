@@ -76,6 +76,7 @@ public class ProductServiceImpl implements ProductService {
 				
 				try {
 					Files.write(uploadPath, file.getBytes());
+					
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -126,12 +127,37 @@ public class ProductServiceImpl implements ProductService {
 	
 	//2. 상품 수정
 	@Override
-	public GetProductResponesDto updateProduct(int productCode) throws Exception {
+	public boolean updateProduct(GetProductResponesDto getProductResponesDto) throws Exception {
+		Product productEntity = getProductResponesDto.toEntity();
 		
-		return null;
+		String path = filePath + "product";
+		Path uploadPath = Paths.get(filePath, "product/" + productEntity.getFile_name());
+		
+		File f = new File(path);
+		
+//		if(f.exists()) {
+//			Path deleteFilePath = Paths.get(filePath, "product/" + "삭제할 파일 풀네임");
+//			Files.delete(deleteFilePath);
+//			
+//		}
+		
+		if(!f.exists()) {
+			f.mkdirs();
+		}
+		
+		System.out.println(productEntity);
+		
+		Files.write(uploadPath, getProductResponesDto.getFile().getBytes());
+		
+		return productRepository.updateProduct(productEntity) > 0;
+	}		
+	
+	//<<삭제>>
+	@Override
+	public boolean deleteProduct(int productCode) throws Exception {
+		
+		return productRepository.deleteProduct(productCode) > 0;
 	}
-		
-
 }
 	
 

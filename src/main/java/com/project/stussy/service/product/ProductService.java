@@ -17,7 +17,10 @@ public interface ProductService {
 	public GetProductResponesDto getProductDetail(int productCode) throws Exception;
 
 	//<<수정>>
-	public GetProductResponesDto updateProduct(int productCode) throws Exception;
+	public boolean updateProduct(GetProductResponesDto getProductResponesDto) throws Exception;
+	
+	//<<삭제>>
+	public boolean deleteProduct(int productCode) throws Exception;
 
 
 

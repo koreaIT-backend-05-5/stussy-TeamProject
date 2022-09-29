@@ -3,9 +3,11 @@ package com.project.stussy.web.controller.api;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -94,8 +96,31 @@ public class ProductController {
 	}
 	
 	//상품 수정
+	@PutMapping("/product-modify/{productCode}") //@RequestBody: JSON으로 받아올 수 없다.
+	public ResponseEntity<?> updateProduct(@PathVariable int productCode, GetProductResponesDto getProductResponesDto) {
+		boolean status = false;
+		try {
+			getProductResponesDto.setProductCode(productCode);
+			System.out.println(getProductResponesDto);
+			status = productService.updateProduct(getProductResponesDto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", status));
+		}
+		return ResponseEntity.ok().body(new CMRespDto<>(1, "success", status));
+	}
 	
 	//상품 삭제
-	
+	@DeleteMapping("/product-list/{productCode}")
+	public ResponseEntity<?> deleteProduct(@PathVariable int productCode){
+		boolean status = false;
+		try {
+			status = productService.deleteProduct(productCode);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", status));
+		}
+		return ResponseEntity.ok().body(new CMRespDto<>(1, "success", status));
+	}
 
 }
