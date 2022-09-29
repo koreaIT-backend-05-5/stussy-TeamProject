@@ -25,4 +25,8 @@ public class PageController {
 	public String accountInfo() {
 		return "cart/cart";
 	}
+	@GetMapping("/import")
+	public String imports() {
+		return "import";
+	}
 }
