@@ -3,9 +3,10 @@ package com.project.stussy.service.product;
 import java.util.List;
 
 import com.project.stussy.web.dto.product.AddProductReqDto;
+import com.project.stussy.web.dto.product.GetShopListRepDto;
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
-import com.project.stussy.web.dto.product.ProductMainRepDto;
+import com.project.stussy.web.dto.product.GetDetailRepDto;
 
 public interface ProductService {
 	//<<등록>>
@@ -14,27 +15,18 @@ public interface ProductService {
 	//<<조회>>
 	//1. 상품 리스트 조회
 	public List<GetProductListDto> getProductList(int page) throws Exception;
-<<<<<<< HEAD
-		
-	//
-	public GetProductResponesDto getProduct(String flag, int noticeCode) throws Exception;
 	
-	//shop페이지 조회
-	
-
-=======
 	//2. 수정 할 상품 조회
 	public GetProductResponesDto getProductDetail(int productCode) throws Exception;
->>>>>>> origin/wonyoung
 
 	//<<수정>>
 	public GetProductResponesDto updateProduct(int productCode) throws Exception;
 
-
-
-
-	
-	
+	//shop
+	//shop detail 
+	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception; 
+	//shop page
+	public List<GetShopListRepDto> getShopList(int page, String searchFlag, String searchValue) throws Exception; 
 	
 	
 	

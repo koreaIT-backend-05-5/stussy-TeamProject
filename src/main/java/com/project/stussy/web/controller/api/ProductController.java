@@ -57,7 +57,7 @@ public class ProductController {
 
 		}
 		return ResponseEntity.ok(new CMRespDto<>(1,"lookup successful", listDto));
-	}
+	} 
 	
 //	@GetMapping("/{flag}/{productCode}")
 //	public ResponseEntity<?> getProduct(@PathVariable String flag, @PathVariable int productCode) {

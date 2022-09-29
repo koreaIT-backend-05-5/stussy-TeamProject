@@ -4,11 +4,9 @@ package com.project.stussy.domain.product;
 import java.time.LocalDateTime;
 
 import com.project.stussy.web.dto.product.GetProductListDto;
-<<<<<<< HEAD
-import com.project.stussy.web.dto.product.ProductMainRepDto;
-=======
 import com.project.stussy.web.dto.product.GetProductResponesDto;
->>>>>>> origin/wonyoung
+import com.project.stussy.web.dto.product.GetShopListRepDto;
+import com.project.stussy.web.dto.product.GetDetailRepDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,8 +33,8 @@ public class Product {
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 	
-	private int total_notice_count; 
-	
+	private int total_product_count; 
+
 	
 	//<<<DTO -> Entity>>>
 	public GetProductListDto toListDto() {
@@ -51,16 +49,6 @@ public class Product {
 				.build();
 	}
 	
-<<<<<<< HEAD
-	public ProductMainRepDto toMainDto() {
-		return ProductMainRepDto.builder()
-				.productCode(product_code)
-				.productName(product_name)
-				.productPrice(product_price)
-				.totalNoticeCount(total_notice_count)
-				.build();
-	}
-=======
 	public GetProductResponesDto toReqDto() {
 		return GetProductResponesDto.builder()
 				.productCode(product_code)
@@ -72,7 +60,28 @@ public class Product {
 				.fileName(file_name)
 				.build();
 	}	
->>>>>>> origin/wonyoung
+	
+	//shop
+	//상품상세페이지 dto
+	public GetDetailRepDto toDetailDto() {
+		return GetDetailRepDto.builder()
+				.productCode(product_code)
+				.productName(product_name)
+				.productPrice(product_price)
+				.productSize(product_size)
+				.productExplanation(product_explanation)
+				.build();
+	}
+	
+	public GetShopListRepDto toShopListDto() {
+		return GetShopListRepDto.builder()
+				.productCode(product_code)
+				.productName(product_name)
+				.productPrice(product_price)
+				.totalProductCount(total_product_count)
+				//downloadFile(file_code)
+				.build(); 
+	}
 	
 	
 	

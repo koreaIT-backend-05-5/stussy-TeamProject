@@ -27,6 +27,7 @@ function load(nowPage) {
 	});
 	
 }
+
 //상품 리스트 불러오기
 function getList(list){
 	const tbody = document.querySelector("tbody");

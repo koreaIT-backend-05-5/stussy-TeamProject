@@ -23,5 +23,4 @@ public class ProductPageController {
 		return "manager/product-modify";
 	}
 	
-	
 }

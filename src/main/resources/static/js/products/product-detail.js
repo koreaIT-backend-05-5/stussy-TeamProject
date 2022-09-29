@@ -1,8 +1,44 @@
-const sizeBtns = document.querySelector(".product-size");
-const selectBtn = document.querySelectorAll(".add-btn, buy-btn");
+//const sizeBtns = document.querySelector(".product-size");
+//const selectBtn = document.querySelectorAll(".add-btn, buy-btn");
 // const addBtn = document.querySelector(".add-btn");
 // const buyBtn = document.querySelector(".buy-btn"); 
+let productCode = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
+load("/api/v1/product/");
+
+function load(uri) {
+	
+	$.ajax({
+		async: false,
+		type: "get",
+		url: uri + productCode, 
+		dataType: "json", 
+		success: (response) => {
+			console.log(JSON.stringify(response.data));
+			getDetail(response.data);
+		},
+		error:(error) => {
+			console.log(error);
+		}
+	})
+}
+
+function getDetail(product) {
+	//const productImages = document.querySelector(".product-imgs");
+	const productTitle = document.querySelector(".product-title");
+	const productPrice = document.querySelector(".product-price span");
+	const productSize = document.querySelectorAll(".size-button");
+	const productDetails = document.querySelector(".tee-kind");
+	
+	//productImages.innerHTML = product.fileCode; 
+	productTitle.innerHTML = product.productName; 
+	productPrice.innerHTML = product.productPrice;
+	productSize.innerHTML = product.productSize; 
+	productDetails.innerHTML = product.productExplanation; 
+	
+}
+
+/*
 sizeBtns.onclick = (e) => {
     confirm("사이즈 확실함?")
 }
@@ -32,3 +68,4 @@ function change() {
     purchaseGroup.innerHTML= "/cart/cart";
     purchaseGroup.innerHTML= "/cart/cart";
 }
+*/
