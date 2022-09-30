@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/auth")
 public class ApiController {
 
 	@GetMapping("/main")
@@ -18,11 +18,6 @@ public class ApiController {
 	@GetMapping("/account")
 	public String accountInfo() {
 		return "cart/cart";
-	}
-	
-	@GetMapping("/signup")
-	public String signup() {
-		return "products/product-detail";
 	}
 	
 	@PostMapping("/signup")

@@ -47,7 +47,7 @@
 /*===========<< manager-content >>===========*/
 .manager-content {
     width: 976px;
-    height: 567px;
+    /* height: 567px; */
     /* background-color: aqua; */
 }
 
@@ -102,7 +102,7 @@ td {
 .list-btn {
 	display: flex;
 	justify-content: center;
-    margin-top: 380px;
+    margin-top: 10px;
 	
 	width: 100%;
 }

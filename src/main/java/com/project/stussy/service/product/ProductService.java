@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.project.stussy.web.dto.product.AddProductReqDto;
 import com.project.stussy.web.dto.product.GetShopListRepDto;
+
+import lombok.Builder;
+import lombok.Data;
+
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
 import com.project.stussy.web.dto.product.GetDetailRepDto;
