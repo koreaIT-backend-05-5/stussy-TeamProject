@@ -130,24 +130,21 @@ public class ProductServiceImpl implements ProductService {
 	public boolean updateProduct(GetProductResponesDto getProductResponesDto) throws Exception {
 		Product productEntity = getProductResponesDto.toEntity();
 		
-		String path = filePath + "product";
-		Path uploadPath = Paths.get(filePath, "product/" + productEntity.getFile_name());
-		
-		File f = new File(path);
-		
-//		if(f.exists()) {
-//			Path deleteFilePath = Paths.get(filePath, "product/" + "삭제할 파일 풀네임");
-//			Files.delete(deleteFilePath);
-//			
-//		}
-		
-		if(!f.exists()) {
-			f.mkdirs();
+		//공백이 아닐때만 if문 실행해서 폴더에 사진 업로드 해줍니다.
+		if(!getProductResponesDto.getFile().getOriginalFilename().isBlank()) {
+			String path = filePath + "product";
+			Path uploadPath = Paths.get(filePath, "product/" + productEntity.getFile_name());
+			
+			File f = new File(path);
+			
+			if(!f.exists()) {
+				f.mkdirs();
+			}
+			
+			System.out.println(productEntity);
+			
+			Files.write(uploadPath, getProductResponesDto.getFile().getBytes());
 		}
-		
-		System.out.println(productEntity);
-		
-		Files.write(uploadPath, getProductResponesDto.getFile().getBytes());
 		
 		return productRepository.updateProduct(productEntity) > 0;
 	}		

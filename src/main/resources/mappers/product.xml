@@ -84,8 +84,11 @@
 			pm.product_name = #{product_name},
 			pm.product_price = #{product_price},
 			pm.product_explanation = #{product_explanation},
-			pm.product_size = #{product_size},
-			pf.file_name = #{file_name}
+			pm.product_size = #{product_size}
+			<if test="file_name != null">
+				,
+				pf.file_name = #{file_name}
+			</if>
 		where
 			pm.product_code = #{product_code}	
 	</update>

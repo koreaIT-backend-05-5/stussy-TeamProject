@@ -61,23 +61,6 @@ public class ProductController {
 		return ResponseEntity.ok(new CMRespDto<>(1,"lookup successful", listDto));
 	}
 	
-//	@GetMapping("/{flag}/{productCode}")
-//	public ResponseEntity<?> getProduct(@PathVariable String flag, @PathVariable int productCode) {
-//		GetProductResponesDto getProductResponesDto = null;
-//		if(flag.equals("pre") || flag.equals("next")) {
-//			try {
-//				getProductResponesDto = productService.getProduct(flag, productCode);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//				return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", null));
-//			}
-//		}else {
-//			return ResponseEntity.badRequest().body(new CMRespDto<>(-1, "request failed", null));
-//		}
-//		return ResponseEntity.ok().body(new CMRespDto<>(1, "lookup successful", getProductResponesDto));
-//	}
-//	
-	
 	
 	//DB에서 수정 할 상품정보 가져오는 API
 	@GetMapping("/product-detail/{productCode}")
@@ -96,8 +79,8 @@ public class ProductController {
 	}
 	
 	//상품 수정
-	@PutMapping("/product-modify/{productCode}") //@RequestBody: JSON으로 받아올 수 없다.
-	public ResponseEntity<?> updateProduct(@PathVariable int productCode, GetProductResponesDto getProductResponesDto) {
+	@PutMapping("/product-modify/{productCode}") //@RequestBody: 폼데이터 JSON으로 받아올 수 없다.
+	public ResponseEntity<?> updateProduct(@PathVariable int productCode,GetProductResponesDto getProductResponesDto) {
 		boolean status = false;
 		try {
 			getProductResponesDto.setProductCode(productCode);
