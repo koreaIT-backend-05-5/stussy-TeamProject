@@ -55,7 +55,7 @@ function getUserList(userList) {
     });
 }
 
-/*
+
 function getPageNumbers(totalUserCount) {
 	const pageButtons = document.querySelector(".page-buttons");
 	
@@ -120,7 +120,7 @@ function getPageNumbers(totalUserCount) {
 	});
 
 }
-*/
+
 
 function getPageNumbers(totalUserCount) {
 	const pageButtons = document.querySelector(".page-buttons");

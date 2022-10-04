@@ -5,65 +5,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/stussy")
 public class PageController {
 	
+	//동영이형
 	@GetMapping("/shop")
 	public String loadProductShop() {
 		return "products/product-main"; 
 	}
-	
-<<<<<<< HEAD
+	//동영이형
 	@GetMapping("/detail/{productCode}")
 	public String loadProductDetail() {
-		return "products/product-detail"; 
-=======
+		return "products/product-detail";
+	} 
+	
+	//원영이형
 	@GetMapping("/signin")
 	public String loadSignin() {
 		return "auth/signin";
->>>>>>> origin/kyung
 	}
-
-	
+	//원영이형
 	@GetMapping("/signup")
 	public String loadSignup() {
 		return "auth/signup";
 	}
-	
+	//내꺼
 	@GetMapping("/product-main")
 	public String product() {
 		return "products/product-main";
 	}
+	//내꺼
 	@GetMapping("/product-detail")
 	public String productdetail() {
 		return "products/product-detail";
 	}
-	
-	@GetMapping("/account")
-	public String accountInfo() {
-		return "cart/cart";
-	}
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-	@GetMapping("/import")
-	public String imports() {
-		return "import";
-	}
-	@GetMapping("/products/main")
-	public String produtsmain() {
-		return "products/product-main";
-	}
-	@GetMapping("/contact")
-	public String contact() {
-		return "contact/contact";
-=======
-	@GetMapping("/buy")
-	public String buy() {
-		return "buy/buyPage";
->>>>>>> 39ebc87ad3f22eca3f1c3bf5f760342d15aa4c22
-	}
->>>>>>> origin/kyung
+
 }
 

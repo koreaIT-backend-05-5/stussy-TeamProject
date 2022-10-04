@@ -1,4 +1,4 @@
-package com.project.stussy.web.dto;
+package com.project.stussy.web.dto.auth;
 
 public class UserDto {
 	

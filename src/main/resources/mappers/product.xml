@@ -63,28 +63,12 @@
 				pm.product_name,
 				pm.product_price,
 				pf.file_name,
-				(select 
-				   count(*)
-				 from
-				    product_mst
-				 <!-- 검색카테고리 -->
-				 <choose>
-				 	<when test='search_falg == "title"'>
-				 	
-				 	</when>
-				 	<when test='search_falg == "titleAndContent"'>
-				 	
-				 	</when>
-				 	<when test='search_falg == "writer"'>
-				 	
-				 	</when>
-				 </choose>   
-				    
-				 ) as total_product_count
+				pmc.total_product_count
 			FROM
 				product_mst pm
 				LEFT OUTER JOIN product_file pf ON(pf.product_code = pm.product_code)
-				<!-- 검색카테고리 -->
+				LEFT OUTER JOIN (select count(*) as total_product_count from product_mst) pmc on(1 = 1)
+				<!-- 검색카테고리
 				 <choose>
 				 	<when test='search_falg == "title"'>
 				 	
@@ -95,10 +79,10 @@
 				 	<when test='search_falg == "writer"'>
 				 	
 				 	</when>
-				 </choose> 
+				 </choose>  -->
 			order by
 				product_code asc
-			limit #{index}, 16;
+			limit #{index}, #{contentCount};
   		</select>
   		
   		<!-- east -->
@@ -163,11 +147,7 @@
   		</select>
   		
   		
-<<<<<<< HEAD
 	<update id="updateProduct" parameterType="com.project.stussy.domain.product.Product">
-=======
-  		<update id="countIncrement" parameterType="hashmap">
->>>>>>> origin/eastzi
 		update
 			product_mst pm
 			left outer join product_file pf on(pf.product_code = pm.product_code)
@@ -184,7 +164,8 @@
 			</if>
 		where
 			pm.product_code = #{product_code}	
-	</update>
+		</update>
+	
 	
 	<delete id="deleteProduct" parameterType="Integer">
 		delete

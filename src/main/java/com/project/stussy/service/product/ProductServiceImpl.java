@@ -201,16 +201,15 @@ public class ProductServiceImpl implements ProductService {
 
 	//shopMain
 	@Override
-	public List<GetShopListRepDto> getShopList(int page, String searchFlag, String searchValue) throws Exception {
+	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception {
 		int index = (page - 1) * 10;
 		
-		//검색부분 
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("index", index); 
-		map.put("search_flag", searchFlag);
-		map.put("search_value", searchValue == null ? "" : searchValue);
 		
 		List<GetShopListRepDto> list = new ArrayList<GetShopListRepDto>();
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("index", index);
+		map.put("contentCount", contentCount);
 		
 		productRepository.getProductShopList(map).forEach(product -> {
 			list.add(product.toShopListDto()); 

@@ -26,7 +26,11 @@ function load(nowPage) {
 	});
 }
 */
+const body = document.querySelector("body");
+const collectionProducts = document.querySelector(".collection-products");
 let page = 1;
+let totalPage = 0;
+let contentCount = 16;
 
 load(page);
 
@@ -35,7 +39,11 @@ function load(page) {
 	$.ajax({
 		async: false,
 		type: "get",
-		url: `/api/v1/product/list/${page}`, 
+		url: `/api/v1/product/list/${page}`,
+		data: {
+			"page" : page,
+			"contentCount" : contentCount
+		},
 		dataType: "json", 
 		success: (response) => {
 			getShopList(response.data);
@@ -46,10 +54,17 @@ function load(page) {
 	})
 }
 
+function setTotalCount(totalProductCount) {
+	totalPage = totalProductCount % contentCount == 0 ? totalProductCount / contentCount : Math.floor(totalProductCount / contentCount) + 1; 
+}
+
 function getShopList(productList){
 	console.log(productList);
-	const collectionProducts = document.querySelector(".collection-products")
-	collectionProducts.innerHTML = "";
+	/*const collectionProducts = document.querySelector(".collection-products")*/
+	setTotalCount(productList[0].totalProductCount);
+	if(page == 1){
+		collectionProducts.innerHTML = "";
+	}
 	
 	productList.forEach(product => {
 		collectionProducts.innerHTML += `
@@ -71,6 +86,15 @@ function getShopList(productList){
 }
 
 
+body.onscroll = () => {
+	const de = document.documentElement;
+	let checkNum = de.offsetHeight - de.clientHeight - de.scrollTop;
+	
+	if(checkNum < 200 && checkNum > -1  && page < totalPage){
+		page++;
+		load(page);
+	}
+}
 
 
 

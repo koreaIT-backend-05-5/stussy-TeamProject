@@ -44,8 +44,7 @@
 				um.user_name,
 				um.user_email,
 				ud.user_phone,
-				um.create_date
-				<!--  
+				um.create_date,
 				(select
 			   		count(*) 
 				from
@@ -65,11 +64,10 @@
 				  	  um.user_phone like concat('%', #{search_value}, '%')
 				  </when>
 				</choose>   
-				) as total_user_count-->
+				) as total_user_count
 			FROM
 				user_mst um
 				LEFT OUTER JOIN user_dtl ud ON(ud.user_code = um.user_code)
-				<!-- 
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
@@ -83,7 +81,7 @@
 				    where
 				  	  um.user_phone like concat('%', #{search_value}, '%')
 				  </when>
-				</choose> -->
+				</choose> 
 			order by
 				user_code desc
 			limit #{index}, 10;		

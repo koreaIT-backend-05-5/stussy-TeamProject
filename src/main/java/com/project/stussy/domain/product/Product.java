@@ -46,6 +46,7 @@ public class Product {
 				.productPrice(product_price)
 				.productSize(product_size)
 				.productExplanation(product_explanation)
+				.totalProductCount(total_product_count)
 				.build();
 	}
 	

@@ -32,7 +32,7 @@ public interface ProductRepository {
 	//상품 디테일페이지 
 	public List<Product> getProductDetailList(Map<String, Object> map) throws Exception; 
 	//shop페이지 조회
-	public List<Product> getProductShopList(Map<String, Object> map) throws Exception; 
+	public List<Product> getProductShopList(Map<String, Integer> map) throws Exception; 
 	
 
 }
