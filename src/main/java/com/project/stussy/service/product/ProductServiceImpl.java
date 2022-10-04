@@ -159,8 +159,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productRepository.deleteProduct(productCode) > 0;
 	}
-<<<<<<< HEAD
-=======
+
 
 	//shop detail
 	@Override
@@ -220,10 +219,7 @@ public class ProductServiceImpl implements ProductService {
 		return list;
 	}
 
-	
-		
 
->>>>>>> origin/eastzi
 }
 	
 

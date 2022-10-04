@@ -29,10 +29,7 @@ spring:
       max-request-size: 50MB    
     
     
-  servlet:
-    multipart:
-      max-request-size: 50MB
-        
+
     
 mybatis:
   mapper-locations:

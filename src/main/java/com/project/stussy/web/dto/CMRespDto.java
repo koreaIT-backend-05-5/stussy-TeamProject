@@ -9,10 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CMRespDto<T> {
 	private int code;
-
 	private String massege;
-
-	private String message;
-
 	private T data;
 }
