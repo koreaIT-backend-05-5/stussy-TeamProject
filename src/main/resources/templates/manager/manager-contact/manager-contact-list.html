@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/manger/manager-contact-list.css">
+    <title>Document</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div id="wrap">
+        <div class="contact-list-main">
+            <h2>관리자페이지</h2>
+            <div class="manager-box">
+                <nav class="menu-list">
+                    <ul>
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#">주문목록관리</a></li>
+                        <li><a href="#">문의사항관리</a></li>
+                    </ul>
+                </nav>
+                <div class="contact-list-content">
+                    <div class="contact-search">
+                        <select class="search-select">
+                            <option value="title">제목</option>
+                            <option value="titleAndContent">제목+내용</option>
+                            <option value="writer">작성자</option>
+                        </select>
+                        <input type="text" class="search-input">
+                        <button type="button" class="search-button contact-btn">검색</button>
+                    </div>
+                    <h2>문의사항 관리</h2>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th width="70px">번호</th>
+                                <th width="180px">이메일</th>
+                                <th width="200px">제목</th>
+                                <th width="70px">답변</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><button>답변하기</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><button>답변하기</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <th:block th:replace="/fragment/footer"></th:block>
+</body>
+</html>

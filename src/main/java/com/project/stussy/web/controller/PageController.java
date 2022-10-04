@@ -25,4 +25,5 @@ public class PageController {
 	public String accountInfo() {
 		return "cart/cart";
 	}
+
 }
