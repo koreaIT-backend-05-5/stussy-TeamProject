@@ -23,13 +23,10 @@ public class ProductPageController {
 		return "manager/product-modify";
 	}
 	
-<<<<<<< HEAD
+
 	@GetMapping("/product-list/{productCode}")
 	public String loadProductDelete() {
 		return "manager/product-list";
 	}
-	
-	
-=======
->>>>>>> origin/eastzi
+
 }

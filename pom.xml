@@ -65,7 +65,7 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
+
 		
 		<!-- validation -->
 		<dependency>
@@ -73,21 +73,18 @@
 		    <artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<!-- commons-io -->
-=======
->>>>>>> origin/joohong
+
 		<dependency>
 		    <groupId>commons-io</groupId>
 		    <artifactId>commons-io</artifactId>
 		    <version>2.4</version>
 		</dependency>
-<<<<<<< HEAD
-=======
+
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
->>>>>>> origin/joohong
-		
+
 	</dependencies>
 
    <build>

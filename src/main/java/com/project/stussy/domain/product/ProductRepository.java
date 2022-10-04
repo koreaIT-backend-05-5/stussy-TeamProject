@@ -22,18 +22,17 @@ public interface ProductRepository {
 	//상품 수정
 	public int updateProduct(Product product) throws Exception;
 	
-<<<<<<< HEAD
+
 	//상품 삭제
 	public int deleteProduct(int product_code) throws Exception;
 
 
-=======
+
 	//shop
 	//상품 디테일페이지 
 	public List<Product> getProductDetailList(Map<String, Object> map) throws Exception; 
 	//shop페이지 조회
 	public List<Product> getProductShopList(Map<String, Object> map) throws Exception; 
->>>>>>> origin/eastzi
 	
 
 }

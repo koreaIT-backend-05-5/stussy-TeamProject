@@ -17,7 +17,7 @@ public class PageController {
 	public String loadProductDetail() {
 		return "products/product-detail"; 
 	}
-<<<<<<< HEAD
+
 	
 	@GetMapping("/auth/signup")
 	public String loadSignup() {
@@ -30,6 +30,4 @@ public class PageController {
 	}
 
 }
-=======
-} 
->>>>>>> origin/eastzi
+
