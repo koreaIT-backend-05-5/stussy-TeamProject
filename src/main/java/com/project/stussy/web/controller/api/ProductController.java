@@ -59,7 +59,7 @@ public class ProductController {
 
 		}
 		return ResponseEntity.ok(new CMRespDto<>(1,"lookup successful", listDto));
-	}
+	} 
 	
 	
 	//DB에서 수정 할 상품정보 가져오는 API

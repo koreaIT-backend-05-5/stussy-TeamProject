@@ -50,6 +50,7 @@
 
 .product-imgs img {
     width: 644px;
+    height: 644px;
 }
 
 .product-information {
@@ -116,10 +117,17 @@
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 .clicked {
     border: 2px solid black;
     transition-delay: 0.3s; 
 }
+=======
+/* .product-size ul li button:focus {
+    border: 1px solid black;
+    /* transition-delay: 0.3s; 
+} */
+>>>>>>> origin/eastzi
 
 /* button {
     border: none;

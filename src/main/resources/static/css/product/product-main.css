@@ -30,21 +30,31 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 800px;
+    /* height: 800px; */
     margin-top: 90px;
+    /* background-color: aqua; */
 }
 
 .collection-product {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 336.5px;
+    width: 400px;
+    height: 445px;
+    margin-bottom: 35px;
+    padding: 0 17px;
 }
 
-.collection-product img {
-    width: 301.5px;
+.product-img {
+    width: 400px;
+    height: 390px;
+    background-color: #dbdbdb;
 }
 
+.product-img img {
+    width: 400px;
+    height: 390px;
+}
 .a-tag {
     color: #000;
     text-decoration: none;
@@ -70,6 +80,12 @@
     padding: 20px;
     font-size: 11px;
     text-align: center;
+}
+
+.shop-box {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* footer */

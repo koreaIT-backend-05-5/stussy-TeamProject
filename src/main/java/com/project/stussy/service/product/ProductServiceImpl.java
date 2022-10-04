@@ -2,6 +2,8 @@ package com.project.stussy.service.product;
 
 
 import java.io.File;
+
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,6 +23,8 @@ import com.project.stussy.domain.product.Product;
 import com.project.stussy.domain.product.ProductFile;
 import com.project.stussy.domain.product.ProductRepository;
 import com.project.stussy.web.dto.product.AddProductReqDto;
+import com.project.stussy.web.dto.product.GetShopListRepDto;
+import com.project.stussy.web.dto.product.GetDetailRepDto;
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
 
@@ -100,7 +104,7 @@ public class ProductServiceImpl implements ProductService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("index", index);
 		
-		 List<GetProductListDto> list = new ArrayList<GetProductListDto>();
+		List<GetProductListDto> list = new ArrayList<GetProductListDto>();
 		
 		productRepository.getProductList(map).forEach(product -> {
 			
@@ -155,6 +159,71 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productRepository.deleteProduct(productCode) > 0;
 	}
+<<<<<<< HEAD
+=======
+
+	//shop detail
+	@Override
+	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception {
+		GetDetailRepDto getDetailRepDto = null;
+		
+		Map<String, Object> mainmap = new HashMap<String, Object>();
+		mainmap.put("flag", flag); 
+		mainmap.put("product_code", productCode); 
+		
+		List<Product> productMain = productRepository.getProductDetailList(mainmap);
+		log.info("{}", productMain);
+		if(!productMain.isEmpty()) {
+			List<Map<String, Object>> downloadFiles = new ArrayList<Map<String, Object>>();
+			productMain.forEach(product -> {
+				Map<String, Object> fileMap = new HashMap<String, Object>(); 
+				fileMap.put("fileCode", product.getFile_code());
+				
+				String fileName = product.getFile_name(); 
+				fileMap.put("fileName", fileName.substring(fileName.indexOf("_") + 1));
+				
+				downloadFiles.add(fileMap);
+			});
+			
+			Product firstProduct = productMain.get(0);
+			
+			getDetailRepDto = GetDetailRepDto.builder()
+					.productCode(firstProduct.getProduct_code())
+					.productName(firstProduct.getProduct_name())
+					.productPrice(firstProduct.getProduct_price())
+					.productSize(firstProduct.getProduct_size())
+					.productExplanation(firstProduct.getProduct_explanation())
+					.fileName(firstProduct.getFile_name())
+					.build();
+		}
+		
+		return getDetailRepDto; 
+	}
+
+	//shopMain
+	@Override
+	public List<GetShopListRepDto> getShopList(int page, String searchFlag, String searchValue) throws Exception {
+		int index = (page - 1) * 10;
+		
+		//검색부분 
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("index", index); 
+		map.put("search_flag", searchFlag);
+		map.put("search_value", searchValue == null ? "" : searchValue);
+		
+		List<GetShopListRepDto> list = new ArrayList<GetShopListRepDto>();
+		
+		productRepository.getProductShopList(map).forEach(product -> {
+			list.add(product.toShopListDto()); 
+		});
+		
+		return list;
+	}
+
+	
+		
+
+>>>>>>> origin/eastzi
 }
 	
 

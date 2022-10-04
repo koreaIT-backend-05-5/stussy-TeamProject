@@ -17,17 +17,19 @@ public class ProductPageController {
 	public String loadProductList() {
 		return "manager/product-list";
 	}
-
 	
 	@GetMapping("/product-modify/{productCode}")
 	public String loadProductModify() {
 		return "manager/product-modify";
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("/product-list/{productCode}")
 	public String loadProductDelete() {
 		return "manager/product-list";
 	}
 	
 	
+=======
+>>>>>>> origin/eastzi
 }

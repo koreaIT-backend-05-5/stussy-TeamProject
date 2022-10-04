@@ -49,7 +49,6 @@ submitButton.onclick = () => {
 			alert(response.data + "번 상품등록 완료");
 			location.replace("/manager/product-list");
 
-		
 		},
 		error: (error) => {
 			

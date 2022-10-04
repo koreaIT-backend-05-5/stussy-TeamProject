@@ -49,15 +49,74 @@ h2 {
 .contact-content {
     width: 976px;
     height: 567px;
+    /* background-color: aqua; */
 }
 
-h1 {
+.insert-title h1 {
     width: 100%;
     font-size: 14px;
     text-align: left;
     margin-bottom: 15px;
 }
 
+/* >>>>>>>>>>>>> table <<<<<<<<<<<<<<< */
+article {
+    margin-top: 20px;
+    
+    border: 2px solid #141414;
+    
+    padding: 0;
+    width: 100%;
+    min-height: 450px;
+    
+    background-color: white;
+    
+}
+
+.contact-menu {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.contact-row {
+    border-bottom: 1px solid #dbdbdb;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+.contact-row input {
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.contact-row td {
+    border: 1px solid #dbdbdb;
+    padding: 0px;
+}
+
+.contact-row td, .contact-row th {
+    font-weight: 600;
+}
+
+.catact-name, .contact-title {
+    border: none;
+    outline: none;
+    background-color: #ccc;
+
+    width: 99%;
+    height: 30px;
+}
+
+.contact-second {
+    border: none;
+    outline: none;
+    background-color: #ccc;
+    width: 98%;
+    height: 30px;
+}
+
+/* 
 #input-name {
     width: 956px;
     padding: 7px;
@@ -87,28 +146,27 @@ h1 {
 .contact-choice select{
     width: 974px;
     height: 33px;
-}
+} */
 
 textarea{
-    width: 974px;
+    width: 99%;
+    height: 450px;
     margin-top: 10px;
 }
 
-button {
-    width: 974px;
+.submit {
+    width: 99%;
     height: 33px;
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: #000;
     color: #fff;
     font-weight: 500;
 }
 
-button:hover{
-    cursor: pointer;
-    background-color: #c3cad8;
-    opacity: 0.9;
-    text-decoration: underline;
-}
+.submit:active {
+    background-color: #fafafa;
+    color: #141414;
+} 
 
 /* support 상세 페이지 - info */
 .contact-info1{

@@ -3,8 +3,14 @@ package com.project.stussy.service.product;
 import java.util.List;
 
 import com.project.stussy.web.dto.product.AddProductReqDto;
+import com.project.stussy.web.dto.product.GetShopListRepDto;
+
+import lombok.Builder;
+import lombok.Data;
+
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
+import com.project.stussy.web.dto.product.GetDetailRepDto;
 
 public interface ProductService {
 	//<<등록>>
@@ -23,11 +29,11 @@ public interface ProductService {
 	//<<삭제>>
 	public boolean deleteProduct(int productCode) throws Exception;
 
-
-
-
-	
-	
+	//shop
+	//shop detail 
+	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception; 
+	//shop page
+	public List<GetShopListRepDto> getShopList(int page, String searchFlag, String searchValue) throws Exception; 
 	
 	
 	
