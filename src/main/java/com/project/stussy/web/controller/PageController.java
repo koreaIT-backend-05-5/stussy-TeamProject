@@ -29,15 +29,9 @@ public class PageController {
 	public String loadSignup() {
 		return "auth/signup";
 	}
-	//내꺼
-	@GetMapping("/product-main")
-	public String product() {
-		return "products/product-main";
-	}
-	//내꺼
-	@GetMapping("/product-detail")
-	public String productdetail() {
-		return "products/product-detail";
+	@GetMapping("/main")
+	public String loadmain() {
+		return "main/main";
 	}
 
 

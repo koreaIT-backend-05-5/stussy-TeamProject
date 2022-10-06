@@ -29,10 +29,6 @@ spring:
       max-request-size: 50MB   
       
     
-<<<<<<< HEAD
-    
-
-=======
   mail:
     host: smtp.naver.com 
     port: 465
@@ -43,7 +39,6 @@ spring:
       mail.smtp.auth: true
       mail.smtp.ssl.enable: true
       mail.smtp.ssl.trust: smtp.naver.com
->>>>>>> origin/wonyoung
     
 mybatis:
   mapper-locations:
