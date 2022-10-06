@@ -1,9 +1,20 @@
+const menuLi = document.querySelectorAll(".category");
+const subbox = document.querySelector(".subbox");
 const topRight = document.querySelector(".top-right");
 
 let user = getPrincipal();
 
 
 setManagerButtons();
+
+menuLi[0].onmouseover = () => {
+	subbox.classList.remove("subbox-visible");
+}
+
+subbox.onmouseleave = () => {
+	subbox.classList.add("subbox-visible");
+}
+
 
 
 
