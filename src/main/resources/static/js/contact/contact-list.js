@@ -11,7 +11,7 @@ function load(nowPage) {
 	$.ajax({
 		async: false,
 		type: "get",
-		url: "/api/v1/contact/list/" + nowPage,
+		url: "/api/v1/contact/manager/list/" + nowPage,
 		data: {
 			"searchFlag": searchFlag,
 			"searchValue": searchValue
@@ -52,7 +52,7 @@ function getList(list) {
 	contactRows.forEach(row => {
 		row.onclick = () => {
 			const contactCode = row.querySelectorAll("td")[0].textContent;
-			location.href = "/contact/view/" + contactCode;
+			location.href = "/contact/manager/view/" + contactCode;
 		}
 	});
 }
@@ -122,17 +122,17 @@ function getPageNumbers(totalContactCount) {
 
 
 
-function getWriteButton() {
+/*function getAnswerButton() {
 	
-	const contactBtn = document.querySelector(".contact-add-button");
+	const answertBtn = document.querySelector(".contact-answer-button");
 	
-	contactBtn.onclick = () => {
-		location.href = "/contact/addition";
+	answertBtn.onclick = () => {
+		location.href = "/mail/send";
 	}
 }
 
-getWriteButton();
-
+getAnswerButton();
+*/
 
 searchButton.onclick = () => {
 	load(1);

@@ -154,13 +154,13 @@ textarea{
     margin-top: 10px;
 }
 
-.contact-submit {
+/* .contact-submit {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .contact-button {
-    width: 49.6%;
+    width: 99%;
     height: 33px;
     margin-top: 5px;
     background-color: #000;

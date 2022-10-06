@@ -1,5 +1,5 @@
 const submitButton = document.querySelector(".submit");
-const cancelBtn = document.querySelector(".cancel");
+/*const cancelBtn = document.querySelector(".cancel");*/
 
 submitButton.onclick = () => {
 	
@@ -21,7 +21,7 @@ submitButton.onclick = () => {
 		dataType: "json",
 		success: (response) => {
 			alert("문의사항 작성 완료");
-			location.href = "/contact/view/" + response.data;
+			location.href = "/contact/addition/complete";
 		},
 		error: (error) => {
 			console.log(error);
@@ -31,13 +31,13 @@ submitButton.onclick = () => {
 }
 
 
-function cancel() {
+/*function cancel() {
      alert("취소되었습니다.");
      history.back(); 
-     location.href = "/contact/contact";
-}
+     location.href = "/contact/manager/list";
+}*/
 
 
-cancelBtn.onclick = () => {
+/*cancelBtn.onclick = () => {
 	 cancel()
-}
+}*/

@@ -1,12 +1,12 @@
 const preBtn = document.querySelector(".pre");
 const nextBtn = document.querySelector(".next");
 const listBtn = document.querySelector(".list");
-const modifyBtn = document.querySelector(".modify");
+const answerBtn = document.querySelector(".answer");
 const deleteBtn = document.querySelector(".delete");
 
 let contactCode = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
-load("/api/v1/contact/");
+load("/api/v1/contact/manager/");
 
 
 function load(uri) {
@@ -29,11 +29,11 @@ function deleteContactContent() {
 	$.ajax({
 		async: false,
 		type: "delete",
-		url: `/api/v1/contact/view/${contactCode}`,
+		url: `/api/v1/contact/manager/view/${contactCode}`,
 		dataType: "json",
 		success: () => {
 			alert("삭제 되었습니다.");
-			location.replace("/contact/contact");
+			location.replace("/contact/manager/list");
 		},
 		error: (error) => {
 			alert("요청 실패");
@@ -58,22 +58,29 @@ function getContact(contact) {
 	
 }
 
+function new_window() {
+    window.open(
+      "/manager/mail/send",
+      "mail-send",
+      "width=1000, height=600");
+}
+
 deleteBtn.onclick = () => {
 	deleteContactContent();
 }
 
-modifyBtn.onclick = () => {
-	location.href = "/contact/modify/" + contactCode;
+answerBtn.onclick = () => {
+	new_window()
 }
 
 listBtn.onclick = () => {
-	location.href = "/contact/contact";
+	location.href = "/contact/manager/list";
 }
 
 preBtn.onclick = () => {
-	load("/api/v1/contact/pre/");
+	load("/api/v1/contact/manager/pre/");
 }
 
 nextBtn.onclick = () => {
-	load("/api/v1/contact/next/");
+	load("/api/v1/contact/manager/next/");
 }

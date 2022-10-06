@@ -18,7 +18,7 @@ function updateContactContent() {
 	$.ajax({
 		async: false,
 		type: "put",
-		url: `/api/v1/contact/modify/${contactCode}`,
+		url: `/api/v1/contact/manager/modify/${contactCode}`,
 		enctype: "multipart/form-data",
 		contentType: false,
 		processData: false,
@@ -27,7 +27,7 @@ function updateContactContent() {
 		success: (response) => {
 			if(response.data) {
 				alert("수정 완료");
-				location.replace("/contact/contact");
+				location.replace("/contact/manager/list");
 			}
 		},
 		error: (error) => {
@@ -44,7 +44,7 @@ function updateContactContent() {
 function cancel(){
      alert("취소되었습니다.");
      history.back(); 
-     location.href = "/contact/view/" + getContactCode();
+     location.href = "/contact/manager/view/" + getContactCode();
 }
 
 
