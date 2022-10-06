@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/stussy")
+/* @RequestMapping("/stussy") */
 public class PageController {
 	
 	//동영이형
@@ -34,6 +34,10 @@ public class PageController {
 		return "main/main";
 	}
 
-
-}
-
+	@GetMapping("/cart")
+	public String loadCart() {
+		return "cart/cart";
+	}
+	
+	
+} 

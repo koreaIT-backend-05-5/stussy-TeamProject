@@ -49,7 +49,7 @@
 			   		count(*) 
 				from
 			   		user_mst um
-			   		left outer join user_dtl ud on (um.user_code = ud.user_code)
+			   		left outer join user_dtl ud on(um.user_code = ud.user_code)
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
@@ -73,7 +73,7 @@
 				  	where
 				  	  um.user_code like concat('%', #{search_value}, '%')
 				  </when>
-				  <when test='search_flag == "na	me"'>
+				  <when test='search_flag == "name"'>
 				    where
 				  	  um.user_name like concat('%', #{search_value}, '%')
 				  </when>
@@ -87,5 +87,13 @@
 			limit #{index}, 10;		
   		</select>
   		
-  	
+  		<!-- 관리자페이지 회원정보 삭제 -->
+  		<delete id="remove" parameterType="Integer">
+  		  delete
+  		  from
+  		    user_mst
+  		  where
+  		    user_code = #{user_code}
+  		</delete>
+  		
   </mapper>

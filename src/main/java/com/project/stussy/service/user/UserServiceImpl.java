@@ -37,4 +37,10 @@ public class UserServiceImpl implements UserService {
 		return userList;
 	}
 
+	//관리자페이지 회원정보 삭제 
+	@Override
+	public boolean removeUser(int userCode) throws Exception {
+		return userRepository.remove(userCode) > 0;
+	}
+
 }

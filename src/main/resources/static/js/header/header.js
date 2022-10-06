@@ -25,7 +25,7 @@ function getPrincipal() {
 	$.ajax({
 		async: false,
 		type: "get",
-		url: "/api/v1/auth/principal",
+		url: "/api/v1/stussy/principal",
 		dataType: "json",
 		success: (response) => {
 			user = response.data;
@@ -77,6 +77,7 @@ function setManagerButtons() {
 function setLogoutButtonClickEvent(logoutBtn) {
 	logoutBtn.onclick = () => {
 				location.href = "/logout";
+				
 	}
 	
 }

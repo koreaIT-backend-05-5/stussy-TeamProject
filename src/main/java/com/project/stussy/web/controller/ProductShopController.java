@@ -29,7 +29,7 @@ public class ProductShopController {
 //		@RequestParam String searchFlag, @RequestParam String searchValue
 		List<GetShopListRepDto> shopListDto = null; 
 		try {
-			shopListDto = productService.getShopList(page, contentCount);
+			shopListDto = productService.getShopList(page, contentCount); //, searchFlag, searchValue
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", shopListDto)); 

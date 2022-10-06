@@ -34,6 +34,7 @@ public interface ProductService {
 	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception; 
 	//shop page
 	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception; 
+//, String searchFlag, String searchValue
 	
 	
 	

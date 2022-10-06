@@ -21,8 +21,6 @@ public class ManagerPageController {
 	public String ManagerContactDetail() {
 		return "manager/manager-contact/manager-contact-detail";
 	}
-
-	// ===========회원 관리 ===================//
 	@GetMapping("/manager-user")
 	public String loadUserList() {
 		return "manager/manager-user";
@@ -32,4 +30,10 @@ public class ManagerPageController {
     public String dispMail() {
         return "mail/contact_mail_insert";
     }
+	
+//	@GetMapping("/product-update")
+//	public String loadUpdateList() {
+//		return "manager/product-update";
+//	}
 }
+
