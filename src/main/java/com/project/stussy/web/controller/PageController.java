@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/stussy")
 public class PageController {
 	
 	@GetMapping("/shop")
@@ -17,4 +17,11 @@ public class PageController {
 	public String loadProductDetail() {
 		return "products/product-detail"; 
 	}
+	
+	@GetMapping("/cart")
+	public String loadCart() {
+		return "cart/cart";
+	}
+	
+	
 } 

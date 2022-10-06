@@ -25,6 +25,15 @@
     background-color: antiquewhite;
 }
 
+.collection-body {
+    /* height: 1970px; */
+    overflow: auto;
+}
+
+.collection-body::-webkit-scrollbar {
+    width: 0px;
+}
+
 .collection-products {
     display: flex;
     justify-content: center;
@@ -33,6 +42,10 @@
     /* height: 800px; */
     margin-top: 90px;
     /* background-color: aqua; */
+}
+
+.collection-product:not(:last-of-type) {
+    margin-bottom: 10PX;
 }
 
 .collection-product {
@@ -45,6 +58,12 @@
     padding: 0 17px;
 }
 
+.shop-box::-webkit-scrollbar {
+    overflow: auto;
+    height: 0px;
+    width: 0px;
+}
+
 .product-img {
     width: 400px;
     height: 390px;
@@ -55,6 +74,7 @@
     width: 400px;
     height: 390px;
 }
+
 .a-tag {
     color: #000;
     text-decoration: none;

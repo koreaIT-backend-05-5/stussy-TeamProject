@@ -3,6 +3,7 @@ package com.project.stussy.web.controller.user;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,19 @@ public class UserListController {
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1,"database error",userListDto));
 		}
 		return ResponseEntity.ok(new CMRespDto<>(1,"lookup successful", userListDto));
+	}
+	
+	//관리자페이지 회원정보 삭제
+	@DeleteMapping("/user/{userCode}") 
+	public ResponseEntity<?> removeUser(@PathVariable int userCode) {
+		boolean status = false; 
+		try {
+			status = userService.removeUser(userCode);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", status));
+		}
+		return ResponseEntity.ok().body(new CMRespDto<>(1, "success", status));
 	}
 
 }

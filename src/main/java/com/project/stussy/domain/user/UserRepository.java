@@ -17,4 +17,7 @@ public interface UserRepository {
 	//관리자페이지-user
 	public List<User> getUserList(Map<String, Object> map) throws Exception; 
 	
+	//관리자페이지 회원정보 삭제
+	public int remove(int user_code) throws Exception; 
+	
 }

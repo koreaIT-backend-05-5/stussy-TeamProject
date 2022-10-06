@@ -30,7 +30,7 @@ public interface ProductService {
 	//shop detail 
 	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception; 
 	//shop page
-	public List<GetShopListRepDto> getShopList(int page, String searchFlag, String searchValue) throws Exception; 
+	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception; //, String searchFlag, String searchValue
 	
 	
 	

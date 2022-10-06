@@ -1,4 +1,5 @@
 const searchButton = document.querySelector(".search-button");
+const userContentList = document.querySelector(".user-content-list");
 
 searchButton.onclick = () => {
 	load(1); 
@@ -20,7 +21,7 @@ function load(nowPage) {
 			"searchFlag": searchFlag,
 			"searchValue": searchValue
 		},
-		dataType: "json",
+		dataType: "json", 
         success: (response) => {
 			if(response.data[0] != null) {
 				getUserList(response.data);
@@ -42,20 +43,34 @@ function getUserList(userList) {
 
     userList.forEach(user => {
         tbody.innerHTML += `
-	        <tr>
+	        <tr class = "user-content">
 	            <td><input type="checkbox"></td>
 	            <td>${user.userCode}</td>
 	            <td>${user.userName}</td>
 	            <td>${user.userEmail}</td>
 	            <td>${user.userPhone}</td>
 	            <td>${user.createDate}</td>
-	            <td><button>삭제</button></td>
+	            <td><button type="button" class="delete-button">삭제</button></td>
 	        </tr>
         `;
     });
+    
+    const userContentItems = document.querySelectorAll(".user-content");
+	const deleteButtons = document.querySelectorAll(".delete-button");
+	
+	addDeleteButtonClickEvent(deleteButtons, userList, userContentItems);
 }
 
-/*
+function addDeleteButtonClickEvent(deleteButtons, userList, userContentItems) {
+	for(let i = 0; i < deleteButtons.length; i++) {
+		
+		deleteButtons[i].onclick = () => {
+			
+			deleteUser(userContentItems[i], userList[i].userCode);
+		}
+	}
+}
+
 function getPageNumbers(totalUserCount) {
 	const pageButtons = document.querySelector(".page-buttons");
 	
@@ -120,7 +135,7 @@ function getPageNumbers(totalUserCount) {
 	});
 
 }
-*/
+
 
 function getPageNumbers(totalUserCount) {
 	const pageButtons = document.querySelector(".page-buttons");
@@ -185,12 +200,24 @@ function getPageNumbers(totalUserCount) {
 			}
 		}
 	});
-	
-	
 }
 
-
-
+function deleteUser(userContent, userCode) {
+	$.ajax({
+		type: "delete",
+		url: `/api/v1/manager/user/${userCode}`,
+		async: false,
+		dataType: "json",
+		success: (response) => {
+			if(response.data) {
+				userContentList.removeChild(userContent);
+			}
+		},
+		error: (error) => {
+            console.log(error);
+        }
+	})
+}
 
 
 

@@ -44,13 +44,12 @@
 				um.user_name,
 				um.user_email,
 				ud.user_phone,
-				um.create_date
-				<!--  
+				um.create_date,
 				(select
 			   		count(*) 
 				from
 			   		user_mst um
-			   		left outer join user_dtl ud on (um.user_code = ud.user_code)
+			   		left outer join user_dtl ud on(um.user_code = ud.user_code)
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
@@ -64,18 +63,17 @@
 				    where
 				  	  um.user_phone like concat('%', #{search_value}, '%')
 				  </when>
-				</choose>   
-				) as total_user_count-->
+				</choose>    
+				) as total_user_count 
 			FROM
 				user_mst um
 				LEFT OUTER JOIN user_dtl ud ON(ud.user_code = um.user_code)
-				<!-- 
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
 				  	  um.user_code like concat('%', #{search_value}, '%')
 				  </when>
-				  <when test='search_flag == "na	me"'>
+				  <when test='search_flag == "name"'>
 				    where
 				  	  um.user_name like concat('%', #{search_value}, '%')
 				  </when>
@@ -83,11 +81,19 @@
 				    where
 				  	  um.user_phone like concat('%', #{search_value}, '%')
 				  </when>
-				</choose> -->
+				</choose> 
 			order by
 				user_code desc
 			limit #{index}, 10;		
   		</select>
   		
-  	
+  		<!-- 관리자페이지 회원정보 삭제 -->
+  		<delete id="remove" parameterType="Integer">
+  		  delete
+  		  from
+  		    user_mst
+  		  where
+  		    user_code = #{user_code}
+  		</delete>
+  		
   </mapper>
