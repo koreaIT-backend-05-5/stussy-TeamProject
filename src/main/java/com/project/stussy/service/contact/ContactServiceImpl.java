@@ -83,6 +83,7 @@ public class ContactServiceImpl implements ContactService {
 			
 			getContactResponseDto = GetContactResponseDto.builder()
 									.contactCode(firstContact.getContact_code())
+									.userCode(firstContact.getUser_code())
 									.contactTitle(firstContact.getContact_title())
 									.userEmail(firstContact.getUser_email())
 									.createDate(firstContact.getCreate_date().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))

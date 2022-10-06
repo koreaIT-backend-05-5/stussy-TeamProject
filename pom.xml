@@ -65,7 +65,10 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/wonyoung
 		
 		<!-- validation -->
 		<dependency>
@@ -73,18 +76,28 @@
 		    <artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<!-- commons-io -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/wonyoung
 		<dependency>
 		    <groupId>commons-io</groupId>
 		    <artifactId>commons-io</artifactId>
 		    <version>2.4</version>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+		<!-- mail -->
+>>>>>>> origin/wonyoung
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/wonyoung
 	</dependencies>
 
    <build>

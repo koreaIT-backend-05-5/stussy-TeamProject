@@ -6,47 +6,49 @@
 
 	<select id="getContactList" parameterType="hashmap" resultType="com.project.stussy.domain.contact.Contact">
 		select
-			contact_code,
-			contact_title,
-			user_email,
-			create_date,
-			contact_count,
+			cm.contact_code,
+			cm.contact_title,
+			um.user_email,
+			cm.create_date,
+			cm.contact_count,
 			(select 
 				count(*) 
 			from 
-				contact_mst
+				contact_mst cm
+				left outer join user_mst um on(um.user_code = cm.user_code)
 			<choose>
 				<when test='search_flag == "title"'>
 					where
-						contact_title like concat('%', #{search_value}, '%')
+						cm.contact_title like concat('%', #{search_value}, '%')
 				</when>
 				<when test='search_flag == "titleAndContent"'>
 					where
-						contact_title like concat('%', #{search_value}, '%')
-						or contact_content like concat('%', #{search_value}, '%')
+						cm.contact_title like concat('%', #{search_value}, '%')
+						or cm.contact_content like concat('%', #{search_value}, '%')
 				</when>
 				<when test='search_flag == "writer"'>
 					where
-						user_email like concat('%', #{search_value}, '%')
+						um.user_email like concat('%', #{search_value}, '%')
 				</when>
 			</choose>	
 				
 			) as total_contact_count
 		from
-			contact_mst
+			contact_mst cm
+			left outer join user_mst um on(um.user_code = cm.user_code)
 		<choose>
 			<when test='search_flag == "title"'>
 				where
-					contact_title like concat('%', #{search_value}, '%')
+					cm.contact_title like concat('%', #{search_value}, '%')
 			</when>
 			<when test='search_flag == "titleAndContent"'>
 				where
-					contact_title like concat('%', #{search_value}, '%')
-					or contact_content like concat('%', #{search_value}, '%')
+					cm.contact_title like concat('%', #{search_value}, '%')
+					or cm.contact_content like concat('%', #{search_value}, '%')
 			</when>
 			<when test='search_flag == "writer"'>
 				where
-					user_email like concat('%', #{search_value}, '%')
+					um.user_email like concat('%', #{search_value}, '%')
 			</when>
 		</choose>
 		order by
@@ -58,30 +60,38 @@
 	<insert id="saveContact" parameterType="com.project.stussy.domain.contact.Contact"
 		useGeneratedKeys="true" keyProperty="contact_code">
 		insert into
-			contact_mst
+			contact_mst 
 		values(
 			0,
+			#{user_code},
 			#{contact_title},
-			#{user_email},
 			#{contact_content},
 			#{contact_count},
 			now(),
 			now()	
 		);
 	</insert>
+	
 	<select id="getContact" parameterType="hashmap"
 		resultType="com.project.stussy.domain.contact.Contact">
 		select
-			*
+			cm.contact_code,
+			cm.contact_title,
+			cm.contact_content,
+			cm.user_code,
+			um.user_email,
+			cm.create_date,
+			cm.contact_count
 		from
-			contact_mst
+			contact_mst cm
+			left outer join user_mst um on(um.user_code = cm.user_code)
 		where
 			<choose>
 				<when test="flag == null">
-					contact_code = #{contact_code}
+					cm.contact_code = #{contact_code}
 				</when>
 				<when test='flag.equals("pre")'>
-					contact_code = (
+					cm.contact_code = (
 						select
 							max(contact_code)
 						from
@@ -91,7 +101,7 @@
 					)
 				</when>
 				<otherwise>
-					contact_code = (
+					cm.contact_code = (
 						select
 							min(contact_code)
 						from

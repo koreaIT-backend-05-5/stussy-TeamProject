@@ -68,3 +68,41 @@ td{
 .product-img {
 	width: 40px;
 }
+
+.list-footer {
+	display: flex;
+	justify-content: center;
+}
+
+.page-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+
+    width: 100%;
+    height: 100px;
+}
+
+.page-button {
+    margin: 2px;
+    
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    
+    width: 40px;
+    height: 40px;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.page-button:hover {
+    background-color: #9ee8ff;
+}
+
+.visible {
+	display: none;
+}

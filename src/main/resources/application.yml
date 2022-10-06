@@ -26,10 +26,24 @@ spring:
   servlet:
     multipart:
       max-file-size: 50MB
-      max-request-size: 50MB    
+      max-request-size: 50MB   
+      
     
+<<<<<<< HEAD
     
 
+=======
+  mail:
+    host: smtp.naver.com 
+    port: 465
+    username: izx43@naver.com
+    password: wjs952578!
+   
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.ssl.trust: smtp.naver.com
+>>>>>>> origin/wonyoung
     
 mybatis:
   mapper-locations:

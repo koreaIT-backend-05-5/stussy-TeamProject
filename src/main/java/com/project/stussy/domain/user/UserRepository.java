@@ -13,8 +13,12 @@ public interface UserRepository {
 	public int save(User user) throws Exception;
 	//로그인
 	public User findUserByUseremail(String useremail) throws Exception;
+<<<<<<< HEAD
 	
 	//관리자페이지-user
 	public List<User> getUserList(Map<String, Object> map) throws Exception; 
 	
+=======
+		
+>>>>>>> origin/wonyoung
 }

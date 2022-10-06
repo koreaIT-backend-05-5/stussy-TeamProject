@@ -7,6 +7,7 @@ import lombok.Data;
 @Builder
 public class GetContactResponseDto {
 	private int contactCode;
+	private int userCode;
 	private String contactTitle;
 	private String userEmail;
 	private String createDate;

@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Contact {
 	private int contact_code;
+	private int user_code;
 	private String contact_title;
 	private String user_email;
 	private String contact_content;

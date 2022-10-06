@@ -33,10 +33,16 @@ public class Product {
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 	
+<<<<<<< HEAD
 	private int total_product_count; 
 
+=======
+	private int total_product_count;
 	
-	//<<<DTO -> Entity>>>
+>>>>>>> origin/wonyoung
+	
+	
+	//<<<Entity -> DTO>>>
 	public GetProductListDto toListDto() {
 		return GetProductListDto.builder()
 				.productCode(product_code)

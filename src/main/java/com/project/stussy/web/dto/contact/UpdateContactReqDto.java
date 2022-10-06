@@ -1,7 +1,5 @@
 package com.project.stussy.web.dto.contact;
 
-import java.time.LocalDateTime;
-
 import com.project.stussy.domain.contact.Contact;
 
 import lombok.Data;

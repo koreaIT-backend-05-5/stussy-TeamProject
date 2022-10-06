@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+<<<<<<< HEAD
 @RequestMapping({ "/manager" })
 public class ManagerPageController {
 
@@ -45,4 +46,13 @@ public class ManagerPageController {
 	 * { return "manager/product-list"; }
 	 */
 
+=======
+@RequestMapping({"/manager"})
+public class ManagerPageController {
+	// 문의사항 답변하기 페이지 불러오기
+		@GetMapping("/mail/send")
+	    public String dispMail() {
+	        return "mail/contact_mail_insert";
+	    }
+>>>>>>> origin/wonyoung
 }

@@ -11,7 +11,7 @@ function load(nowPage) {
 	$.ajax({
 		async: false,
 		type: "get",
-		url: "/api/v1/contact/list/" + nowPage,
+		url: "/api/v1/contact/manager/list/" + nowPage,
 		data: {
 			"searchFlag": searchFlag,
 			"searchValue": searchValue
@@ -41,7 +41,7 @@ function getList(list) {
 			<tr class="contact-row">
                 <td>${contact.contactCode}</td>
                 <td>${contact.contactTitle}</td>
-                <td>${contact.userEamil}</td>
+                <td>${contact.userEmail}</td>
                 <td>${contact.createDate}</td>
                 <td>${contact.contactCount}</td>
             </tr>
@@ -52,7 +52,7 @@ function getList(list) {
 	contactRows.forEach(row => {
 		row.onclick = () => {
 			const contactCode = row.querySelectorAll("td")[0].textContent;
-			location.href = "/contact/view/" + contactCode;
+			location.href = "/contact/manager/view/" + contactCode;
 		}
 	});
 }
@@ -119,20 +119,6 @@ function getPageNumbers(totalContactCount) {
 	
 	
 }
-
-
-
-function getWriteButton() {
-	
-	const contactBtn = document.querySelector(".contact-add-button");
-	
-	contactBtn.onclick = () => {
-		location.href = "/contact/addition";
-	}
-}
-
-getWriteButton();
-
 
 searchButton.onclick = () => {
 	load(1);
