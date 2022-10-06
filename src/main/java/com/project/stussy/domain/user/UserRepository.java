@@ -8,5 +8,5 @@ public interface UserRepository {
 	public int save(User user) throws Exception;
 	//로그인
 	public User findUserByUseremail(String useremail) throws Exception;
-	
+		
 }

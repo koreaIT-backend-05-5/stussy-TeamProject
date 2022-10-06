@@ -25,4 +25,10 @@ public class PageController {
 	public String accountInfo() {
 		return "cart/cart";
 	}
+	
+	@GetMapping("/auth/findPassword")
+	public String dispMail() {
+		return "auth/findPassword";
+
+	}
 }

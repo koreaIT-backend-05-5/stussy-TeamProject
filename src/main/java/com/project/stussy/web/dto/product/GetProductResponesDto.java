@@ -20,7 +20,6 @@ public class GetProductResponesDto {
 	private String productExplanation;
 	private MultipartFile file;
 	private String fileName;
-//	private int productCount;
 	
 	public Product toEntity() {
 		return Product.builder()

@@ -20,8 +20,8 @@
                 <nav class="menu-list">
                     <ul>
                         <li><a href="#">회원관리</a></li>
-                        <li><a href="#">상품등록</a></li>
-                        <li><a href="#">상품목록</a></li>
+                        <li><a href="#" class="product-update-btn">상품등록</a></li>
+                        <li><a href="#" class="product-list-btn">상품목록</a></li>
                         <li><a href="#">주문목록관리</a></li>
                         <li><a href="#">문의사항관리</a></li>
                     </ul>
@@ -90,9 +90,8 @@
             </div>
         </div>
     </div>
-    
-    
-    <th:block th:replace="/fragment/footer"></th:block>
+    <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
     <script type="text/javascript" src="/static/js/product/product-insert.js"></script>
+    <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

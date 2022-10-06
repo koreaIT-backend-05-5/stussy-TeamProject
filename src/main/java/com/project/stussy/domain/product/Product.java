@@ -31,9 +31,11 @@ public class Product {
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 	
+	private int total_product_count;
 	
 	
-	//<<<DTO -> Entity>>>
+	
+	//<<<Entity -> DTO>>>
 	public GetProductListDto toListDto() {
 		return GetProductListDto.builder()
 				.productCode(product_code)
@@ -43,6 +45,7 @@ public class Product {
 				.productPrice(product_price)
 				.productSize(product_size)
 				.productExplanation(product_explanation)
+				.totalProductCount(total_product_count)
 				.build();
 	}
 	

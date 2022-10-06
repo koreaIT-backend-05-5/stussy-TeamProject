@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/manager")
 public class ProductPageController {
 	
+	@GetMapping("/main")
+	public String loadMain() {
+		return "manager/manager-main";
+	}
+	
 	@GetMapping("/product-update")
 	public String loadProduct() {
 		return "manager/product-update";

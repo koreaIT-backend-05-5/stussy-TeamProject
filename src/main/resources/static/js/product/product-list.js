@@ -14,6 +14,7 @@ function load(nowPage) {
 		success: (response) => {
 			if(response.data[0] != null) {
 				getList(response.data);
+				getPageNumbers(response.data[0].totalProductCount);
 			}else{
 				getList(new Array());
 				getPageNumbers(0);
@@ -49,6 +50,7 @@ function getList(list){
 		`;
 	});
 	
+	
 	//상품 삭제
 	const deleteBtns = document.querySelectorAll(".delete");
 	
@@ -81,4 +83,55 @@ function getList(list){
 		}
 	}
 	
+	
+function getPageNumbers(totalProductCount) {
+	const pageButtons = document.querySelector(".page-buttons");
+	
+	const totalPageCount = totalProductCount % 10 == 0 ? totalProductCount / 10 : (totalProductCount / 10) + 1;
+	
+	const startIndex = nowPage % 5 == 0 ? nowPage - 4 : nowPage - (nowPage % 5) + 1;
+	const endIndex = startIndex + 4 <= totalPageCount ? startIndex + 4 : totalPageCount;
+	
+	console.log(
+		`
+			totalPageCount: ${totalProductCount}
+			startIndex: ${startIndex}
+			endIndex: ${endIndex}
+		`
+		
+	);
+	
+	pageButtons.innerHTML = ``;
+	
+	if(startIndex != 1) {
+		pageButtons.innerHTML += `
+			<button type="button" class="page-button pre">&lt;</button>
+		`;
+	}
+	
+	for(let i = startIndex; i <= endIndex; i++) {
+		pageButtons.innerHTML += `
+			<button type="button" class="page-button">${i}</button>
+		`
+	}
+	
+	if(endIndex != totalProductCount) {
+		pageButtons.innerHTML += `
+			<button type="button" class="page-button next">&gt;</button>
+		`;
+	}
+	
+	}
+	
+	
+	const pageNumberButtons = document.querySelectorAll(".page-button");
+	pageNumberButtons.forEach(button => {
+		if(button.textContent != "<" && button.textContent != ">"){
+			button.onclick = () => {
+				nowPage = button.textContent;
+				load(nowPage);
+			}
+		}
+	});
 }
+
