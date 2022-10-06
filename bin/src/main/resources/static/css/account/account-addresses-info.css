@@ -1,0 +1,424 @@
+:root {
+    --main-color: rgb(255, 255, 255);
+    --line-color: rgb(198, 198, 198);
+    --sub-color: #000000;
+    --sub-font-color: rgb(127, 127, 127);
+    --input-font-color: rgb(115, 115, 115);
+}
+
+.header-info-1 {
+    width: 100%;
+    height: 33px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-info-1 > p {
+    font-size: 11px;
+    color: var(--main-color)
+}
+
+.header-info-2 {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h-info-box-1 {
+    display: flex;
+    align-items: center;
+}
+
+.h-info-box-1 > h1 {
+    margin-right: 18px;
+}
+
+.h-info-box-1 > h1 > img{
+    width: 56px;
+    height: 39px;
+}
+
+.nav-click-menu {
+    position: relative;
+}
+
+.nav-info > nav {
+    height: 200px;
+
+    position: absolute;
+    top:100px;
+}
+
+.h-info-box-2 {
+    display: flex;
+    width: 150px;
+}
+
+.h-info-box-2 > img {
+    width: 23px;
+    height: 18px;
+}
+
+main {
+    width: 100%;
+    height: 472px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-page-info-menu {
+    width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-addresses-info-title {
+    height: 40px;
+    text-align: center;
+}
+
+.account-addresses-info-title > p {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+main {
+    width: 100%;
+    height: 557px;
+}
+
+section {
+    display: flex;
+}
+
+.left-menu-list {
+    width: 264px;
+    height: 537px;
+}
+
+.left-menu-list > ul > li {
+    width: 244px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--sub-color);
+    border-color: var(--sub-font-color);
+}
+
+.left-menu-list > ul > li > a {
+    font-weight: 300;
+    font-size: 11px;
+}
+
+.left-menu-list > ul > li > a:hover {
+    text-decoration: underline;
+}
+
+.account-addresses-update-info {
+    width: 996px;
+}
+
+.account-addresses-update-info > ul {
+    width: 956px;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+}
+
+.account-addresses-update-info > ul > li:nth-child(1) {
+    display: flex;
+    align-items: center;
+    height: 41px;
+    font-weight: 600;
+}
+
+.account-addresses-update-info > ul > li:nth-child(1):hover {
+    cursor: pointer;
+}
+
+.account-addresses-update-info > ul > li:nth-child(2) {
+    height: 24px;
+    font-weight: 600;
+}
+
+.input-height {
+    height: 49px;
+}
+
+.addresses-info-short-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addresses-info-short-input input{
+    width: 473px;
+    height: 34px;
+    padding-left: 10px;
+
+    border-color: var(--line-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+}
+
+.addresses-info-short-input input::placeholder {
+    color: var(--input-font-color);
+}
+
+.addresses-info-short-input input:focus {
+    border: 1px solid var(--sub-color);
+    transition-duration: 0.5s;
+}
+
+.addresses-info-long-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addresses-info-long-input input {
+    width: 956px;
+    height: 34px;
+    padding-left: 10px;
+
+    border-color: var(--line-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+    
+}
+
+.addresses-info-long-input input::placeholder {
+    color: var(--input-font-color);
+}
+
+.addresses-info-long-input input:focus {
+    border: 1px solid var(--sub-color);
+    transition-duration: 0.5s;
+}
+
+.addresses-txt-box {
+    width: 956px;
+    height: 49px;
+}
+
+.addresses-txt-box > div {
+    width: 956px;
+    height: 34px;
+    padding-left: 10px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: rgb(238, 238, 238);
+
+    border-color: rgb(204, 204, 204);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+
+    color: var(--sub-font-color);
+}
+
+.find-addresses-btn-area {
+    width: 956px;
+    height: 49px;
+}
+
+.find-addresses-btn {
+    width: 956px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--sub-color);
+
+    border-color: var(--sub-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--main-color);
+
+    color: var(--main-color);
+}
+
+.find-addresses-btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition-duration: 0.5s;
+    text-decoration: underline;
+}
+
+.detail-addresses-input {
+    height: 46px;
+}
+
+.home-essential-txt {
+    height: 24px;
+    color: #cf5050;
+}
+
+.national-select-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nation-select-box {
+    position: relative;
+}
+
+.nation-txt {
+    font-size: 9px;
+    position: absolute;
+    color: var(--sub-font-color);
+    top: 444px;
+    left: 382px;
+}
+
+.region-select-box {
+    position: relative;
+}
+
+.region-txt {
+    font-size: 9px;
+    position: absolute;
+    color: var(--sub-font-color);
+    top: 444px;
+    left: 865px;
+}
+
+select {
+    width: 473px;
+    height: 34px;
+    padding: 9px 0 0 8px;
+    border-color: var(--line-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+
+    color: var(--sub-color);
+
+    border-radius: 0;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance : none;
+}
+
+select:focus {
+    cursor: pointer;
+    opacity: 0.6;
+    transition-duration: 0.5s;
+
+    border-color: var(--sub-color);
+    border-width: 1px;
+    border-style: solid;
+
+    color: var(--sub-color);
+}
+
+.tel-input-box {
+    display: flex;
+    height: 46px;
+}
+
+.tel-input-box input {
+    width: 473px;
+    height: 34px;
+    padding-left: 10px;
+
+    border-color: var(--line-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+}
+
+.tel-input-box input:focus {
+    border: 1px solid var(--sub-color);
+    transition-duration: 0.5s;
+}
+
+.tel-txt {
+    height: 24px;
+    color: #cf5050;
+}
+
+.cofirm-cancel-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cofirm-btn,
+.cancel-btn {
+    width: 473px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cofirm-btn {
+    background-color: var(--sub-color);
+
+    border-color: var(--sub-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--main-color);
+
+    color: var(--main-color);
+
+    opacity: 0.2;
+}
+
+.cancel-btn {
+    background-color: var(--main-color);
+
+    border-color: var(--sub-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--main-color);
+
+    color: var(--sub-color);
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    text-decoration: underline;
+
+    background-color: var(--sub-color);
+
+    border-color: var(--sub-color);
+    border-width: 1px;
+    border-style: solid;
+    outline: var(--sub-color);
+
+    color: var(--main-color);
+}
+
+.add-addresses-btn {
+    display: flex;
+    align-items: flex-end;
+    height: 51px;
+    color: #7f7f7f;
+}
+
+.add-addresses-btn:hover {
+    cursor: pointer;
+}
+
+
+
+
+

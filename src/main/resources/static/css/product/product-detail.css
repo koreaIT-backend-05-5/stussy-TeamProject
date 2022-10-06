@@ -100,7 +100,11 @@
     
 }
 
-.product-size p {
+/* .product-size ul {
+    display: flex;
+} */
+
+.product-size button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +113,23 @@
     height: 45px;
     font-size: 11px;
     
-    font-weight: 600;
-    border: 1px solid black;
+    font-weight: 700;
+}
+
+.clicked {
+    border: 2px solid black;
+    transition-delay: 0.3s; 
+}
+
+/* button {
+    border: none;
+    background-color: #fff;
+} */
+
+/* <<<<<<<<<<<<<<<js>>>>>>>>>>>> */
+.select-size {
+    background-color: white;
+    border: 2px solid black;
 }
 
 .product-button {

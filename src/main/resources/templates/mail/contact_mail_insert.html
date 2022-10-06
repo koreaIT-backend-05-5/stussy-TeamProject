@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>mail-send</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mail/contact-mail-insert.css">
+</head>
+<body>
+    <div id="wrap">
+        <article>
+            <h1 class="mail-send-title">메일 발송</h1>
+            <div class="mail-send-content">
+                <form enctype="application/x-www-form-urlencoded">
+                    <input class="address mail-contents mail-input" name="address" placeholder="이메일 주소">
+                    <input class="title mail-contents mail-input" name="title" placeholder="제목">
+                    <textarea class="message mail-contents" name="message" placeholder="메일 내용을 입력해주세요." cols="60" rows="20"></textarea>
+                    <div class="mail-send-btns">
+                        <button type="button" class="submit mail-contents btns">발송</button>
+                        <button type="button" class="cancel btns">취소</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <script type="text/javascript" src="/static/js/mail/contact-mail-insert.js"></script>
+</body>
+</html>

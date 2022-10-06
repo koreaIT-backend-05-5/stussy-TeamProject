@@ -38,7 +38,7 @@ function getUser() {
 function setManagerButtons() {
 	
 	if(getUser() != null) {
-		if(getUser().userRoles.includes("ROLE_ADMIN") || getUser().userRoles.includes("ROLE_USER")) {
+		if(getUser().userRoles.includes("ROLE_ADMIN")) {
 			topRight.innerHTML += `
 				<button type="button" class="logout-btn">로그아웃</button>
 				<button type="button" class="manager-btn">관리자 페이지</button>
@@ -51,6 +51,13 @@ function setManagerButtons() {
 			setLogoutButtonClickEvent(logoutBtn);
 			setManagerButtonClickEvent(managerBtn);
 			
+		} else if(getUser().userRoles.includes("ROLE_USER")) {
+			topRight.innerHTML += `
+				<button type="button" class="logout-btn">로그아웃</button>
+			`;
+			
+			const logoutBtn = document.querySelector(".logout-btn");
+			setLogoutButtonClickEvent(logoutBtn);
 		}
 	}
 

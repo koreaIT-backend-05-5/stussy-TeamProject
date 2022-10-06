@@ -1,0 +1,105 @@
+#wrap {
+    width: 100%;
+}
+
+.account-main {
+    width: 1260px;
+    height: 594px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.account-box {
+    width: 1260px;
+    height: 567px;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.menu-list {
+    float: left;
+    width: 244px;
+    height: 567px;
+    padding: 0 10px;
+    /* background-color: rebeccapurple; */
+    
+}
+
+.menu-list li {
+    text-align: left;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.menu-list a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* account dashbord */
+.account-content {
+    width: 976px;
+    height: 567px;
+    /* background-color:s */
+}
+
+.account-info {
+    width: 100%;
+    text-align: left;
+    font-size: 11px;
+    padding-bottom: 15px;
+}
+
+.account-info h2 {
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 12px;
+    box-sizing: border-box;
+} 
+
+.account-info span {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.account-info h3 {
+    margin-bottom: 5px;
+}
+
+.account-info p {
+    margin-bottom: 10px;
+}
+
+.account-address-link {
+    color: #7f7f7f;
+    font-weight: 700;
+}
+
+.account-order h2 {
+    display: block;
+    text-align: left;
+    padding: 0;
+    font-size: 12px;
+}
+
+.account-order table {
+    width: 700px;
+    font-size: 12px;
+}
+
+.account-order td {
+    text-align: center;
+}
