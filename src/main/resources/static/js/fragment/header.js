@@ -1,9 +1,10 @@
 const menuLi = document.querySelector('.category');
 const subbox = document.querySelector('.subbox');
 
-menuLi.onmouseover = () => {
-    subbox.style.display = "block";
+menuLi[0].onmouseover = () => {
+	alert("!")
+    subbox.classList.remove = "subbox-visible";
 }
 subbox.onmouseleave = () => {
-    subbox.style.display = "none";
+    subbox.classList.add= "subbox-visible";
 }
