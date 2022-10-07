@@ -19,6 +19,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class Product {
 	private int product_code; //등록시 상품번호
+	private int category_code;
+	private String category_name;
 	private String product_category; // 카테고리
 	private String product_name; //상품명
 	private String product_price; //상품금액
@@ -44,6 +46,7 @@ public class Product {
 				.fileName(file_name)
 				.productName(product_name)
 				.productCategory(product_category)
+				.categoryName(category_name)
 				.productPrice(product_price)
 				.productSize(product_size)
 				.productExplanation(product_explanation)
@@ -55,6 +58,7 @@ public class Product {
 		return GetProductResponesDto.builder()
 				.productCode(product_code)
 				.productCategory(product_category)
+				.categoryName(category_name)
 				.productName(product_name)
 				.productPrice(product_price)
 				.productSize(product_size)

@@ -10,7 +10,7 @@
   				product_mst
   			values(
   					0,
-  			#{product_category},
+  			#{category_code},
 			#{product_name},
 			#{product_price},
 			#{product_explanation},
@@ -42,15 +42,22 @@
   				SELECT
 					pm.product_code,
 					pf.file_name,
-					pm.product_category,
 					pm.product_name,
 					pm.product_price,
 					pm.product_size,
-					pm.product_explanation
-				
+					pm.product_explanation,
+					
+					cm.category_name,
+					
+					tc.total_product_count
 				FROM
 					product_mst pm
 					LEFT OUTER JOIN product_file pf ON(pf.product_code = pm.product_code)
+					LEFT OUTER JOIN category_mst cm on (cm.category_code = pm.category_code)
+					LEFT OUTER JOIN (select
+													count(*) as total_product_count
+												from
+													product_mst) tc on(1 = 1)
 			order by
 				product_code asc
 			limit #{index}, 10;		

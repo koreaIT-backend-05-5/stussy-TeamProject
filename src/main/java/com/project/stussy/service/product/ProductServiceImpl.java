@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		product = Product.builder()
 				.product_code(addProductReqDto.getProductCode())
-				.product_category(addProductReqDto.getProductCategory())
+				.category_code(addProductReqDto.getCategoryCode())
 				.product_name(addProductReqDto.getProductName())
 				.product_price(addProductReqDto.getProductPrice())
 				.product_size(addProductReqDto.getProductSize())
