@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/stussy")
 public class PageController {
 	
 	//동영이형
-	@GetMapping("/shop")
+	@GetMapping("/shop/{productType}")
 	public String loadProductShop() {
 		return "products/product-main"; 
 	}
@@ -20,12 +19,12 @@ public class PageController {
 	} 
 	
 	//원영이형
-	@GetMapping("/signin")
+	@GetMapping("/auth/signin")
 	public String loadSignin() {
 		return "auth/signin";
 	}
 	//원영이형
-	@GetMapping("/signup")
+	@GetMapping("/auth/signup")
 	public String loadSignup() {
 		return "auth/signup";
 	}

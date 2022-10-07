@@ -25,11 +25,13 @@ public class ProductShopController {
 	
 	//shop페이지의 list 
 	@GetMapping("/list/{page}")
-	public ResponseEntity<?> getShopList(@PathVariable int page, int contentCount) {
+	public ResponseEntity<?> getShopList(@PathVariable int page, int contentCount, int categoryCode) {
 //		@RequestParam String searchFlag, @RequestParam String searchValue
+		
+		System.out.println(categoryCode);
 		List<GetShopListRepDto> shopListDto = null; 
 		try {
-			shopListDto = productService.getShopList(page, contentCount);
+			shopListDto = productService.getShopList(page, contentCount, categoryCode);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", shopListDto)); 

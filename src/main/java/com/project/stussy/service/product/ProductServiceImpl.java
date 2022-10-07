@@ -160,6 +160,7 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.deleteProduct(productCode) > 0;
 	}
 
+//=========================================================================================================
 
 	//shop detail
 	@Override
@@ -201,7 +202,7 @@ public class ProductServiceImpl implements ProductService {
 
 	//shopMain
 	@Override
-	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception {
+	public List<GetShopListRepDto> getShopList(int page, int contentCount, int categoryCode) throws Exception {
 		int index = (page - 1) * 10;
 		
 		
@@ -210,6 +211,7 @@ public class ProductServiceImpl implements ProductService {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("index", index);
 		map.put("contentCount", contentCount);
+		map.put("category_code", categoryCode);
 		
 		productRepository.getProductShopList(map).forEach(product -> {
 			list.add(product.toShopListDto()); 

@@ -44,6 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginPage("/auth/signin")
 			.loginProcessingUrl("/auth/signin")
 			.failureHandler(new AuthFailureHandler())
-			.defaultSuccessUrl("/stussy/main");
+			.defaultSuccessUrl("/main");
 	}
 }
