@@ -5,23 +5,19 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.project.stussy.web.dto.cart.AddCartReqDto;
+
 @Mapper
 public interface CartRepository {
-	//저장
-	public void save(Cart cart) throws Exception;
 	
-	//사용자 장바구니 찾기
-	public List<Cart> findByUserName(String userEmail, int productCode) throws Exception; 
+	//장바구니 리스트
+	public List<Cart> getCartList(Map<String, Object> map) throws Exception; 
 	
-	//장바구니 내 상품 찾기
-	public Cart findByCartList(String userEmail, int productCode) throws Exception; 
+	//장바구니 추가 
+	public int addCartProduct(AddCartReqDto addCartReqDto) throws Exception; 
 	
-	//장바구니 상품 수량 증가
-	public void increase(Cart cart) throws Exception; 
+	public Cart checkCart(AddCartReqDto addCartReqDto) throws Exception; 
 	
-	//장바구니 상품 개수 감소
-	public void decrease(Cart cart) throws Exception; 
-	
-	//장바구니 상품 삭제
-	public void delete(List<Integer> productCodes, String userEmail) throws Exception;
+	//장바구니 내역 삭제
+	public int remove(int productCode) throws Exception; 
 }

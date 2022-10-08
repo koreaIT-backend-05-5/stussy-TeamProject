@@ -42,12 +42,11 @@
                                     <div class="sum">합계</div>
                                 </div>
                                 <div class="subdiv">
-                
                                     <div class="basketcmd">삭제</div>
                                 </div>
                                 <div class="split"></div>
                             </div>
-                    
+ 
                             <div class="row data">
                                 <div class="subdiv">
                                     <div class="check"><input type="checkbox" name="buy" value="260" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
@@ -68,7 +67,7 @@
                                     <div class="sum">40,000원</div>
                                 </div>
                                 <div class="subdiv">
-                                    <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                                    <button type="button" class="delete-button">삭제</button>
                                 </div>
                             </div>
                             <div class="row data">
@@ -117,9 +116,20 @@
                                     <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
                                 </div>
                             </div>
-                    
                         </div>
                 
+                        <div class="list-btn">
+                            <div class="page-buttons">
+                                <button type="button" class="page-button">&lt;</button>
+                                <button type="button" class="page-button">1</button>
+                                <button type="button" class="page-button">2</button>
+                                <button type="button" class="page-button">3</button>
+                                <button type="button" class="page-button">4</button>
+                                <button type="button" class="page-button">5</button>
+                                <button type="button" class="page-button">&gt;</button>
+                            </div>
+                        </div>
+
                         <div class="right-align basketrowcmd">
                             <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
                             <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
@@ -131,15 +141,16 @@
                         <div id="goorder" class="">
                             <div class="clear"></div>
                             <div class="buttongroup center-align cmd">
-                                <a href="javascript:void(0);">선택한 상품 주문</a>
+                                <button id="final-support-submit"><a href="javascript:void(0);" >선택한 상품 주문</a></button>  
                             </div>
                         </div>
                     </form>
-                </div>
+                </div>    
             </div>
+            
         </div>
     </div>
     <th:block th:replace="/fragment/footer"></th:block>
 </body>
-<script type="text/javascript" src="/static/js/cart/cart.js"></script>  
+<script type="text/javascript" src="/static/js/cart/cartt.js"></script>  
 </html>

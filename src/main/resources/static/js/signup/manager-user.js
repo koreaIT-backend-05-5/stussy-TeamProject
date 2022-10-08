@@ -98,7 +98,7 @@ function getPageNumbers(totalUserCount) {
 	for(let i = startIndex; i <= endIndex; i++){
 		pageButtons.innerHTML += `
 			<button type="button" class="page-button">${i}</button>
-		`
+		`;
 	}
 	
 	if(endIndex != totalUserCount) {
@@ -115,7 +115,7 @@ function getPageNumbers(totalUserCount) {
 		}
 	}
 	
-	if(endIndex != totalNoticeCount) {
+	if(endIndex != totalUserCount) {
 		const nextPageButton = document.querySelector(".next");
 		nextPageButton.onclick = () => {
 			nowPage = endIndex + 1;
@@ -134,72 +134,6 @@ function getPageNumbers(totalUserCount) {
 		}
 	});
 
-}
-
-
-function getPageNumbers(totalUserCount) {
-	const pageButtons = document.querySelector(".page-buttons");
-	
-	const totalPageCount = totalUserCount % 10 == 0 ? totalUserCount / 10 : (totalUserCount / 10) + 1;
-	
-	const startIndex = nowPage % 5 == 0 ? nowPage - 4 : nowPage - (nowPage % 5) + 1;
-	const endIndex = startIndex + 4 <= totalPageCount ? startIndex + 4 : totalPageCount;
-	
-	console.log(
-		`
-			totalPageCount: ${totalUserCount}
-			startIndex: ${startIndex}
-			endIndex: ${endIndex}
-		`
-		
-	);
-	/*
-	pageButtons.innerHTML = ``;
-	
-	if(startIndex != 1) {
-		pageButtons.innerHTML += `
-			<button type="button" class="page-button">&lt;</button>
-		`;
-	}
-	
-	for(let i = startIndex; i <= endIndex; i++) {
-		pageButtons.innerHTML += `
-			<button type="button" class="page-button">${i}</button>
-		`
-	}
-	
-	if(endIndex != totalUserCount) {
-		pageButtons.innerHTML += `
-			<button type="button" class="page-button">&gt;</button>
-		`;
-	}
-	
-	
-	if(startIndex != 1) {
-		const prePageButton = document.querySelector(".pre");
-		prePageButton.onclick = () => {
-			nowPage = startIndex - 1;
-			load(nowPage);
-		}
-	}
-	
-	if(endIndex != totalNoticeCount) {
-		const nextPageButton = document.querySelector(".next");
-		nextPageButton.onclick = () => {
-			nowPage = endIndex + 1;
-			load(nowPage);
-		}
-	}
-	*/
-	const pageNumberButtons = document.querySelectorAll(".page-button");
-	pageNumberButtons.forEach(button => {
-		if(button.textContent != "<" && button.textContent != ">"){
-			button.onclick = () => {
-				nowPage = button.textContent;
-				load(nowPage);
-			}
-		}
-	});
 }
 
 function deleteUser(userContent, userCode) {

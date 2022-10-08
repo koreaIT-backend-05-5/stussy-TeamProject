@@ -42,7 +42,7 @@
   				SELECT
 					pm.product_code,
 					pf.file_name,
-					pm.product_category,
+					<!-- pm.product_category, -->
 					pm.product_name,
 					pm.product_price,
 					pm.product_size,
@@ -109,7 +109,7 @@
   				SELECT
 					pm.product_code,
 					pf.file_name,
-					pm.product_category,
+					<!-- pm.product_category, -->
 					pm.product_name,
 					pm.product_price,
 					pm.product_size,
@@ -150,7 +150,7 @@
   		<select id="getProductDetail" parameterType="Integer" resultType="com.project.stussy.domain.product.Product">
   			SELECT	
   			pm.product_code,
-			pm.product_category,
+			<!-- pm.product_category, -->
 			pm.product_size,
 			pm.product_name,
 			pm.product_price,

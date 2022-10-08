@@ -12,19 +12,21 @@ let basket = {
         this.reCalc();
         this.updateUI();
     },
+
     //장바구니 전체 비우기
     delAllItem: function(){
         document.querySelectorAll('.row.data').forEach(function (item) {
             item.remove();
-          });
+        });
           //AJAX 서버 업데이트 전송
         
           //전송 처리 결과가 성공이면
-          this.totalCount = 0;
-          this.totalPrice = 0;
-          this.reCalc();
-          this.updateUI();
+        this.totalCount = 0;
+        this.totalPrice = 0;
+        this.reCalc();
+        this.updateUI();
     },
+
     //재계산
     reCalc: function(){
         this.totalCount = 0;
@@ -38,11 +40,13 @@ let basket = {
             }
         }, this); // forEach 2번째 파라메터로 객체를 넘겨서 this 가 객체리터럴을 가리키도록 함. - thisArg
     },
+
     //화면 업데이트
     updateUI: function () {
         document.querySelector('#sum_p_num').textContent = '상품갯수: ' + this.totalCount.formatNumber() + '개';
         document.querySelector('#sum_p_price').textContent = '합계금액: ' + this.totalPrice.formatNumber() + '원';
     },
+
     //개별 수량 변경
     changePNum: function (pos) {
         var item = document.querySelector('input[name=p_num'+pos+']');
@@ -62,10 +66,12 @@ let basket = {
         this.reCalc();
         this.updateUI();
     },
+
     checkItem: function () {
         this.reCalc();
         this.updateUI();
     },
+    
     delItem: function () {
         event.target.parentElement.parentElement.parentElement.remove();
         this.reCalc();
@@ -81,3 +87,4 @@ Number.prototype.formatNumber = function(){
     while (regex.test(nstr)) nstr = nstr.replace(regex, '$1' + ',' + '$2');
     return nstr;
 };
+

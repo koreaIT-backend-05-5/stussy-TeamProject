@@ -26,6 +26,7 @@ function load(nowPage) {
 	});
 }
 */
+
 const body = document.querySelector("body");
 const collectionProducts = document.querySelector(".collection-products")
 
@@ -61,17 +62,18 @@ function setTotalCount(totalProductCount) {
 
 function getShopList(productList){
 	console.log(productList);
-	// const collectionProducts = document.querySelector(".collection-products")
+	const collectionProducts = document.querySelector(".collection-products")
 	setTotalCount(productList[0].totalProductCount);
 	if(page == 1){
 		collectionProducts.innerHTML = "";		
 	}
-	
+
 	productList.forEach(product => {
 	
 		
 		collectionProducts.innerHTML += `
 			<li class="collection-product collection-product-${page}">
+			<input type="hidden" value="${product.productCode}">
 				<div class="shop-box">
 					<div class="product-img">
 						<a>
@@ -87,13 +89,14 @@ function getShopList(productList){
 		`;
 	});
 	
-	const collectionProduct = document.querySelectorAll(`.collection-product-${page}`);
+	const collectionProduct = document.querySelectorAll(`.collection-product`);
 	
 	console.log("collectionProduct: " + collectionProduct[0].classList)
+	console.log(productList)
 	for(let i = 0; i < collectionProduct.length; i++){
 		
 		collectionProduct[i].onclick = () => {
-			location.href = "/stussy/detail/" + productList[i].productCode;
+			location.href = "/stussy/detail/" + collectionProduct[i].querySelector("input").value;
 		}
 		
 	}

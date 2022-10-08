@@ -88,7 +88,7 @@
   		</select>
   		
   		<!-- 관리자페이지 회원정보 삭제 -->
-  		<delete id="remove" parameterType="Integer">
+  		<delete id="remove" parameterType="Integer" >
   		  delete
   		  from
   		    user_mst

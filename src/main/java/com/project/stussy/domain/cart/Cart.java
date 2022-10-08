@@ -19,9 +19,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Cart {
-	private int product_code; 
-	private String user_email;
 	private int cart_code;
+	private int user_code; 
+	private int product_code; 
 	private int cart_count; 
 	private String cart_total_price; 
 	
@@ -34,30 +34,20 @@ public class Cart {
 	private LocalDateTime create_date;
 	private LocalDateTime update_date; 
 	
-//	private String user_email;
-//	private User user;
-//	private CartItem cartItem; 
-//	private Product product; 
-//	private ProductFile productFile;
-//	
-//	private LocalDateTime create_date; 
-//	private LocalDateTime update_date;
+	private int total_cart_count; 
 	
 	public AddCartReqDto toCartDto() {
 		return AddCartReqDto.builder()
-				.productCode(product_code)
-				.userEmail(user_email)
 				.cartCode(cart_code)
+				.userCode(user_code)
+				.productCode(product_code)
 				.cartCount(cart_count)
 				.cartTotalPrice(cart_total_price)
 				.productName(product_name)
 				.productPrice(product_price)
-				.fileCode(file_code)
 				.fileName(file_name)
+				.totalCartCount(total_cart_count)
 				.build();
 	}
-	
-	
-	
-	
+		
 }
