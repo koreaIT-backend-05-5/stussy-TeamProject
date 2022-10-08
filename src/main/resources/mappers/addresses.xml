@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.stussy.domain.account.addresses.AddressesRepository">
+
+	<insert id="saveAddresses" parameterType="com.project.stussy.domain.account.addresses.Addresses"
+			useGeneratedKeys="true" keyProperty="info_code">
+			insert into
+				order_info_mst
+			values(
+				0,
+				#{user_code},
+				#{road_address},
+				#{building_name},
+				#{si_do},
+				#{zone_code},
+				now(),
+				now()
+			);
+	</insert>
+</mapper>

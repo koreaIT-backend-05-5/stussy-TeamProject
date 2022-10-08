@@ -1,11 +1,28 @@
-#wrap {
-    width: 100%;
+:root {
+    --main-color: rgb(255, 255, 255);
+    --line-color: rgb(198, 198, 198);
+    --sub-color: #000000;
+    --sub-font-color: rgb(127, 127, 127);
+    --input-font-color: rgb(115, 115, 115);
 }
 
-.account-main {
+#wrap {
+    width: 100%;
+    font-size: 11px;
+}
+
+.contact-main {
     width: 1260px;
-    height: 594px;
+    height: 100vh;
     margin: 0 auto;
+}
+
+.contact-box {
+    width: 1260px;
+    height: 567px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 h2 {
@@ -15,22 +32,13 @@ h2 {
     font-size: 11px;
 }
 
-.account-box {
-    width: 1260px;
-    height: 567px;
-    display: flex;
-    /* text-align: center; */
-    justify-content: center;
-    /* background-color: aqua; */
-}
-
 .menu-list {
     float: left;
     width: 244px;
     height: 567px;
     padding: 0 10px;
+    margin-bottom: 20px;
     /* background-color: rebeccapurple; */
-    
 }
 
 .menu-list li {
@@ -42,14 +50,46 @@ h2 {
     font-size: 11px;
 }
 
-.menu-list a:hover {
-    cursor: pointer;
-    text-decoration: underline;
+.menu-list li a:hover {
+    text-decoration-line: underline;
 }
 
 /* account dashbord */
 .account-content {
     width: 976px;
     height: 567px;
-    /* background-color:s */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 11px;
+
+    margin-bottom: 20px;
+}
+
+.account-info p {
+    margin-top: 10px;
+}
+
+.account-address-info {
+    margin-bottom: 0;
+}
+
+.account-address-update button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    color: gray;
+}
+
+h1 {
+    font-size: 11px;
 }

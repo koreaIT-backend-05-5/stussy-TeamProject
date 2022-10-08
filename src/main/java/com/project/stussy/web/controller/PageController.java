@@ -25,5 +25,12 @@ public class PageController {
 	public String accountInfo() {
 		return "cart/cart";
 	}
+	
+	//=================내 정보 주소수정, 추가, 삭제================//
+	
+	@GetMapping("/account/addresses")
+	public String addressesInfo() {
+		return "account/account_addresses";
+	}
 
 }

@@ -54,6 +54,7 @@ public class ContactServiceImpl implements ContactService {
 		
 		contact = Contact.builder()
 				.contact_title(addContactReqDto.getContactTitle())
+				.user_code(addContactReqDto.getUserCode())
 				.user_email(addContactReqDto.getUserEmail())
 				.contact_content(addContactReqDto.getContactContent())
 				.build();

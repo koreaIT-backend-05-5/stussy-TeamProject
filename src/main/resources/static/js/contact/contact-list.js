@@ -36,6 +36,22 @@ function getList(list) {
 	const tbody = document.querySelector("tbody");
 	tbody.innerHTML = "";
 	
+	for(let i = 0; i < list.length; i++) {
+		if(list[i].userEmail == null) {
+			continue;
+		}
+		
+		tbody.innerHTML += `
+			<tr class="contact-row">
+                <td>${list[i].contactCode}</td>
+                <td>${list[i].contactTitle}</td>
+                <td>${list[i].userEmail}</td>
+                <td>${list[i].createDate}</td>
+                <td>${list[i].contactCount}</td>
+            </tr>
+		`;
+	}
+	/*
 	list.forEach(contact => {
 		tbody.innerHTML += `
 			<tr class="contact-row">
@@ -47,7 +63,7 @@ function getList(list) {
             </tr>
 		`;
 	});
-	
+	*/
 	const contactRows = document.querySelectorAll(".contact-row");
 	contactRows.forEach(row => {
 		row.onclick = () => {
