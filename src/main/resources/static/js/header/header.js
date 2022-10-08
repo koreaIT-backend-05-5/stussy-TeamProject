@@ -18,7 +18,7 @@ subbox.onmouseleave = () => {
 
 
 
-
+/*
 function getPrincipal() {
 	let user = null;
 	
@@ -89,4 +89,4 @@ function setManagerButtonClickEvent(managerBtn) {
 	}
 	
 }
-
+*/

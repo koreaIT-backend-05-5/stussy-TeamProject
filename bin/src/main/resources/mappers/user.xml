@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.project.stussy.domain.user.UserRepository">
+  		<insert id="save" parameterType="com.project.stussy.domain.user.User">
+  			insert into
+  				user_mst
+  			values(
+  					0,
+			#{user_name},
+			#{user_email},
+			#{user_password},
+			#{user_roles},
+			now(),
+			now()
+  			)
+  		</insert>
+  		
+  		<select id="findUserByUseremail" parameterType="String" 
+  			resultType="com.project.stussy.domain.user.User">
+  			select
+				um.user_code,
+				
+				um.user_name,
+				um.user_email,
+				um.user_password,
+				um.user_roles,
+				
+				ud.user_address,
+				ud.user_phone
+			from
+				user_mst um
+				left outer join user_dtl ud on(ud.user_code = um.user_code)
+			where
+				um.user_email = #{useremail}
+  		</select>
+  		
+  		<!-- 관리자페이지-userList -->
+  		<select id="getUserList" parameterType="hashmap" resultType= "com.project.stussy.domain.user.User">
+	  		SELECT
+				um.user_code,
+				um.user_name,
+				um.user_email,
+				ud.user_phone,
+				um.create_date,
+				(select
+			   		count(*) 
+				from
+			   		user_mst um
+			   		left outer join user_dtl ud on(um.user_code = ud.user_code)
+				<choose>
+				  <when test='search_flag == "number"'>
+				  	where
+				  	  um.user_code like concat('%', #{search_value}, '%')
+				  </when>
+				  <when test='search_flag == "name"'>
+				    where
+				  	  um.user_name like concat('%', #{search_value}, '%')
+				  </when>
+				  <when test='search_flag == "phone"'>
+				    where
+				  	  um.user_phone like concat('%', #{search_value}, '%')
+				  </when>
+				</choose>   
+				) as total_user_count
+			FROM
+				user_mst um
+				LEFT OUTER JOIN user_dtl ud ON(ud.user_code = um.user_code)
+				<choose>
+				  <when test='search_flag == "number"'>
+				  	where
+				  	  um.user_code like concat('%', #{search_value}, '%')
+				  </when>
+				  <when test='search_flag == "name"'>
+				    where
+				  	  um.user_name like concat('%', #{search_value}, '%')
+				  </when>
+				  <when test='search_flag == "phone"'>
+				    where
+				  	  um.user_phone like concat('%', #{search_value}, '%')
+				  </when>
+				</choose> 
+			order by
+				user_code desc
+			limit #{index}, 10;		
+  		</select>
+  		
+  		<!-- 관리자페이지 회원정보 삭제 -->
+  		<delete id="remove" parameterType="Integer">
+  		  delete
+  		  from
+  		    user_mst
+  		  where
+  		    user_code = #{user_code}
+  		</delete>
+  		
+  </mapper>

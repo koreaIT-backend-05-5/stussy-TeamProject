@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/auth/signup.css">
     <title>stussy signin</title>
@@ -20,32 +22,29 @@
                 </div>
                 <section class="signup-info">
                     <div class="signup-info-title">
-                        <p>신규 회원가입</p>  
-                    </div>
-                    <div class="name-box-info">
-                        <form>
-                            <input type="text" placeholder="이름">
-                            <input type="text" placeholder="성">
-                        </form>
+                       <p>신규가입<p>
                     </div>
                     <div class="signup-box-info">
+                    	<p class="email-input-error-message"></p>
+                    	<p class="password-input-error-message"></p>
+                    	
                         <form>
-                            <input type="text" placeholder="이메일">
-                            <input type="text" placeholder="비밀번호">
+                            	<input type="text" name="username" placeholder="이름" class="name-box">
+	                            <input type="email" name="useremail" placeholder="이메일">
+	                            <input type="password" name="password" placeholder="비밀번호">
+		                    <div class="signup-btn-info">
+		                            <button type="button" class="create-click-btn">확인</button>
+		                        <div class="back-to-login-btn">
+		                            <a href="/stussy/signin">로그인으로 돌아가기</a>
+		                        </div>  
+		                    </div>
                         </form>
-                    </div>
-                    <div class="signup-btn-info">
-                        <form action="">
-                            <button class="create-click-btn">확인</button>
-                        </form>
-                        <div class="back-to-login-btn">
-                            <a href="#">로그인으로 돌아가기</a>
-                        </div>  
                     </div>
                 </section>
             </article>
         </main>
     </div>
     <th:block th:replace="/fragment/footer"></th:block>
+<script type="text/javascript" src="/static/js/auth/signup.js"></script>
 </body>
 </html>

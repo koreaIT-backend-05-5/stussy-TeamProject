@@ -21,7 +21,6 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: aqua;
 }
 
 .menu-list {
@@ -29,7 +28,6 @@
     width: 244px;
     height: 567px;
     padding: 0 10px;
-    /* background-color: rebeccapurple; */
 }
 
 .menu-list li {
@@ -50,7 +48,6 @@
     width: 976px;
     height: 567px;
     text-align: left;
-    /* background-color: blue; */
 }
 
 .product-update-content h2 {
@@ -60,12 +57,24 @@
 }
 
 .product-update-content table {
-    width: 600px;
+    width: 690px;
+    height: 400px;
     border: 1px solid #000;
+}
+
+textarea {
+    width: 70%;
+    height: 300px;
 }
 
 .product-update-content tr td {
     border: 1px solid #000;
-    font-size: 11px;
+    font-size: 14px;
     
+}
+
+.product-button {
+    width: 60px;
+    border: 1px solid #141414;
+    height: 25px;
 }

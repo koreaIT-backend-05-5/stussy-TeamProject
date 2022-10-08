@@ -18,7 +18,7 @@ submitButton.onclick = () => {
     
     let selectItem1 = selectOption1.options[selectOption1.selectedIndex].value;
     
-    formData.append("productCategory", selectItem1);
+    formData.append("categoryCode", selectItem1);
     
     
     

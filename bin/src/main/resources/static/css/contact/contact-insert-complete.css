@@ -1,0 +1,76 @@
+#wrap {
+    width: 100%;
+}
+
+.contact-main {
+    width: 1260px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.contact-box {
+    width: 1260px;
+    height: 567px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.menu-list {
+    float: left;
+    width: 244px;
+    height: 567px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    /* background-color: rebeccapurple; */
+}
+
+.menu-list li {
+    text-align: left;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.menu-list li a:hover {
+    text-decoration-line: underline;
+}
+
+/* support 상세 페이지 - contact */
+.contact-content {
+    width: 976px;
+    height: 567px;
+    /* background-color: aqua; */
+}
+
+.insert-title h1 {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.contact-complete {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.contact-complete h3 {
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+.contact-complete p {
+    font-size: 11px;
+    color: gray;
+}

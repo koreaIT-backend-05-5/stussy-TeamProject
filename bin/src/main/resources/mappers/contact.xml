@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.stussy.domain.contact.ContactRepository">
+
+	<select id="getContactList" parameterType="hashmap" resultType="com.project.stussy.domain.contact.Contact">
+		select
+			cm.contact_code,
+			cm.contact_title,
+			um.user_email,
+			cm.create_date,
+			cm.contact_count,
+			(select 
+				count(*) 
+			from 
+				contact_mst cm
+				left outer join user_mst um on(um.user_code = cm.user_code)
+			<choose>
+				<when test='search_flag == "title"'>
+					where
+						cm.contact_title like concat('%', #{search_value}, '%')
+				</when>
+				<when test='search_flag == "titleAndContent"'>
+					where
+						cm.contact_title like concat('%', #{search_value}, '%')
+						or cm.contact_content like concat('%', #{search_value}, '%')
+				</when>
+				<when test='search_flag == "writer"'>
+					where
+						um.user_email like concat('%', #{search_value}, '%')
+				</when>
+			</choose>	
+				
+			) as total_contact_count
+		from
+			contact_mst cm
+			left outer join user_mst um on(um.user_code = cm.user_code)
+		<choose>
+			<when test='search_flag == "title"'>
+				where
+					cm.contact_title like concat('%', #{search_value}, '%')
+			</when>
+			<when test='search_flag == "titleAndContent"'>
+				where
+					cm.contact_title like concat('%', #{search_value}, '%')
+					or cm.contact_content like concat('%', #{search_value}, '%')
+			</when>
+			<when test='search_flag == "writer"'>
+				where
+					um.user_email like concat('%', #{search_value}, '%')
+			</when>
+		</choose>
+		order by
+			contact_code desc
+		limit #{index}, 10;
+		
+	</select>
+
+	<insert id="saveContact" parameterType="com.project.stussy.domain.contact.Contact"
+		useGeneratedKeys="true" keyProperty="contact_code">
+		insert into
+			contact_mst 
+		values(
+			0,
+			#{user_code},
+			#{contact_title},
+			#{contact_content},
+			#{contact_count},
+			now(),
+			now()	
+		);
+	</insert>
+	
+	<select id="getContact" parameterType="hashmap"
+		resultType="com.project.stussy.domain.contact.Contact">
+		select
+			cm.contact_code,
+			cm.contact_title,
+			cm.contact_content,
+			cm.user_code,
+			um.user_email,
+			cm.create_date,
+			cm.contact_count
+		from
+			contact_mst cm
+			left outer join user_mst um on(um.user_code = cm.user_code)
+		where
+			<choose>
+				<when test="flag == null">
+					cm.contact_code = #{contact_code}
+				</when>
+				<when test='flag.equals("pre")'>
+					cm.contact_code = (
+						select
+							max(contact_code)
+						from
+							contact_mst
+						where
+							contact_code &lt; #{contact_code}
+					)
+				</when>
+				<otherwise>
+					cm.contact_code = (
+						select
+							min(contact_code)
+						from
+							contact_mst
+						where
+							contact_code &gt; #{contact_code}
+					)
+				</otherwise>
+			</choose>
+	</select>
+	
+	<update id="countIncrement" parameterType="hashmap">
+		update
+			contact_mst
+		set
+			contact_count = contact_count + 1
+		where
+			<choose>
+			<when test="flag == null">
+				contact_code = #{contact_code}
+			</when>
+			<when test='flag.equals("pre")'>
+				contact_code = (
+					select
+						max(contact_code)
+					from
+						contact_mst
+					where
+						contact_code &lt; #{contact_code}
+				)
+			</when>
+			<otherwise>
+				contact_code = (
+					select
+						min(contact_code)
+					from
+						contact_mst
+					where
+						contact_code &gt; #{contact_code}
+				)
+			</otherwise>
+		</choose>
+	</update>
+	
+	<update id="updateContactByContactCode" parameterType="com.project.stussy.domain.contact.Contact">
+		update
+			contact_mst
+		set
+			contact_title = #{contact_title},
+			contact_content = #{contact_content},
+			update_date = now()
+		where
+			contact_code = #{contact_code}
+	</update>
+	
+	<delete id="remove" parameterType="Integer">
+		delete
+		from
+			contact_mst
+		where
+			contact_code = #{contact_code}
+	</delete>
+</mapper>

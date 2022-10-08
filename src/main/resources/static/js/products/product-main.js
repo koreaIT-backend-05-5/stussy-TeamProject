@@ -4,8 +4,35 @@ const collectionProducts = document.querySelector(".collection-products")
 let page = 1;
 let totalPage = 0;
 let contentCount = 16;
+let categoryCode = 0;
 
-load(page);
+
+setCategoryCode(); 
+	
+
+function setCategoryCode() {
+	let categoryType = getCategoryTypeByUri();
+	
+	
+	load(1);
+}
+
+function getCategoryTypeByUri() {
+	let categoryType = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+	
+	if(categoryType == "shirt") {
+		categoryCode = 1;
+	}else if(categoryType == "pants") {
+		categoryCode = 2;
+	}else if(categoryType == "cap") {
+		categoryCode = 3;
+	}else if(categoryType == "accessory") {
+		categoryCode = 4;
+	}
+	
+	return categoryType;
+}
+
 
 function load(page) {
    
@@ -15,7 +42,8 @@ function load(page) {
       url: `/api/v1/product/list/${page}`, 
       data: {
          "page" : page,
-         "contentCount": contentCount
+         "contentCount": contentCount,
+         "categoryCode": categoryCode
       },
       dataType: "json", 
       success: (response) => {
@@ -44,6 +72,7 @@ function getShopList(productList){
       
       collectionProducts.innerHTML += `
          <li class="collection-product collection-product-${page}">
+         <input type="hidden" value="${product.productCode}">
             <div class="shop-box">
                <div class="product-img">
                   <a>
@@ -59,13 +88,14 @@ function getShopList(productList){
       `;
    });
    
-   const collectionProduct = document.querySelectorAll(`.collection-product-${page}`);
+   const collectionProduct = document.querySelectorAll(`.collection-product`);
    
    console.log("collectionProduct: " + collectionProduct[0].classList)
    for(let i = 0; i < collectionProduct.length; i++){
       
       collectionProduct[i].onclick = () => {
          location.href = "/stussy/detail/" + productList[i].productCode;
+         location.href = "/detail/" + collectionProduct[i].querySelector("input").value;
       }
       
    }
@@ -73,9 +103,7 @@ function getShopList(productList){
 
 }
 
-// console.log("전체 높이: " + collectionProducts.clientHeight) //전체높이
-// console.log("현제 보이는 높이: " + collectionBody.offsetHeight) //바디높이
-// console.log("스크롤 최상단 위치: " + collectionBody.scrollTop) //scrollTOP
+
 body.onscroll = () => {   
    const de = document.documentElement;
    let checkNum = de.offsetHeight - de.clientHeight - de.scrollTop;
@@ -91,3 +119,14 @@ body.onscroll = () => {
       load(page);
    }
 }
+
+//1.
+
+
+
+
+
+
+
+
+

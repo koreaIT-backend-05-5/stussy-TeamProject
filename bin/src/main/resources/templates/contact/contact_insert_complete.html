@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/contact/contact-insert-complete.css">
+    <title>stussy-contact</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+    
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div id="wrap">
+        <div class="contact-main">
+            <h2>CUSTOMER SUPPORT</h2>
+            <div class="contact-box">
+                <nav class="menu-list">
+                    <ul>
+                        <li><a href="#">내 계정</a></li>
+                        <li><a href="#">문의</a></li>
+                        <li><a href="#">배송지연안내</a></li>
+                        <li><a href="#">주문 및 배송정보</a></li>
+                        <li><a href="#">장바구니</a></li>
+                    </ul>
+                </nav>
+                <div class="contact-content">
+                    <div class="insert-title">
+                        <h1>CONTACT US</h1>
+                    </div>
+                    <div class="contact-complete">
+                        <h3>감사합니다!</h3>
+                        <p>문의가 정상적으로 접수 되었습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <th:block th:replace="/fragment/footer"></th:block> 
+</body>
+</html>

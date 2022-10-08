@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		product = Product.builder()
 				.product_code(addProductReqDto.getProductCode())
-				.product_category(addProductReqDto.getProductCategory())
+				.category_code(addProductReqDto.getCategoryCode())
 				.product_name(addProductReqDto.getProductName())
 				.product_price(addProductReqDto.getProductPrice())
 				.product_size(addProductReqDto.getProductSize())
@@ -160,6 +160,7 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.deleteProduct(productCode) > 0;
 	}
 
+//=========================================================================================================
 
 	//shop detail
 	@Override
@@ -201,20 +202,16 @@ public class ProductServiceImpl implements ProductService {
 
 	//shopMain
 	@Override
-	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception { //, String searchFlag, String searchValue
-		int index = (page - 1) * contentCount;
-		
-		//검색부분 
-//		Map<String, Object> map = new HashMap<String, Object>();
-//		map.put("index", index); 
-//		map.put("search_flag", searchFlag);
-//		map.put("search_value", searchValue == null ? "" : searchValue);
+
+	public List<GetShopListRepDto> getShopList(int page, int contentCount, int categoryCode) throws Exception {
+		int index = (page - 1) * 10;
 		
 		List<GetShopListRepDto> list = new ArrayList<GetShopListRepDto>();
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("index", index);
 		map.put("contentCount", contentCount);
+		map.put("category_code", categoryCode);
 		
 		productRepository.getProductShopList(map).forEach(product -> {
 			list.add(product.toShopListDto()); 

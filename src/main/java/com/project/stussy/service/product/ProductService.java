@@ -33,18 +33,8 @@ public interface ProductService {
 	//shop detail 
 	public GetDetailRepDto getDetail(String flag, int productCode) throws Exception; 
 	//shop page
-	public List<GetShopListRepDto> getShopList(int page, int contentCount) throws Exception; 
-//, String searchFlag, String searchValue
-	
-	
-	
-//	public GetProductResponesDto getProduct(String flag, int productCode) throws Exception;
-//	
-//	
-//	public List<GetProductListDto> getProductDetail(int productCode) throws Exception;
- 
 
-	
+	public List<GetShopListRepDto> getShopList(int page, int contentCount, int categoryCode) throws Exception; 
 	
 	
 }

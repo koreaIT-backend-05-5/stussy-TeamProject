@@ -78,7 +78,7 @@ signupBtn.onclick = () => {
       success: (response) => {
          if(response.data){
          alert("회원가입 완료.");
-         location.replace("/signin");            
+         location.replace("/auth/signin");            
          }
       },
       error:(error) => {
