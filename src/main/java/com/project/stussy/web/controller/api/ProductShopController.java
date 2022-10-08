@@ -1,4 +1,4 @@
-package com.project.stussy.web.controller;
+package com.project.stussy.web.controller.api;
 
 import java.util.List;
 

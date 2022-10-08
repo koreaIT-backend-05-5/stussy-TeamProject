@@ -33,6 +33,9 @@ public class PageController {
 		return "main/main";
 	}
 
-
+	@GetMapping("/account")
+	public String loadAccountPage() {
+		return "account/account-main";
+	}
 }
 
