@@ -39,5 +39,30 @@ public class PageController {
 		return "account/account-main";
 	}
 	
+	//===========결제 관련 ===========//
+	@GetMapping("/import")
+	public String loadImport() {
+		return "/import";
+	}
+	@GetMapping("/buy")
+	public String loadBuy() {
+		return "buy/buyPage";
+	}
+	@GetMapping("/checkouts")
+	public String loadcheckouts() {
+		return "checkouts/checkouts";
+	}
+	@GetMapping("/checkoutscard")
+	public String loadcheckoutscard() {
+		return "checkouts/checkouts_card";
+	}
+	@GetMapping("/contactinsert")
+	public String loadcontactinsert() {
+		return "contact/contact_insert";
+	}
+	
+	//==========관리자 페이지 관련 =======//
+	
+	
 } 
 

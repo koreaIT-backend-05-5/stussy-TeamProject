@@ -20,4 +20,7 @@ public interface UserRepository {
 	//관리자페이지 회원정보 삭제
 	public int remove(int user_code) throws Exception; 
 	
+	//임시비밀번호로 메일 보내기
+	public int updatePassword(Map<String, String> map) throws Exception;
+		
 }

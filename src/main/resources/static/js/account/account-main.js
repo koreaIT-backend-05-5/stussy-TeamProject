@@ -2,7 +2,7 @@ const menuListBtn = document.querySelector(".menu-list");
 
 setManagerButtons();
 
-
+console.log(user);
 
 function setManagerButtons() {
 	

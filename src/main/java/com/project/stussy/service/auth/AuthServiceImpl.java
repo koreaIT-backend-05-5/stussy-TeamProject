@@ -1,5 +1,9 @@
 package com.project.stussy.service.auth;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.stussy.domain.user.UserRepository;
@@ -24,5 +28,14 @@ public class AuthServiceImpl implements AuthService{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	//비밀번호변경
+	@Override
+		public boolean updatePassword(String email, String password) throws Exception {
+		System.out.println(password);
+		Map<String, String> map = new HashMap<String, String>();
+			map.put("user_email", email);
+			map.put("user_password", new BCryptPasswordEncoder().encode(password));
+			return userRepository.updatePassword(map) > 0;
+		}
 
 }
