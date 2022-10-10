@@ -17,5 +17,8 @@ public interface UserRepository {
 	//관리자페이지-user
 	public List<User> getUserList(Map<String, Object> map) throws Exception; 
 	
+	//임시비밀번호로 메일 보내기
+	public int updatePassword(Map<String, String> map) throws Exception;
+	
 		
 }

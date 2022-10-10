@@ -34,5 +34,20 @@ public class MailRestController {
 		return ResponseEntity.ok(new CMRespDto<>(1, "success", mail));
 		
 	}
+	
+	@PostMapping("/random/password")
+	public ResponseEntity<?> passowrdSendMail(String email){
+		String randomPassword = null;
+		
+		try {
+			randomPassword = mailService.getRamdomPassword(email);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", randomPassword));
+		}
+		return ResponseEntity.ok(new CMRespDto<>(1, "success", randomPassword));
+		
+	}
+	
 
 }

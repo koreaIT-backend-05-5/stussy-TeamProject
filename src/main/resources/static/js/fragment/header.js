@@ -17,8 +17,6 @@ subbox.onmouseleave = () => {
 }
 
 
-
-
 function setCategoryTagClickEvent() {
 	const categoryTagItems = document.querySelectorAll(".subbox-children a");
 	
@@ -128,9 +126,6 @@ body.onscroll = () => {
 }
 
 */
-
-
-
 
 
 function getPrincipal() {
