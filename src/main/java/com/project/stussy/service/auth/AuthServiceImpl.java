@@ -28,6 +28,7 @@ public class AuthServiceImpl implements AuthService{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
 	//비밀번호변경
 	@Override
 		public boolean updatePassword(String email, String password) throws Exception {

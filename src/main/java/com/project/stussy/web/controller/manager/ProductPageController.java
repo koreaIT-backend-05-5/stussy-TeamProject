@@ -1,4 +1,4 @@
-package com.project.stussy.web.controller;
+package com.project.stussy.web.controller.manager;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

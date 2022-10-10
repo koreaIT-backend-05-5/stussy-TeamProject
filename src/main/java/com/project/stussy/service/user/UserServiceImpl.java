@@ -11,11 +11,9 @@ import com.project.stussy.domain.user.UserRepository;
 import com.project.stussy.web.dto.user.GetUserListDto;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class UserServiceImpl implements UserService {
 	
 	private final UserRepository userRepository;

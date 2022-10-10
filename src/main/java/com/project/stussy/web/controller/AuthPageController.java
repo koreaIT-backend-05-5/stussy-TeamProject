@@ -5,18 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class PageController {
-	
-	
-	@GetMapping("/main")
-	public String loadmain() {
-		return "main/main";
-	}
-	
-	@GetMapping("/account")
-	public String loadAccountPage() {
-		return "account/account-main";
-	}
-	
-} 
+@RequestMapping("/auth")
+public class AuthPageController {
 
+	@GetMapping("/signin")
+	public String loadSignin() {
+		return "auth/signin";
+	}
+	@GetMapping("/signup")
+	public String loadSignup() {
+		return "auth/signup";
+	}
+}

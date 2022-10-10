@@ -5,8 +5,6 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import lombok.Data;
-
 @Mapper
 public interface UserRepository {
 	//회원가입

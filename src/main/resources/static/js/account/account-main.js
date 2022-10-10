@@ -38,7 +38,7 @@ function setLogoutButtonClickEvent(logoutBtn) {
 
 function setManagerButtonClickEvent(managerBtn) {
 	managerBtn.onclick = () => {
-				location.href = "/manager/main";
+				location.href = "/manager/customer";
 				
 	}
 	

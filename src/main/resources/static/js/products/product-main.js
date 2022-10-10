@@ -94,8 +94,8 @@ function getShopList(productList){
    for(let i = 0; i < collectionProduct.length; i++){
       
       collectionProduct[i].onclick = () => {
-         location.href = "/stussy/detail/" + productList[i].productCode;
-         location.href = "/detail/" + collectionProduct[i].querySelector("input").value;
+         location.href = "/product/detail/" + productList[i].productCode;
+         location.href = "/product/detail/" + collectionProduct[i].querySelector("input").value;
       }
       
    }
