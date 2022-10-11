@@ -60,7 +60,7 @@ function getContact(contact) {
 
 function new_window() {
     window.open(
-      "/manager/mail/send",
+      "/contact/mail/send",
       "mail-send",
       "width=1000, height=600");
 }

@@ -22,6 +22,12 @@ public class UserContactPageController {
 		return "contact/contact_insert_complete";
 	}
 	
-
+	// 문의사항 답변하기
+	@GetMapping("/mail/send")
+	public String sendMail() {
+		return "mail/contact_mail_insert";
+	}
+	
+	
 
 }
