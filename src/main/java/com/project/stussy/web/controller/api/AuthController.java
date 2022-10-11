@@ -10,6 +10,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +34,7 @@ public class AuthController {
 	private final AuthService authService;
 	
 	//이메일 체크
-	@GetMapping("/signup/validation/useremail")
+	@GetMapping("/{requsetType}/validation/useremail") //{requsetType}: 내가원하는 아무 값을 넣을 수 있다.
 	public ResponseEntity<?> checkUseremail(@Valid UseremailCheckReqDto useremailCheckReqDto, BindingResult bindingResult) {
 		
 		if(bindingResult.hasErrors()) {
@@ -90,5 +91,21 @@ public class AuthController {
 		return ResponseEntity.ok(new CMRespDto<>(1,"success load", principalDetails.getUser()));
 	}
 	
+	//이메일 비밀번호 변경 
+	@PutMapping("/password")
+	public ResponseEntity<?> checkEmail(String email, String password) {
+		boolean result = false;
+		
+		try {
+			result = authService.updatePassword(email, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1,"null", result));
+		}
+		
+		return ResponseEntity.ok(new CMRespDto<>(1,"success load", result));
+			
+		
+	}
 
 }

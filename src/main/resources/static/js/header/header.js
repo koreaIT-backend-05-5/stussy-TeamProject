@@ -1,3 +1,5 @@
+const menuLi = document.querySelectorAll(".category");
+const subbox = document.querySelector(".subbox");
 const topRight = document.querySelector(".top-right");
 
 let user = getPrincipal();
@@ -5,16 +7,25 @@ let user = getPrincipal();
 
 setManagerButtons();
 
+menuLi[0].onmouseover = () => {
+	subbox.classList.remove("subbox-visible");
+}
+
+subbox.onmouseleave = () => {
+	subbox.classList.add("subbox-visible");
+}
 
 
 
+
+/*
 function getPrincipal() {
 	let user = null;
 	
 	$.ajax({
 		async: false,
 		type: "get",
-		url: "/api/v1/auth/principal",
+		url: "/api/v1/stussy/principal",
 		dataType: "json",
 		success: (response) => {
 			user = response.data;
@@ -66,6 +77,7 @@ function setManagerButtons() {
 function setLogoutButtonClickEvent(logoutBtn) {
 	logoutBtn.onclick = () => {
 				location.href = "/logout";
+				
 	}
 	
 }
@@ -77,4 +89,4 @@ function setManagerButtonClickEvent(managerBtn) {
 	}
 	
 }
-
+*/

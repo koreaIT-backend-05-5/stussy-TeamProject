@@ -19,9 +19,10 @@
                 <nav class="menu-list">
                     <ul>
                         <li><a href="#">회원관리</a></li>
-                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#" class="product-update-btn">상품등록</a></li>
+                        <li><a href="#" class="product-list-btn">상품목록</a></li>
                         <li><a href="#">주문목록관리</a></li>
-                        <li><a href="#">문의사항관리</a></li>
+                        <li><a href="#" class="contact-btn">문의사항관리</a></li>
                     </ul>
                 </nav>
                 <div class="manager-content">
@@ -38,44 +39,48 @@
                     </div>
                         <article>
                             <table>
-                                <tr>
-                                    <th><input type="checkbox"></th>
-                                    <th>번호</th>
-                                    <th>아이디</th>
-                                    <th>이름</th>
-                                    <th>이메일</th>
-                                    <th>휴대폰</th>
-                                    <th>가입일</th>
-                                    <th>관리</th>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>1</td>
-                                    <td>zxcxv10</td>
-                                    <td>장원영</td>
-                                    <td>zxcv10@nanver.com</td>
-                                    <td>010-2028-3850</td>
-                                    <td>2022-09-01</td>
-                                    <td><button>삭제</button></td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>번호</th>
+                                        <th>이름</th>
+                                        <th>이메일</th>
+                                        <th>휴대폰</th>
+                                        <th>가입일</th>
+                                        <th>관리</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="user-content-list">
+                                    <tr class="user-content">
+                                        <td><input type="checkbox"></td>
+                                        <td>1</td>
+                                        <td>장원영</td> 
+                                        <td>zxcv10@nanver.com</td>
+                                        <td>010-2028-3850</td>
+                                        <td>2022-09-01</td>
+                                        <td><button type="button" class="delete-button">삭제</button></td>
+                                    </tr>
+                                </tbody>
                             </table>
-                             <div class="list-btn">
-                                <div class="page-buttons">
-                                    <button type="button" class="page-button">&lt;</button>
-                                    <button type="button" class="page-button">1</button>
-                                    <button type="button" class="page-button">2</button>
-                                    <button type="button" class="page-button">3</button>
-                                    <button type="button" class="page-button">4</button>
-                                    <button type="button" class="page-button">5</button>
-                                    <button type="button" class="page-button">&gt;</button>
-                                </div>
-                            </div>
                         </article>
+                        <div class="list-btn">
+                            <div class="page-buttons">
+                                <button type="button" class="page-button">&lt;</button>
+                                <button type="button" class="page-button">1</button>
+                                <button type="button" class="page-button">2</button>
+                                <button type="button" class="page-button">3</button>
+                                <button type="button" class="page-button">4</button>
+                                <button type="button" class="page-button">5</button>
+                                <button type="button" class="page-button">&gt;</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
     <th:block th:replace="/fragment/footer"></th:block>
+    <script type="text/javascript" src="/static/js/signup/manager-user.js"></script>
 </body>
 </html>

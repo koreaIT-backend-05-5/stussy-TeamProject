@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/manger/product-update.css">
+    <title>product-write</title>
+    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="/fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="/fragment/header"></th:block>
+    <div>
+        <div class="product-update-main">
+            <h2>관리자페이지</h2>
+            <div class="product-update-box">
+                <nav class="menu-list">
+                    <ul>
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#" class="product-update-btn">상품등록</a></li>
+                        <li><a href="#" class="product-list-btn">상품목록</a></li>
+                        <li><a href="#">주문목록관리</a></li>
+                        <li><a href="#" class="contact-btn">문의사항관리</a></li>
+                    </ul>
+                </nav>
+                <div class="product-update-content">
+                    <h2>상품수정</h2>
+                    <form  enctype="multipart/form-data">
+                        <table class="table">
+                            <tr>
+                                <td>카테고리</td>
+                                <td>
+                                    <select class="product_category">
+                                        <option value="ALL">ALL</option>
+                                        <option value="SHIRT">SHIRT</option>
+                                        <option value="PANTS">PANTS</option>
+                                        <option value="CAP">CAP</option>
+                                        <option value="ACCESSORY">ACCESSORY</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>사이즈</td>
+                                <td>
+                                    <select class="product_size">
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>상품명</td>
+                                <td><input type="text" name="productName" id="productName"></td>
+                            </tr>
+                        
+                            <tr>
+                                <td>가격</td>
+                                <td><input type="text" name="productPrice" id="productPrice"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>상품설명</td>
+                                <td>
+                                    <textarea id="ir1" name="productExplanation"></textarea>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td>상품이미지</td>
+                                <td><input type="file" name="file" multiple="multiple" accept=".jpg, .jpeg, .png, .gif"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <button type="button" class="product-button submit" >수정</button>
+                                    <button type="button" class="product-button cancel" >취소</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <th:block th:replace="/fragment/footer"></th:block>
+    <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
+    <script type="text/javascript" src="/static/js/product/product-modify.js"></script>
+</body>
+</html>

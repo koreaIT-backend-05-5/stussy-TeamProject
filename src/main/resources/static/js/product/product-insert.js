@@ -18,7 +18,7 @@ submitButton.onclick = () => {
     
     let selectItem1 = selectOption1.options[selectOption1.selectedIndex].value;
     
-    formData.append("productCategory", selectItem1);
+    formData.append("categoryCode", selectItem1);
     
     
     
@@ -49,7 +49,6 @@ submitButton.onclick = () => {
 			alert(response.data + "번 상품등록 완료");
 			location.replace("/manager/product-list");
 
-		
 		},
 		error: (error) => {
 			

@@ -19,16 +19,14 @@
             <div class="product-update-box">
                 <nav class="menu-list">
                     <ul>
-                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#" class="user-list-btn">회원관리</a></li>
                         <li><a href="#" class="product-update-btn">상품등록</a></li>
                         <li><a href="#" class="product-list-btn">상품목록</a></li>
                         <li><a href="#">주문목록관리</a></li>
                         <li><a href="#" class="contact-btn">문의사항관리</a></li>
                     </ul>
                 </nav>
-    </div>
-
-                 
+             </div>
                 <div>
                     <h2>상품목록</h2>
                     <form enctype="multipart/form-data" method="post">
@@ -46,38 +44,38 @@
                                 </tr>
                             </thead>
                             <tbody>
-	                            <tr  class="product-row">
-	                                <td><input type="checkbox"></td>
-	                                <td>1</td>
-	                                <td class="product-img">123</td>
-	                                <td>PANTS</td>
-	                                <td>청바지</td>
-	                                <td>M</td>
-	                                <td>청바지</td>
-	                                <td>
-	                                    <button type="button" class="detail-button modify">수정</button>
-	                                    <button type="button" class="detail-button delete">삭제</button>
-	                                </td>
-	                            </tr>
+                               <tr  class="product-row">
+                                   <td><input type="checkbox"></td>
+                                   <td>1</td>
+                                   <td class="product-img">123</td>
+                                   <td>PANTS</td>
+                                   <td>청바지</td>
+                                   <td>M</td>
+                                   <td>청바지</td>
+                                   <td>
+                                       <button type="button" class="detail-button modify">수정</button>
+                                       <button type="button" class="detail-button delete">삭제</button>
+                                   </td>
+                               </tr>
                             </tbody>
                         </table>
                          <div class="list-footer">
-					        <div class="page-buttons">
-					            <button type="button" class="page-button">&lt;</button>
-					            <button type="button" class="page-button">1</button>
-					            <button type="button" class="page-button">2</button>
-					            <button type="button" class="page-button">3</button>
-					            <button type="button" class="page-button">4</button>
-					            <button type="button" class="page-button">5</button>
-					            <button type="button" class="page-button">&gt;</button>
-					        </div>
-			            </div>
+                       <div class="page-buttons">
+                           <button type="button" class="page-button">&lt;</button>
+                           <button type="button" class="page-button">1</button>
+                           <button type="button" class="page-button">2</button>
+                           <button type="button" class="page-button">3</button>
+                           <button type="button" class="page-button">4</button>
+                           <button type="button" class="page-button">5</button>
+                           <button type="button" class="page-button">&gt;</button>
+                       </div>
+                     </div>
                     </form>
                 </div>
+    </div>
     
     <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
     <script type="text/javascript" src="/static/js/product/product-list.js"></script>
-    
     <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>

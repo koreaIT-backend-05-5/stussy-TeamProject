@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class AddProductReqDto {
 	private int productCode;
-	private String productCategory;
+	private int categoryCode;
 	private String productName;
 	private String productPrice;
 	private String productExplanation;

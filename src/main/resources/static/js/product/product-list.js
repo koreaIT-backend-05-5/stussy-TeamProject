@@ -38,7 +38,7 @@ function getList(list){
 				<td><input type="checkbox"></td>
                 <td>${product.productCode}</td>
                 <td><img class="product-img" src="/image/product/${product.fileName}"></td>
-                <td>${product.productCategory}</td>
+                <td>${product.categoryName}</td>
                 <td>${product.productPrice}</td>
                 <td>${product.productSize}</td>
                 <td>${product.productExplanation}</td>
@@ -82,19 +82,20 @@ function getList(list){
 			location.href = `/manager/product-modify/${list[i].productCode}`
 		}
 	}
-	
+}	
 	
 function getPageNumbers(totalProductCount) {
 	const pageButtons = document.querySelector(".page-buttons");
+
 	
-	const totalPageCount = totalProductCount % 10 == 0 ? totalProductCount / 10 : (totalProductCount / 10) + 1;
+	const totalPageCount = totalProductCount % 10 == 0 ? totalProductCount / 10 : Math.floor(totalProductCount / 10) + 1;
 	
 	const startIndex = nowPage % 5 == 0 ? nowPage - 4 : nowPage - (nowPage % 5) + 1;
 	const endIndex = startIndex + 4 <= totalPageCount ? startIndex + 4 : totalPageCount;
 	
 	console.log(
 		`
-			totalPageCount: ${totalProductCount}
+			totalPageCount: ${totalPageCount}
 			startIndex: ${startIndex}
 			endIndex: ${endIndex}
 		`
@@ -115,16 +116,17 @@ function getPageNumbers(totalProductCount) {
 		`
 	}
 	
-	if(endIndex != totalProductCount) {
+	if(endIndex != totalPageCount) {
 		pageButtons.innerHTML += `
 			<button type="button" class="page-button next">&gt;</button>
 		`;
 	}
 	
-	}
 	
 	
-	const pageNumberButtons = document.querySelectorAll(".page-button");
+// 다음 페이지로 넘기기
+const pageNumberButtons = document.querySelectorAll(".page-button");
+
 	pageNumberButtons.forEach(button => {
 		if(button.textContent != "<" && button.textContent != ">"){
 			button.onclick = () => {

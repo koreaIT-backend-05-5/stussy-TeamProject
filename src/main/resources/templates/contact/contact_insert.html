@@ -9,7 +9,6 @@
     <title>stussy-contact</title>
     <th:block th:replace="/fragment/head"></th:block>
     <th:block th:replace="/fragment/footer-head"></th:block>
-    
 </head>
 <body>
     <th:block th:replace="/fragment/header"></th:block>
@@ -20,7 +19,7 @@
                 <nav class="menu-list">
                     <ul>
                         <li><a href="#">내 계정</a></li>
-                        <li><a href="/contact/addition">문의</a></li>
+                        <li><a href="#">문의</a></li>
                         <li><a href="#">배송지연안내</a></li>
                         <li><a href="#">주문 및 배송정보</a></li>
                         <li><a href="#">장바구니</a></li>
@@ -35,34 +34,28 @@
                             <table class="contact-menu">
                                 <tr class="contact-row">
                                     <td colspan="2">
-                                        <input type="text" class="contactName catact-name" name="contactName" placeholder="이름">
+                                        <input type="text" class="catact-name" name="contactName" placeholder="이름">
                                     </td>
                                 </tr>
                                 <tr class="contact-row">
-                                    <td><input type="text" class="contactEmail contact-second email" name="contactEmail" placeholder="이메일"></td>
-                                    <td><input type="text" class="contact-second ordernum" name="orderNum" placeholder="주문 번호"></td>
+                                    <td><input type="email" class="contact-second email" name="contactEmail" placeholder="이메일"></td>
+                                    <td><input type="text" class="contact-second order-no" name="contactOrderNo" placeholder="주문번호"></td>
+                                </tr>
                                 <tr class="contact-row">
                                     <td colspan="2">
-                                        <select class="contactTitle contact-title" name="contactTitle">
-                                            <option value="문의사항을 선택해주세요" selected="selected">문의사항을 선택해주세요</option>
-                                            <option value="주문 상태">주문 상태</option>
-                                            <option value="반품">반품</option>
-                                            <option value="주소 변경">주소 변경</option>
-                                            <option value="배송 조회">배송 조회</option>
-                                            <option value="오류 문의">오류 문의</option>
-                                            <option value="기타">기타</option>
-                                        </select>
+                                        <input type="text" class="contact-title" name="contactTitle" placeholder="제목을 입력해주세요">
                                     </td>
                                 </tr>
                                 <tr class="contact-row">
                                     <td colspan="2">
-                                        <textarea class="contactContent" name="contactContent" id="ir1" placeholder="내용을 입력해주세요"></textarea>
+                                        <textarea name="contactContent" id="ir1" placeholder="내용을 입력해주세요"></textarea>
                                     </td>
                                 </tr>
                                 <tr class="contact-row">
                                     <td colspan="2">
                                         <div class="contact-submit">
                                             <button type="button" class="contact-button submit">확인</button>
+                                            <button type="button" class="contact-button cancel">취소</button>
                                             <!-- <button type="button" class="contact-button cancel">취소</button> -->
                                         </div>
                                     </td>
@@ -92,7 +85,7 @@
             </div>
         </div>
     </div>
-    <th:block th:replace="/fragment/footer"></th:block>
+    <th:block th:replace="/fragment/footer"></th:block> 
     <script type="text/javascript" src="/static/js/contact/contact-insert.js"></script>
 </body>
 </html>

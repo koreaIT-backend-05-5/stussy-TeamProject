@@ -14,11 +14,11 @@
     <th:block th:replace="/fragment/header"></th:block>
     <div class="wrap">
         <!-- contents -->
-        <div class="product-section-area">
+        <article class="product-section-area">
             <div class="section-product">
                 <div class="product-imgs">
-                    <img src="/images/b-tee01.jpg" alt="tee02">
-                    <img src="/images/f-tee01.jpg" alt="tee02">
+                    <img src="/static/images/b-tee01.jpg" alt="tee02">
+                    <img src="/static/images/f-tee01.jpg" alt="tee02">
                 </div>
                 <div class="product-information">
                     <h1 class="product-title">GUMBALL TEE</h1>
@@ -27,35 +27,27 @@
                         <span>₩62,000</span>
                     </div>
                     <div class="swich">
-                        <img src="/images/b-tee01.jpg" alt="tee01">
-                        <img src="/images/tee02.jpg" alt="tee02">
-                        <img src="/images/tee03.jpg"alt="tee03">
+                        <img src="/static/images/b-tee01.jpg" alt="tee01">
+                        <img src="/static/images/tee02.jpg" alt="tee02">
+                        <img src="/static/images/tee03.jpg"alt="tee03">
                     </div>
                     <div class="product-size">
-                        <p>S</p>
-                        <p>M</p>
-                        <p>L</p>
-                        <p>XL</p>
-                        <p>XXL</p>
+                        <button type="button" class="size-button">S</button>
+                        <button type="button" class="size-button">M</button>
+                        <button type="button" class="size-button">L</button>
+                        <button type="button" class="size-button">XL</button>
+                        <button type="button" class="size-button">XXL</button>
                     </div>
                     <div class="product-button">
-                        <button type="submit" class="add-btn">
-                            <span class="add-btn-span">ADD TO BAG</span>
+                        <button type="submit" class="add-btn" href="/account">
+                            <a href="/account"><span class="add-btn-span">ADD TO BAG</span></a>
                         </button>
                         <button type="submit" class="buy-btn">
-                            <span class="buy-btn-span">BUY NOW</span>
+                            <a href="/buy"><span class="buy-btn-span">BUY NOW</span></a>
                         </button>
                     </div>
                     <div class="product-details">
                         <p class="tee-kind">Shortsleeve crewneck tee.</p>
-                        <strong>PRODUCT DETAILS</strong>
-                        <p>- Screenprinted graphics</p>
-                        <p>- Ribbed collar</p>
-                            <br>
-                            <p>100% Cotton</p>
-                            <p>imported</p>
-                            <br>
-                        <strong>MORE TEE</strong>
                     </div>
                 </div>
             </div>
@@ -66,36 +58,38 @@
                 <ul class="releted-products">
                     <li class="releted-product">
                         <div>
-                            <img src="/images/tee02.jpg" alt="tee02">                    
+                            <img src="/static/images/tee02.jpg" alt="tee02">                    
                             <a><p>GUMBALL TEE</p></a>
                             <p>₩62,000</p>
                         </div>
                     </li>
                     <li class="releted-product">
                         <div>
-                            <img src="/images/tee03.jpg" alt="tee02">                    
+                            <img src="/static/images/tee03.jpg" alt="tee02">                    
                             <a><p class="card-title">GUMBALL TEE</p></a>
                             <p>₩62,000</p>
                         </div>
                     </li>
                     <li class="releted-product">
                         <div>
-                            <img src="/images/b-tee01.jpg" alt="tee02">                    
+                            <img src="/static/images/b-tee01.jpg" alt="tee02">                    
                             <a><p class="card-title">GUMBALL TEE</p></a>
                             <p>₩62,000</p>
                         </div>
                     </li>
                     <li class="releted-product">
                         <div>
-                            <img src="/images/b-tee01.jpg" alt="01">                    
+                            <img src="/static/images/b-tee01.jpg" alt="01">                    
                             <a><p class="card-title">GUMBALL TEE</p></a>
                             <p>₩62,000</p>
                         </div>
                     </li>
                 </ul>
             </div>
-        </div>
+        </article>
     </div>
     <th:block th:replace="/fragment/footer"></th:block>
+   <script type="text/javascript" src="/static/js/product/product-detail.js"></script>
+	<script type="text/javascript" src="/static/js/products/product-detail.js"></script>
 </body>
 </html>

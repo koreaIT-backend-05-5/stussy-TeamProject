@@ -11,9 +11,10 @@ import lombok.Data;
 
 @Builder
 @Data
-public class GetProductResponesDto {
+public class GetProductResponesDto { //원영이형
 	private int productCode;
 	private String productCategory;
+	private String categoryName;
 	private String productName;
 	private String productPrice;
 	private String productSize;

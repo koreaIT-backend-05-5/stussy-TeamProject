@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ProductRepository {
 	
+	
+	//manager
 	//상품,이미지 등록
 	public int saveProduct(Product product) throws Exception;
 	public int saveProductFiles(List<ProductFile> list) throws Exception;
@@ -15,6 +17,7 @@ public interface ProductRepository {
 	//<<조회>>
 	//1. 상품 조회
 	public List<Product> getProductList(Map<String, Object> map) throws Exception;
+
 	//2. 수정 할 상품 조회
 	public Product getProductDetail(int product_code) throws Exception;
 	
@@ -25,5 +28,11 @@ public interface ProductRepository {
 	public int deleteProduct(int product_code) throws Exception;
 
 
+	//user
+	//상품 디테일페이지 
+	public List<Product> getProductDetailList(Map<String, Object> map) throws Exception; 
+	//shop페이지 조회
+	public List<Product> getProductShopList(Map<String, Integer> map) throws Exception; 
 	
+
 }

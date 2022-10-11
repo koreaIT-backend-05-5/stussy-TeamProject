@@ -34,11 +34,11 @@ function getModify(productDetailData){
             <td>카테고리</td>
             <td>
                 <select class="product_category" >
-                    <option value="ALL">ALL</option>
-                    <option value="SHIRT">SHIRT</option>
-                    <option value="PANTS">PANTS</option>
-                    <option value="CAP">CAP</option>
-                    <option value="ACCESSORY">ACCESSORY</option>
+                    <option value="0">ALL</option>
+                    <option value="1">SHIRT</option>
+                    <option value="2">PANTS</option>
+                    <option value="3">CAP</option>
+                    <option value="4">ACCESSORY</option>
                 </select>
             </td>
         </tr>
@@ -133,7 +133,7 @@ submitButton.onclick = () => {
 		formData.append("productPrice",productPriceInput.value);
 		formData.append("productExplanation",textArea.value);
 		*/
-		formData.append("productCategory",selectCategoryData);
+		formData.append("categoryCode",selectCategoryData);
 		formData.append("productSize",selectSizeData);
 		
 		formData.forEach((v, k) => {

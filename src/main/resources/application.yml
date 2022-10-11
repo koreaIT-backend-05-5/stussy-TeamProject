@@ -28,12 +28,11 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB   
       
-    
   mail:
     host: smtp.naver.com 
     port: 465
-    username: izx43@naver.com
-    password: wjs952578!
+    username: zxcxv10@naver.com
+    password: aodrn12@@
    
     properties:
       mail.smtp.auth: true

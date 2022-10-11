@@ -11,7 +11,6 @@ submitButton.onclick = () => {
 		"title" : title.value,
 		"message": message.value
 	}
-	
 	$.ajax({
 		async: false,
 		type: "post",
@@ -26,7 +25,6 @@ submitButton.onclick = () => {
 			console.log(error);
 		}	
 	});
-	
 	
 }
 

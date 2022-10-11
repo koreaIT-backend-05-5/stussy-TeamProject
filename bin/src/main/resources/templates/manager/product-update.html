@@ -20,36 +20,71 @@
                 <nav class="menu-list">
                     <ul>
                         <li><a href="#">회원관리</a></li>
-                        <li><a href="#">상품관리</a></li>
+                        <li><a href="#" class="product-update-btn">상품등록</a></li>
+                        <li><a href="#" class="product-list-btn">상품목록</a></li>
                         <li><a href="#">주문목록관리</a></li>
-                        <li><a href="#">문의사항관리</a></li>
+                        <li><a href="#" class="contact-btn">문의사항관리</a></li>
                     </ul>
                 </nav>
                 <div class="product-update-content">
                     <h2>상품등록</h2>
-                    <form id="form01" name="form01" enctype="multipart/form-data" method="post">
-                        <table>
-                            <tr>
-                                <td>상품명</td>
-                                <td><input type="text" name="productName" id="productName"></td>
-                            </tr>
+                    <form  enctype="multipart/form-data">
+                        <table class="table">
+                            <tr class="inputArea">
+                                <tr>
+                                    <td>카테고리</td>
+                                    <td>
+                                        <select class="product_category">
+                                            <option value="ALL">ALL</option>
+                                            <option value="SHIRT">SHIRT</option>
+                                            <option value="PANTS">PANTS</option>
+                                            <option value="CAP">CAP</option>
+                                            <option value="ACCESSORY">ACCESSORY</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>사이즈</td>
+                                    <td>
+                                        <select class="product_size">
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>상품명</td>
+                                    <td><input type="text" name="productName" id="productName"></td>
+                                </tr>
+                                
+                            
                             <tr>
                                 <td>가격</td>
                                 <td><input type="text" name="productPrice" id="productPrice"></td>
                             </tr>
                             <tr>
                                 <td>상품설명</td>
-                                <td><textarea name="productDesc" id="productDesc" cols="60" rows="10"></textarea></td>
+                                <td>
+                                    <textarea id="ir1" name="productExplanation"></textarea>
+                                </td>
                             </tr>
                             <tr>
                                 <td>상품이미지</td>
-                                <td><input type="file" name="productPhoto" id="productPhoto"></td>
+                                <td><input id= "ProductImg" type="file"name="file" multiple="multiple" accept=".jpg, .jpeg, .png, .gif"></td>
                             </tr>
+                            
+                            
                             <tr>
                                 <td colspan="2" align="center">
-                                    <input type="button" value="등록" id="add-btn">
-                                    <input type="button" value="목록" id="list-btn">
+                               	 	<button type="button" class="product-button submit">등록</button>
+                                	<button type="button" class="product-button cancel" onclick="location.href='/manager/product-list';" >목록</button>
                                 </td>
+                                
+                              
                             </tr>
                         </table>
                     </form>
@@ -57,6 +92,8 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
+    <script type="text/javascript" src="/static/js/product/product-insert.js"></script>
     <th:block th:replace="/fragment/footer"></th:block>
 </body>
 </html>
