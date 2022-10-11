@@ -12,34 +12,38 @@
 </head>
 <body>
     <th:block th:replace="/fragment/header"></th:block>
-
     <div id="wrap">
-        <div class="account-main">
+        <div class="contact-main">
             <h2>ACCOUNT DASHBOARD</h2>
-            <div class="account-box">
+            <div class="contact-box">
                 <nav class="menu-list">
                     <ul>
                         <li><a href="#">내 계정</a></li>
                         <li><a href="#">주소록</a></li>
-                        <li><a href="#">문의</a></li>
+                        <li><a href="/contact/addition">문의</a></li>
                         <li><a href="#" class="logout-btn">로그아웃</a></li>
                     </ul>
                 </nav>
-                <div class="account-content">
-		            <p>계정 정보</p>
-					<p>장원영</p>
-					<p>기본 주소</p>
-					<p>장원영</p>
-					<p>대한민국</p>
-					<p>주소 수정하기</p>
-					<p>주문기록</p>
-					<p>You have not placed any orders yet.</p>
-					
-                </div>
+                <article class="account-content">
+                    <div class="account-user-info account-info">
+                        <h1>계정 정보</h1>
+                        <p>전주홍</p>
+                    </div>
+                    <div class="account-address-info account-info">
+                        <h1>기본 주소</h1>
+                    </div>
+                    <div class="account-address-update account-info">
+                        <button type="button">주소 수정하기</button>
+                    </div>
+                    <div class="account-order-info account-info">
+                        <h1>주문 기록</h1>
+                        <p>You have not placed any orders yet.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/static/js/account/account-main.js"></script>
-    <th:block th:replace="/fragment/footer"></th:block>
+	<script type="text/javascript" src="/static/js/account/account-main.js"></script>
+	<th:block th:replace="/fragment/footer"></th:block>  
 </body>
 </html>

@@ -15,12 +15,10 @@ import com.project.stussy.web.dto.CMRespDto;
 import com.project.stussy.web.dto.user.GetUserListDto;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/v1/manager")
 @RequiredArgsConstructor
-@Slf4j
 public class UserListController {
 	
 	private final UserService userService; 

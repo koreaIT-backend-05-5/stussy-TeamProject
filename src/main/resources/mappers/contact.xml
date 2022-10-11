@@ -51,6 +51,56 @@
 					um.user_email like concat('%', #{search_value}, '%')
 			</when>
 		</choose>
+		union
+		select
+			cm.contact_code,
+			cm.contact_title,
+			cm.user_email,
+			cm.create_date,
+			cm.contact_count,
+			(select 
+				count(*) 
+			from 
+				contact_mst cm
+			<choose>
+				<when test='search_flag == "title"'>
+					where
+						cm.contact_title like concat('%', #{search_value}, '%')
+				</when>
+				<when test='search_flag == "titleAndContent"'>
+					where
+						cm.contact_title like concat('%', #{search_value}, '%')
+						or cm.contact_content like concat('%', #{search_value}, '%')
+				</when>
+				<when test='search_flag == "writer"'>
+					where
+						cm.user_email like concat('%', #{search_value}, '%')
+				</when>
+			</choose>	
+				
+			) as total_contact_count
+		from
+			contact_mst cm
+			
+		where
+		<choose>
+			<when test='search_flag == "title"'>
+					cm.contact_title like concat('%', #{search_value}, '%')
+					and
+			</when>
+			<when test='search_flag == "titleAndContent"'>
+				where
+					cm.contact_title like concat('%', #{search_value}, '%')
+					or cm.contact_content like concat('%', #{search_value}, '%')
+					and
+			</when>
+			<when test='search_flag == "writer"'>
+				where
+					cm.user_email like concat('%', #{search_value}, '%')
+					and
+			</when>
+		</choose>
+			user_code = 0
 		order by
 			contact_code desc
 		limit #{index}, 10;
@@ -64,6 +114,7 @@
 		values(
 			0,
 			#{user_code},
+			#{user_email},
 			#{contact_title},
 			#{contact_content},
 			#{contact_count},

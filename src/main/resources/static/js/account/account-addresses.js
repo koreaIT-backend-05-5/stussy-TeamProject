@@ -1,38 +1,96 @@
 const updateBtn = document.querySelector(".update-btn");
-const updateAddressesArea = document.querySelector(".update-addresses-area");
-const addressesShowHideInfo = document.querySelector(".addresses-show-hide-info");
-const addAddressesBtn = document.querySelector(".add-addresses-btn");
-const addressesListTxt = document.querySelector(".addresses-list-txt");
-const createAddressesArea = document.querySelector(".create-addresses-area");
-const cancelBtn = document.querySelector(".cancel-btn");
+const deleteBtn = document.querySelector(".cancel-btn");
 
-cancelBtn.onclick = () => {
-    alert("삭제 하시겠습니까 ?")
+const updateAddressesArea = document.querySelector(".update-addresses-area");
+const createAddressesArea = document.querySelector(".create-addresses-area");
+const addressesShowHideInfo = document.querySelector(".addresses-show-hide-info");
+
+const addAddressesBtn = document.querySelector(".add-addresses-btn");
+const updateCancel = document.querySelector(".update-cancel");
+const createCancel = document.querySelector(".create-cancel");
+
+const createSubmit = document.querySelector(".create-submit");
+const createAddressesTxt = document.querySelector("#create-addresses-txt");
+
+
+
+
+//=======================================================================//
+createAddressesTxt.disabled = true;
+
+createSubmit.onclick = () => {
+	createAddressesTxt.disabled = false;
+	let formData = new FormData(document.querySelector(".address-create"));
+	
+	let addressesData = {};
+	formData.forEach((value, key) => {addressesData[key] = value});
+	
+	console.log(addressesData);
+	
+	
+	$.ajax({
+		async: false,
+		type: "post",
+		url: "/api/v1/account/addresses",
+		contentType: "appication/json",
+		data: JSON.stringify(addressesData),
+		dataType: "json",
+		success: (response) => {
+			alert("주소 작성 완료");
+		},
+		error: (error) => {
+			console.log(error);
+		}
+	
+	});
 }
 
+// 주소 수정버튼 
 updateBtn.onclick = () => {
     if(updateAddressesArea.style.display != 'none') {
         updateAddressesArea.style.display = 'block'
+        updateAddressesArea.style.height = '427px';
         addressesShowHideInfo.style.display = 'none';
-        addAddressesBtn.style.height = "20px"
     } else {
-        updateAddressesArea.style.display = 'none'
-    }
+		addressesShowHideInfo.style.display = 'none';
+        createAddressesArea.style.display = 'block';
+        addAddressesBtn.style.color = 'black';
+	}
 }
 
+// 주소 추가하기 버튼
 addAddressesBtn.onclick = () => {
     if(updateAddressesArea.style.display == 'block') {
         updateAddressesArea.style.display = 'none';
         updateAddressesArea.style.height = '427px';
         createAddressesArea.style.display = 'block';
-       
     } else {
         addressesShowHideInfo.style.display = 'none';
-        addAddressesBtn.style.height = "20px";
         createAddressesArea.style.display = 'block';
         addAddressesBtn.style.color = 'black';
     }
 }
+
+// 주소 수정 취소버튼
+updateCancel.onclick = () => {
+	if(updateAddressesArea.style.display != 'none') {
+        updateAddressesArea.style.display = 'none'
+        addressesShowHideInfo.style.display = 'block';
+       
+    }
+    
+}
+
+// 주소 추가 취소버튼
+createCancel.onclick = () => {
+	 if(createAddressesArea.style.display != 'none') {
+        createAddressesArea.style.display = 'none'
+        addressesShowHideInfo.style.display = 'block';
+    }
+}
+
+
+//=====================================주소 api========================================//
 
 function findAddresses_Postcode() {
     new daum.Postcode({
@@ -41,6 +99,7 @@ function findAddresses_Postcode() {
 
             // 각 주소의 노출 규칙에 따라 주소를 조합한다.
             // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            console.log(data);
             let addr = ''; // 주소 변수
             let extraAddr = ''; // 참고항목 변수
 
@@ -75,7 +134,8 @@ function findAddresses_Postcode() {
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('find-addresses_postcode').value = data.zonecode;
-            document.getElementById("addresses-txt").value = addr;
+            document.getElementById("addresses-txt").value = addr + extraAddr;
+
             // 커서를 상세주소 필드로 이동한다.
             document.getElementById("find-detailAddress-txt").focus();
         }
@@ -123,7 +183,7 @@ function createAddresses_Postcode() {
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('create-addresses_postcode').value = data.zonecode;
-            document.getElementById("create-addresses-txt").value = addr;
+            document.getElementById("create-addresses-txt").value = addr + extraAddr;
             // 커서를 상세주소 필드로 이동한다.
             document.getElementById("create-detailAddress-txt").focus();
         }

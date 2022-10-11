@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class AddContactReqDto {
 	private String contactName;
+	private int userCode;
 	private String userEmail;
 	private int contactOrderNum;
 	private String contactTitle;
