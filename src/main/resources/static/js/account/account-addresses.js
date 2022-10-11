@@ -35,7 +35,7 @@ createSubmit.onclick = () => {
 		contentType: "appication/json",
 		data: JSON.stringify(addressesData),
 		dataType: "json",
-		success: (response) => {
+		success: () => {
 			alert("주소 작성 완료");
 		},
 		error: (error) => {

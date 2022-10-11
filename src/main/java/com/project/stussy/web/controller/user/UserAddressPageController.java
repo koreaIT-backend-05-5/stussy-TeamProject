@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserAddressPageController {
 	
 	//내 정보 페이지
-	@GetMapping("/account/main")
+	@GetMapping("/main")
 	public String loadAccountPage() {
 		return "account/account-main";
 	}
 	
 	//주소수정, 추가, 삭제 페이지
-	@GetMapping("/account/addresses")
+	@GetMapping("/addresses")
 	public String addressesInfo() {
 		return "account/account_addresses";
 	}

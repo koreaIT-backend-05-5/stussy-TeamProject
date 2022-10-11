@@ -18,7 +18,7 @@ productListBtn.onclick = () => {
 }
 
 contactBtn.onclick = () => {
-	location.href = "/manager/contact/list";
+	location.href = "/contact/manager/list";
 }
 	
 	
