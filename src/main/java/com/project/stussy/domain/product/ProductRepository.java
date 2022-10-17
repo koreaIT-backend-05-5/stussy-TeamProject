@@ -17,6 +17,7 @@ public interface ProductRepository {
 	//<<조회>>
 	//1. 상품 조회
 	public List<Product> getProductList(Map<String, Object> map) throws Exception;
+	
 
 	//2. 수정 할 상품 조회
 	public Product getProductDetail(int product_code) throws Exception;

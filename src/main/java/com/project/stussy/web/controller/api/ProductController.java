@@ -46,6 +46,9 @@ public class ProductController {
 		return ResponseEntity.ok(new CMRespDto<>(1, "completing add", productCode));
 	}
 	
+
+
+
 	//모든 상품 조회
 	@GetMapping("/product-list/{page}")
 	public ResponseEntity<?> getProductLsit(@PathVariable int page) {

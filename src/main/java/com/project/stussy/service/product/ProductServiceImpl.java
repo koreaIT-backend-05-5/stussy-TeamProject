@@ -85,7 +85,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		return product.getProduct_code();
 	}
-	
+
 	//<<<상품 조회>>>
 	@Override
 	public List<GetProductListDto> getProductList(int page) throws Exception {

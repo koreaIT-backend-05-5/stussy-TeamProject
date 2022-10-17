@@ -13,66 +13,71 @@
 </head>
 <body>
     <th:block th:replace="fragment/header"></th:block>
-    <div>
-        <div class="product-update-main">
-            <h2>관리자페이지</h2>
-            <div class="product-update-box">
-                <nav class="menu-list">
-                    <ul>
-                         <li><a href="/manager/customer">회원 관리</a></li>
-	                    <li><a href="/manager/product-update">상품 등록</a></li>
-	                    <li><a href="/manager/product-list">상품 목록</a></li>
-	                    <li><a href="#">주문 목록관리</a></li>
-	                    <li><a href="/contact/manager/list">문의 사항관리</a></li>
-                    </ul>
-                </nav>
-             </div>
-                <div>
-                    <h2>상품목록</h2>
-                    <form enctype="multipart/form-data" method="post">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>선택</th>
-                                    <th class="procutCode">상품코드</th>
-                                    <th>이미지</th>
-                                    <th>카테고리</th>
-                                    <th>가격</th>
-                                    <th>상품사이즈</th>
-                                    <th>설명</th>
-                                    <th>수정/삭제</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               <tr  class="product-row">
-                                   <td><input type="checkbox"></td>
-                                   <td>1</td>
-                                   <td class="product-img">123</td>
-                                   <td>PANTS</td>
-                                   <td>청바지</td>
-                                   <td>M</td>
-                                   <td>청바지</td>
-                                   <td>
-                                       <button type="button" class="detail-button modify">수정</button>
-                                       <button type="button" class="detail-button delete">삭제</button>
-                                   </td>
-                               </tr>
-                            </tbody>
-                        </table>
-                         <div class="list-footer">
-                       <div class="page-buttons">
-                           <button type="button" class="page-button">&lt;</button>
-                           <button type="button" class="page-button">1</button>
-                           <button type="button" class="page-button">2</button>
-                           <button type="button" class="page-button">3</button>
-                           <button type="button" class="page-button">4</button>
-                           <button type="button" class="page-button">5</button>
-                           <button type="button" class="page-button">&gt;</button>
-                       </div>
-                     </div>
-                    </form>
+    <div class="admin-container">
+        <div>
+            <h2  class="admin-title">관리자페이지</h2>
+            <nav class="menu-list">
+                <ul>
+                    <li><a href="/manager/customer">회원 관리</a></li>
+                    <li><a href="/manager/product-update">상품 등록</a></li>
+                    <li><a href="/manager/product-list">상품 목록</a></li>
+                    <li><a href="#">주문 목록관리</a></li>
+                    <li><a href="/contact/manager/list">문의 사항관리</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div>
+            <h1 class="admin-title">상품 목록 리스트</h1>
+                <section class="admin-main">
+                    <div class="list-header">
+                        <div class="category-select">
+                            <select class="product-input">
+                                <option value="ALL" selected>전체 상품</option>
+                                <option value="TEES">TEES</option>
+                                <option value="SWEATS">SWEATS</option>
+                                <option value="TOPS_SHIRTS">TOPS & SHIRTS</option>
+                                <option value="BOTTOMS">BOTTOMS</option>
+                                <option value="HEADWEAR">HEADWEAR</option>
+                                <option value="ACCESSORIES">ACCESSORIES</option>
+                            </select>
+                        </div>
+                        <div class="product-search">
+                            <input type="text" class="product-input" placeholder="상품명">
+                            <button type="button" class="search-button black-button">검색</button>
+                        </div>
+                    </div>
+
+                    <table class="product-list">
+                        <thead>
+                            <tr>
+                                <th>상품번호</th>
+                                <th>상품종류</th>
+                                <th>상품명</th>
+                                <th>가격</th>
+                                <th>사이즈</th>
+                                <th>상세</th>
+                                <th>삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list-body">
+                            
+                        </tbody>
+                    </table>
+                </section>
+                <div class="list-footer">
+                    <div class="page-buttons">
+                        <button type="button" class="page-button">&lt;</button>
+                        <button type="button" class="page-button">1</button>
+                        <button type="button" class="page-button">2</button>
+                        <button type="button" class="page-button">3</button>
+                        <button type="button" class="page-button">4</button>
+                        <button type="button" class="page-button">5</button>
+                        <button type="button" class="page-button">&gt;</button>
+                    </div>
                 </div>
-    </div>
+        </div>
+        </div>
     <script type="text/javascript" src="/static/js/product/product-list.js"></script>
     <th:block th:replace="fragment/footer"></th:block>
 </body>

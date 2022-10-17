@@ -2,76 +2,40 @@
     width: 100%;
 }
 
-.product-update-main {
-    width: 1260px;
-    height: 594px;
-    margin: 0 auto;
+section {
+    padding: 0px 20px;
+    width: 956px;
 }
 
-.product-update-main > h2{
-    text-align: center;
-    margin-bottom: 15px;
-    padding: 0 10px;
-    font-size: 15px;
-}
-
-.product-updateite-box {
-    width: 1260px;
-    height: 567px;
+.admin-container {
     display: flex;
-    text-align: center;
     justify-content: center;
+
+    margin: 0px auto;
 }
 
 .menu-list {
-    float: left;
-    width: 244px;
-    height: 567px;
-    padding: 0 10px;
+    width: 264px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 0px 10px;
 }
 
 .menu-list li {
-    text-align: left;
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
     margin-bottom: 10px;
-    box-sizing: border-box;
-    font-size: 11px;
+    border-bottom: 1px solid #7f7f7f;
+    padding-bottom: 10px;
 }
-
+.menu-list li a {
+	font-size: 11px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+}
 .menu-list li a:hover {
     text-decoration-line: underline;
-}
-
-/* 상품등록 표 css */
-.table {
-    width: 900px;
-    height: 200px;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
-    border-top: 1px solid #141414;
-    
-}
-
-
-th{
-	height: 80px;
-}
-
-
-td{
-	height: 50px;
-}
-
-
-.product-img {
-	width: 40px;
-}
-
-.list-footer {
-	display: flex;
-	justify-content: center;
 }
 
 .page-buttons {
@@ -85,15 +49,161 @@ td{
     height: 100px;
 }
 
+.visible {
+	display: none;
+}
+
+
+/* list */
+.admin-title {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-select {
+    width: 200px;
+    
+    margin: 0px 0px 0px -10px;
+}
+
+.product-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+}
+
+.product-input, button {
+    margin: 0px 0px 15px 10px;
+    padding: 10px;
+}
+
+.black-button {
+	width:60px;
+	height: 40px;
+    padding: 10px;
+    margin: -15px 0 0 0;
+    color: white;
+    background-color: black;
+    animation: black-button-fadeout 0.1s linear forwards;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(198, 198, 198);
+}
+
+.product-list {
+    margin-bottom: 20px;
+}
+
+.product-info {
+    border: none;
+}
+
+th, td {
+    border: 1px solid rgb(198, 198, 198);
+    padding: 5px 5px;
+    font-size: 11px;
+    text-align: center;
+}
+
+th:nth-child(1) {
+    width: 70px;
+}
+th:nth-child(2) {
+    width: 120px;
+}
+th:nth-child(4) {
+    width: 100px;
+}
+th:nth-child(5) {
+    width: 100px;
+}
+th:nth-child(6) {
+    width: 70px;
+}
+th:nth-child(7) {
+    width: 70px;
+}
+th:nth-child(8) {
+    width: 70px;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}
+td:nth-child(3) {
+    text-align: left;
+}
+td:nth-child(4) {
+    text-align: right;
+}
+
+.product-list th, .product-list td {
+    height: 25px;
+}
+
+.product-info td {
+    border: none;
+} 
+
+.detail-invisible {
+    display: none;
+}
+
+.list-button {
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    width: 40px;
+    height: 30px;
+}
+
+.detail-button {
+    color: rgb(0, 200, 255);
+}
+
+.delete-button {
+    color: rgb(255, 64, 0);
+}
+
+.list-button .fa-regular {
+    font-size: 14px;
+}
+
+.product-info textarea {
+    height: 60px;
+}
+
+.update-button {
+    margin: 0px;
+    padding: 15px;
+    width: 100%;
+    
+}
+
+.page-buttons {
+    padding: 0px 20px;
+    width: 996px;
+}
+
 .page-button {
     margin: 2px;
-    
     border: none;
     border-radius: 50%;
     background-color: white;
     
     width: 40px;
-    height: 40px;
 
     font-size: 12px;
     font-weight: 500;
@@ -101,8 +211,4 @@ td{
 
 .page-button:hover {
     background-color: #9ee8ff;
-}
-
-.visible {
-	display: none;
 }
