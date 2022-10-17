@@ -2,8 +2,6 @@ package com.project.stussy.service.product;
 
 
 import java.io.File;
-
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,10 +21,10 @@ import com.project.stussy.domain.product.Product;
 import com.project.stussy.domain.product.ProductFile;
 import com.project.stussy.domain.product.ProductRepository;
 import com.project.stussy.web.dto.product.AddProductReqDto;
-import com.project.stussy.web.dto.product.GetShopListRepDto;
 import com.project.stussy.web.dto.product.GetDetailRepDto;
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
+import com.project.stussy.web.dto.product.GetShopListRepDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,27 +47,19 @@ public class ProductServiceImpl implements ProductService {
 		
 		Predicate<String> predicate = (filename) -> !filename.isBlank();
 		
-		Product product = null;
-		
-		
-		product = Product.builder()
-				.product_code(addProductReqDto.getProductCode())
-				.category_code(addProductReqDto.getCategoryCode())
-				.product_name(addProductReqDto.getProductName())
-				.product_price(addProductReqDto.getProductPrice())
-				.product_size(addProductReqDto.getProductSize())
-				.product_explanation(addProductReqDto.getProductExplanation())
-				.build();
+		Product product = addProductReqDto.toProductEntity();
 		
 		productRepository.saveProduct(product);
 		
 		//파일등록
 		if(predicate.test(addProductReqDto.getFile().get(0).getOriginalFilename())) {
 			List<ProductFile> productFiles = new ArrayList<ProductFile>();			
-			
+	        
+
 			for(MultipartFile file : addProductReqDto.getFile()) {
 				String originalFilename = file.getOriginalFilename();
 				String tempFilename = UUID.randomUUID().toString().replace("-", "") + "_"+ originalFilename;
+				
 				log.info(tempFilename);
 				Path uploadPath = Paths.get(filePath, "product/" + tempFilename);
 				
@@ -192,7 +182,8 @@ public class ProductServiceImpl implements ProductService {
 					.productName(firstProduct.getProduct_name())
 					.productPrice(firstProduct.getProduct_price())
 					.productSize(firstProduct.getProduct_size())
-					.productExplanation(firstProduct.getProduct_explanation())
+					.productInfo(firstProduct.getProduct_info())
+					
 					.fileName(firstProduct.getFile_name())
 					.build();
 		}

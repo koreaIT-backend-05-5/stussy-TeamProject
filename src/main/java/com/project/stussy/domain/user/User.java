@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.project.stussy.web.dto.auth.UserDto;
 import com.project.stussy.web.dto.user.GetUserListDto;
 
 import lombok.AllArgsConstructor;
@@ -42,6 +43,7 @@ public class User {
 		return Arrays.asList(user_roles.replaceAll(" ", "").split(","));
 		
 	}
+	
 	
 	//관리자페이지 - userDto
 	public GetUserListDto toUserListDto() {

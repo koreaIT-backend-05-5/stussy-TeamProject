@@ -12,8 +12,14 @@ public class AuthPageController {
 	public String loadSignin() {
 		return "auth/signin";
 	}
+	
 	@GetMapping("/signup")
 	public String loadSignup() {
 		return "auth/signup";
+	}
+	
+	@GetMapping("/resetPassword/{userEmail}")
+	public String resetPassword() {
+		return "mail/mailsend";
 	}
 }

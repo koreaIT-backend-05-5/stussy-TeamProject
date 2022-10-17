@@ -18,7 +18,7 @@ inputs[1].onblur = () => {
       data: {useremail : inputs[1].value},
       dataType: "json",
       success: (response) => {
-         checkUseremailFlag = response.data;
+         checkUseremailFlag = response.data == null;
          
          if(checkUseremailFlag){
             alert("사용 가능한 이메일 입니다.");

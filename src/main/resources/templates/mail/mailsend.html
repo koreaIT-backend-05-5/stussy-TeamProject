@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mail/mailSend.css">
+    <title>stussy signin</title>
+    <th:block th:replace="fragment/head"></th:block>
+    <th:block th:replace="fragment/footer-head"></th:block>
+</head>
+<body>
+    <th:block th:replace="fragment/header"></th:block>
+        <div class="password-area">
+            <p class="login-title">RESET ACCOUNT PASSWORD</p>
+            <p class="info-title">계정의 새로운 비밀번호를 입력해주세요.</p>  
+            <input class="password-input" type="password" name="password" placeholder="비밀번호">
+            <input class="password-check-input" type="password" name="password" placeholder="비밀번호 확인">
+            <button type="button" class="password-click-btn" >확인</button>     
+        </div>
+    <th:block th:replace="fragment/footer"></th:block>
+    <script type="text/javascript" src="/static/js/auth/signin.js"></script>
+</body>
+</html>

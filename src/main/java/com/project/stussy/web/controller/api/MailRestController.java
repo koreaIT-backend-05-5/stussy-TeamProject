@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.stussy.domain.mail.Mail;
-
 import com.project.stussy.service.mail.MailService;
 import com.project.stussy.web.dto.CMRespDto;
+import com.project.stussy.web.dto.mail.MailDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,34 +20,18 @@ public class MailRestController {
 	
 	// 문의사항 답변하기 메일 전송
 	@PostMapping("")
-	public ResponseEntity<?> contactSendMail(Mail mail){
+	public ResponseEntity<?> contactSendMail(MailDto mailDto){
 
-		System.out.println(mail);
+		System.out.println(mailDto);
 		
 		try {
-			mailService.sendMail(mail);
+			mailService.mailSend(mailDto);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", mail));
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", null));
 		}
-		return ResponseEntity.ok(new CMRespDto<>(1, "success", mail));
+		return ResponseEntity.ok(new CMRespDto<>(1, "success", mailDto));
 		
 	}
-	
-	//임시비밀번호 발급
-	@PostMapping("/random/password")
-	public ResponseEntity<?> passowrdSendMail(String email){
-		String randomPassword = null;
-		
-		try {
-			randomPassword = mailService.getRamdomPassword(email);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "failed", randomPassword));
-		}
-		return ResponseEntity.ok(new CMRespDto<>(1, "success", randomPassword));
-		
-	}
-	
 
 }

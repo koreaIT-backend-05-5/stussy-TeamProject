@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/contact/contact-view.css">
     <title>stussy-support</title>
-    <th:block th:replace="/fragment/head"></th:block>
-    <th:block th:replace="/fragment/footer-head"></th:block>
+    <th:block th:replace="fragment/head"></th:block>
+    <th:block th:replace="fragment/footer-head"></th:block>
 </head>
 <body>
-    <th:block th:replace="/fragment/header"></th:block>
+    <th:block th:replace="fragment/header"></th:block>
     <div id="wrap">
         <div class="support-main">
             <h2>관리자 페이지</h2>
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <th:block th:replace="/fragment/footer"></th:block> 
+    <th:block th:replace="fragment/footer"></th:block> 
     <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
     <script type="text/javascript" src="/static/js/contact/contact-view.js"></script>
 </body>

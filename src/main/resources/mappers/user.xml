@@ -21,7 +21,6 @@
   			resultType="com.project.stussy.domain.user.User">
   			select
 				um.user_code,
-				
 				um.user_name,
 				um.user_email,
 				um.user_password,

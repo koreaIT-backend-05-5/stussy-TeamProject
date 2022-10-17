@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/manger/product-update.css">
     <title>product-write</title>
-    <th:block th:replace="/fragment/head"></th:block>
-    <th:block th:replace="/fragment/footer-head"></th:block>
+    <th:block th:replace="fragment/head"></th:block>
+    <th:block th:replace="fragment/footer-head"></th:block>
 </head>
 <body>
-    <th:block th:replace="/fragment/header"></th:block>
+    <th:block th:replace="fragment/header"></th:block>
     <div>
         <div class="product-update-main">
             <h2>관리자페이지</h2>
             <div class="product-update-box">
                 <nav class="menu-list">
                     <ul>
-                        <li><a href="#" class="user-list-btn">회원관리</a></li>
-                        <li><a href="#" class="product-update-btn">상품등록</a></li>
-                        <li><a href="#" class="product-list-btn">상품목록</a></li>
-                        <li><a href="#">주문목록관리</a></li>
-                        <li><a href="#" class="contact-btn">문의사항관리</a></li>
+                         <li><a href="/manager/customer">회원 관리</a></li>
+	                    <li><a href="/manager/product-update">상품 등록</a></li>
+	                    <li><a href="/manager/product-list">상품 목록</a></li>
+	                    <li><a href="#">주문 목록관리</a></li>
+	                    <li><a href="/contact/manager/list">문의 사항관리</a></li>
                     </ul>
                 </nav>
                 <div class="product-update-content">
@@ -92,7 +92,7 @@
     </div>
     
     
-    <th:block th:replace="/fragment/footer"></th:block>
+    <th:block th:replace="fragment/footer"></th:block>
     <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
     <script type="text/javascript" src="/static/js/product/product-modify.js"></script>
 </body>

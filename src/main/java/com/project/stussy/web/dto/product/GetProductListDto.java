@@ -13,7 +13,7 @@ public class GetProductListDto {
 	private String productName;
 	private String productPrice;
 	private String productSize;
-	private String productExplanation;
+	private String productInfo;
 	private int totalProductCount;
 	
 }

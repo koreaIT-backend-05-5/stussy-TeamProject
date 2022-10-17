@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,92 +8,65 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/manger/product-update.css">
     <title>product-write</title>
-    <th:block th:replace="/fragment/head"></th:block>
-    <th:block th:replace="/fragment/footer-head"></th:block>
+    <th:block th:replace="fragment/head"></th:block>
+    <th:block th:replace="fragment/footer-head"></th:block>
 </head>
 <body>
-    <th:block th:replace="/fragment/header"></th:block>
+    <th:block th:replace="fragment/header"></th:block>
     <div>
-        <div class="product-update-main">
-            <h2>관리자페이지</h2>
-            <div class="product-update-box">
-                <nav class="menu-list">
-                    <ul>
-                        <li><a href="#" class="user-list-btn">회원관리</a></li>
-                        <li><a href="#" class="product-update-btn">상품등록</a></li>
-                        <li><a href="#" class="product-list-btn">상품목록</a></li>
-                        <li><a href="#">주문목록관리</a></li>
-                        <li><a href="#" class="contact-btn">문의사항관리</a></li>
-                    </ul>
-                </nav>
-                <div class="product-update-content">
-                    <h2>상품등록</h2>
-                    <form  enctype="multipart/form-data">
-                        <table class="table">
-                            <tr class="inputArea">
-                                <tr>
-                                    <td>카테고리</td>
-                                    <td>
-                                        <select class="product_category">
-                                            <option value="0">ALL</option>
-                                            <option value="1">SHIRT</option>
-                                            <option value="2">PANTS</option>
-                                            <option value="3">CAP</option>
-                                            <option value="4">ACCESSORY</option>
-                                        </select>
-                                    </td>
-                                </tr>
+        <h2 class="manager-title">관리자페이지</h2>
+        <div class="product">
+            <nav class="menu-list">
+                <ul>
+                    <li><a href="/manager/customer">회원 관리</a></li>
+                    <li><a href="/manager/product-update">상품 등록</a></li>
+                    <li><a href="/manager/product-list">상품 목록</a></li>
+                    <li><a href="#">주문 목록관리</a></li>
+                    <li><a href="/contact/manager/list">문의 사항관리</a></li>
+                </ul>
+            </nav>
+                <section>
+                    <select class="product_category product-input">
+                        <option value="none" selected>상품 종류</option>
+                        <option value="0">ALL</option>
+                        <option value="1">TOPS & SHIRTS</option>
+                        <option value="2">BOTTOMS</option>
+                        <option value="3">HEADWEAR</option>
+                        <option value="4">ACCESSORIES</option>
+                    </select>
 
-                                <tr>
-                                    <td>사이즈</td>
-                                    <td>
-                                        <select class="product_size">
-                                            <option value="S">S</option>
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                            <option value="XL">XL</option>
-                                            <option value="XXL">XXL</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>상품명</td>
-                                    <td><input type="text" name="productName" id="productName"></td>
-                                </tr>
-                                
-                            
-                            <tr>
-                                <td>가격</td>
-                                <td><input type="text" name="productPrice" id="productPrice"></td>
-                            </tr>
-                            <tr>
-                                <td>상품설명</td>
-                                <td>
-                                    <textarea id="ir1" name="productExplanation"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>상품이미지</td>
-                                <td><input id= "ProductImg" type="file"name="file" multiple="multiple" accept=".jpg, .jpeg, .png, .gif"></td>
-                            </tr>
-                            
-                            
-                            <tr>
-                                <td colspan="2" align="center">
-                               	 	<button type="button" class="product-button submit">등록</button>
-                                	<button type="button" class="product-button cancel" onclick="location.href='/manager/product-list';" >목록</button>
-                                </td>
-                                
-                              
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
+                    <input type="text" class="product-input" placeholder="상품명을 입력하세요">
+                    <input type="text" class="product-input" placeholder="가격을 입력하세요">
+                    
+                    <div class="product-option">
+                        <select class="product-input">
+                            <option value="none" selected>사이즈 선택</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+
+                    <textarea class="product-input" placeholder="설명"></textarea>
+                   
+                   	<form enctype="multipart/form-data">
+                    <div class="product-img-inputs">
+                        <label>상품 이미지</label>
+                        <button type="button" class="add-button">추가</button>
+                        <input type="file" class="file-input product-invisible" name="file">
+                    </div>
+            	</form>
+            	
+                    <div class="product-images">
+                        
+                    </div>
+                    <button type="button" class="submit-button product-button black-button">등록하기</button>
+                </section>
         </div>
     </div>
-    <script type="text/javascript" src="/static/js/manager/manager-main.js"></script>
-    <script type="text/javascript" src="/static/js/product/product-insert.js"></script>
-    <th:block th:replace="/fragment/footer"></th:block>
+        <script type="text/javascript" src="/static/js/product/product-insert.js"></script>
+    <th:block th:replace="fragment/footer"></th:block>
 </body>
 </html>

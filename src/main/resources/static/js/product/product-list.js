@@ -41,7 +41,7 @@ function getList(list){
                 <td>${product.categoryName}</td>
                 <td>${product.productPrice}</td>
                 <td>${product.productSize}</td>
-                <td>${product.productExplanation}</td>
+                <td>${product.productInfo}</td>
                 <td>
 	                <button type="button" class="detail-button modify">수정</button>
 	                <button type="button" class="detail-button delete">삭제</button>

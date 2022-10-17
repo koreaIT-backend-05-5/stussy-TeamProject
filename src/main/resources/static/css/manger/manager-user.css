@@ -76,8 +76,10 @@
 
 .search-button {
     width: 70px;
+    height: 26px;
     font-weight: 600;
 }
+
 table {
     margin: 0 auto;
     width: 90%;

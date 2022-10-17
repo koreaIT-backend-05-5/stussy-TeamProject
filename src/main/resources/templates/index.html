@@ -1,43 +1,43 @@
 <!DOCTYPE html> 
-	<html lang="ko"> 
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 	<head> 
 	</head> 
 	<body> <!-- jQuery --> 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> 
 	<!-- iamport.payment.js --> <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
 	<div>
-		<h2>IAMPORT °áÁ¦ µ¥¸ð</h2> 
+		<h2>IAMPORT ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</h2> 
 	<li> 
-	<button id="iamportPayment" type="button">°áÁ¦Å×½ºÆ®</button> </li> 
+	<button id="iamportPayment" type="button">ï¿½ï¿½ï¿½ï¿½ï¿½×½ï¿½Æ®</button> </li> 
 	</div> 
 	<script>  
 	$(document).ready(
 			function(){ $("#iamportPayment").click(function()
 					{ iamportPayment(); 
-	//¹öÆ° Å¬¸¯ÇÏ¸é È£Ãâ 
+	//ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ È£ï¿½ï¿½ 
 	}); }) 
-	//¹öÆ° Å¬¸¯ÇÏ¸é ½ÇÇà 
+	//ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	function iamportPayment() {	 
 		IMP.init('imp81625768');
-		//¾ÆÀÓÆ÷Æ® °ü¸®ÀÚ ÄÜ¼Ö¿¡¼­ È®ÀÎÇÑ '°¡¸ÍÁ¡ ½Äº°ÄÚµå' ÀÔ·Â 
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¼Ö¿ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Äºï¿½ï¿½Úµï¿½' ï¿½Ô·ï¿½ 
 	function requestPay() {
-      // IMP.request_pay(param, callback) °áÁ¦Ã¢ È£Ãâ
+      // IMP.request_pay(param, callback) ï¿½ï¿½ï¿½ï¿½Ã¢ È£ï¿½ï¿½
       IMP.request_pay({ // param
           pg: "html5_inicis",
           pay_method: "card",
           merchant_uid: "ORD20180131-0000011",
-          name: "³ë¸£¿þÀÌ È¸Àü ÀÇÀÚ",
+          name: "ï¿½ë¸£ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½",
           amount: 64900,
           buyer_email: "gildong@gmail.com",
-          buyer_name: "È«±æµ¿",
+          buyer_name: "È«ï¿½æµ¿",
           buyer_tel: "010-4242-4242",
-          buyer_addr: "¼­¿ïÆ¯º°½Ã °­³²±¸ ½Å»çµ¿",
+          buyer_addr: "ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å»çµ¿",
           buyer_postcode: "01181"
       }, function (rsp) { // callback
-    	  if (rsp.success) { // °áÁ¦ ¼º°ø ½Ã: °áÁ¦ ½ÂÀÎ ¶Ç´Â °¡»ó°èÁÂ ¹ß±Þ¿¡ ¼º°øÇÑ °æ¿ì
-    	        // jQuery·Î HTTP ¿äÃ»
+    	  if (rsp.success) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±Þ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    	        // jQueryï¿½ï¿½ HTTP ï¿½ï¿½Ã»
     	        jQuery.ajax({
-    	            url: "{¼­¹öÀÇ °áÁ¦ Á¤º¸¸¦ ¹Þ´Â endpoint}", // ¿¹: https://www.myservice.com/payments/complete
+    	            url: "{ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ endpoint}", // ï¿½ï¿½: https://www.myservice.com/payments/complete
     	            method: "POST",
     	            headers: { "Content-Type": "application/json" },
     	            data: {
@@ -45,10 +45,10 @@
     	                merchant_uid: rsp.merchant_uid
     	            }
     	        }).done(function (data) {
-    	          // °¡¸ÍÁ¡ ¼­¹ö °áÁ¦ API ¼º°ø½Ã ·ÎÁ÷
+    	          // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ API ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     	        })
     	      } else {
-    	        alert("°áÁ¦¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù. ¿¡·¯ ³»¿ë: " +  rsp.error_msg);
+    	        alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " +  rsp.error_msg);
     	      }
       });
 	

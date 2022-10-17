@@ -1,4 +1,4 @@
-package com.project.stussy.config.auth;
+package com.project.stussy.config.authHandler;
 
 import java.io.IOException;
 

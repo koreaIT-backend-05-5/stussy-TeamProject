@@ -24,7 +24,9 @@ public class Product {
 	private String product_category; // 카테고리
 	private String product_name; //상품명
 	private String product_price; //상품금액
-	private String product_explanation; //상품설명
+	//상품설명
+	private String product_info;
+	
 	private String product_size; //상품사이즈
 	private int product_count; //페이지.
 	
@@ -49,7 +51,7 @@ public class Product {
 				.categoryName(category_name)
 				.productPrice(product_price)
 				.productSize(product_size)
-				.productExplanation(product_explanation)
+				.productInfo(product_info)
 				.totalProductCount(total_product_count)
 				.build();
 	}
@@ -62,7 +64,8 @@ public class Product {
 				.productName(product_name)
 				.productPrice(product_price)
 				.productSize(product_size)
-				.productExplanation(product_explanation)
+				.productInfo(product_info)
+				
 				.fileName(file_name)
 				.build();
 	}	
@@ -75,7 +78,8 @@ public class Product {
 				.productName(product_name)
 				.productPrice(product_price)
 				.productSize(product_size)
-				.productExplanation(product_explanation)
+				.productInfo(product_info)
+				
 				.fileName(file_name)
 				.build();
 	}

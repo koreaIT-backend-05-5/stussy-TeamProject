@@ -14,7 +14,7 @@
   			#{category_code},
 			#{product_name},
 			#{product_price},
-			#{product_explanation},
+			#{product_info},
 			#{product_size},
 			#{product_count},
 			now(),
@@ -46,7 +46,7 @@
 					pm.product_name,
 					pm.product_price,
 					pm.product_size,
-					pm.product_explanation,
+					pm.product_info,
 					
 					cm.category_name,
 					
@@ -93,7 +93,7 @@
 					pm.product_name,
 					pm.product_price,
 					pm.product_size,
-					pm.product_explanation,
+					pm.product_info,
 				
 					cm.category_name
 				FROM
@@ -135,7 +135,7 @@
 			pm.product_size,
 			pm.product_name,
 			pm.product_price,
-			pm.product_explanation,
+			pm.product_info,
 			pf.file_name,
 			
 			cm.category_name
@@ -158,7 +158,7 @@
 			pm.product_category = #{product_category},
 			pm.product_name = #{product_name},
 			pm.product_price = #{product_price},
-			pm.product_explanation = #{product_explanation},
+			pm.product_info = #{product_info},
 			pm.product_size = #{product_size}
 			<if test="file_name != null">
 				,

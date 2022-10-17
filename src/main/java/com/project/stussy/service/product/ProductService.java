@@ -3,19 +3,15 @@ package com.project.stussy.service.product;
 import java.util.List;
 
 import com.project.stussy.web.dto.product.AddProductReqDto;
-import com.project.stussy.web.dto.product.GetShopListRepDto;
-
-import lombok.Builder;
-import lombok.Data;
-
+import com.project.stussy.web.dto.product.GetDetailRepDto;
 import com.project.stussy.web.dto.product.GetProductListDto;
 import com.project.stussy.web.dto.product.GetProductResponesDto;
-import com.project.stussy.web.dto.product.GetDetailRepDto;
+import com.project.stussy.web.dto.product.GetShopListRepDto;
 
 public interface ProductService {
 	//<<등록>>
 	public int addProduct(AddProductReqDto addProductReqDto) throws Exception;
-	
+
 	//<<조회>>
 	//1. 상품 리스트 조회
 	public List<GetProductListDto> getProductList(int page) throws Exception;

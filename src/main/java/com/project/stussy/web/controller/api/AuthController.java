@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,16 +46,17 @@ public class AuthController {
 			});
 			return ResponseEntity.badRequest().body(new CMRespDto<>(-1, "유효성 검사 실패", errorMessage));
 		}
-		boolean status = false;
+		String userName = null;
 		
 		try {
-			status = authService.checkUseremail(useremailCheckReqDto);
+			userName = authService.checkUseremail(useremailCheckReqDto);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "서버 오류", status));
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "서버 오류", userName));
 		}
 		
-	return ResponseEntity.ok(new CMRespDto<>(1, "회원가입 가능여부", status));
+	return ResponseEntity.ok(new CMRespDto<>(1, "회원가입 가능여부", userName));
 }
 	
 	//회원가입
@@ -86,14 +88,14 @@ public class AuthController {
 	@GetMapping("/principal")
 	public ResponseEntity<?> getPrincipal(@AuthenticationPrincipal PrincipalDetails principalDetails){
 		if(principalDetails == null) {
-			return ResponseEntity.badRequest().body(new CMRespDto<>(-1,"principal is null", null));
+			return ResponseEntity.ok().body(new CMRespDto<>(1,"principal is null", null));
 		}
 		return ResponseEntity.ok(new CMRespDto<>(1,"success load", principalDetails.getUser()));
 	}
 	
 	//이메일 비밀번호 변경 
-	@PutMapping("/password")
-	public ResponseEntity<?> checkEmail(String email, String password) {
+	@PutMapping("/resetPassword/{email}")
+	public ResponseEntity<?> checkEmail(@PathVariable String email, String password) {
 		boolean result = false;
 		
 		try {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +8,11 @@
 <<<<<<< HEAD
     <link rel="stylesheet" href="/static/css/contact/contact-modify.css">
     <title>stussy-support</title>
-    <th:block th:replace="/fragment/head"></th:block>
-    <th:block th:replace="/fragment/footer-head"></th:block>
+    <th:block th:replace="fragment/head"></th:block>
+    <th:block th:replace="fragment/footer-head"></th:block>
 </head>
 <body>
-    <th:block th:replace="/fragment/header"></th:block>
+    <th:block th:replace="fragment/header"></th:block>
     <link rel="stylesheet" href="/static/css/contact/contact_modify.css">
     <title>stussy-support</title>
 </head>
@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <th:block th:replace="/fragment/footer"></th:block> 
+    <th:block th:replace="fragment/footer"></th:block> 
     <script type="text/javascript" src="/static/js/contact/contact-modify.js"></script>
 </body>
 </html>

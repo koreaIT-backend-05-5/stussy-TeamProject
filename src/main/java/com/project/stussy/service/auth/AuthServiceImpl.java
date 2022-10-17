@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.project.stussy.domain.user.User;
 import com.project.stussy.domain.user.UserRepository;
 import com.project.stussy.web.dto.auth.UseremailCheckReqDto;
 
@@ -18,9 +19,18 @@ public class AuthServiceImpl implements AuthService{
 	private final UserRepository userRepository;
 
 	@Override
-	public boolean checkUseremail(UseremailCheckReqDto useremailCheckReqDto) throws Exception{
+	public String checkUseremail(UseremailCheckReqDto useremailCheckReqDto) throws Exception{
 		
-		return userRepository.findUserByUseremail(useremailCheckReqDto.getUseremail()) == null;
+		User user = userRepository.findUserByUseremail(useremailCheckReqDto.getUseremail());
+		
+		if(user == null) {
+			
+			return null;
+			
+		}else {
+			return user.getUser_name();
+		}
+		
 	}
 
 	@Override
