@@ -63,6 +63,7 @@
 				product_code asc
 			limit #{index}, 10;		
   		</select>
+  		
   		<!-- east shopMain -->
   		<select id="getProductShopList" parameterType="HashMap" resultType="com.project.stussy.domain.product.Product">
 			SELECT
@@ -130,42 +131,42 @@
   		
   		
   		<select id="getProductDetail" parameterType="Integer" resultType="com.project.stussy.domain.product.Product">
-  			SELECT	
-  			pm.product_code,
-			pm.product_size,
-			pm.product_name,
-			pm.product_price,
-			pm.product_info,
-			pf.file_name,
-			
-			cm.category_name
-		FROM
-			product_mst pm
-			LEFT OUTER JOIN product_file pf ON(pf.product_code = pm.product_code)
-			LEFT OUTER JOIN category_mst cm on (cm.category_code = pm.category_code)
-		where
-			pm.product_code = #{product_code};
-						
+	  			SELECT	
+	  			pm.product_code,
+				pm.product_size,
+				pm.product_name,
+				pm.product_price,
+				pm.product_info,
+				pf.file_name,
+				
+				cm.category_name
+			FROM
+				product_mst pm
+				LEFT OUTER JOIN product_file pf ON(pf.product_code = pm.product_code)
+				LEFT OUTER JOIN category_mst cm on (cm.category_code = pm.category_code)
+			where
+				pm.product_code = #{product_code};
   		</select>
   		
   		
 	<update id="updateProduct" parameterType="com.project.stussy.domain.product.Product">
-		update
-			product_mst pm
-			left outer join product_file pf on(pf.product_code = pm.product_code)
-		set
-			pm.product_code = #{product_code},
-			pm.product_category = #{product_category},
-			pm.product_name = #{product_name},
-			pm.product_price = #{product_price},
-			pm.product_info = #{product_info},
-			pm.product_size = #{product_size}
-			<if test="file_name != null">
-				,
-				pf.file_name = #{file_name}
-			</if>
-		where
-			pm.product_code = #{product_code}	
+			update
+				product_mst pm
+				left outer join product_file pf on(pf.product_code = pm.product_code)
+				
+			set
+				pm.product_code = #{product_code},
+				pf.product_category = #{product_category},
+				pm.product_name = #{product_name},
+				pm.product_price = #{product_price},
+				pm.product_info = #{product_info},
+				pm.product_size = #{product_size}
+				<if test="file_name != null">
+					,
+					pf.file_name = #{file_name}
+				</if>
+			where
+				pm.product_code = #{product_code}	
 		</update>
 	
 	

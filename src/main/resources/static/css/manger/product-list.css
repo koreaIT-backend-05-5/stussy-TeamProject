@@ -134,19 +134,6 @@ th:nth-child(6) {
 th:nth-child(7) {
     width: 70px;
 }
-th:nth-child(8) {
-    width: 70px;
-}
-
-td:nth-child(2) {
-    text-align: left;
-}
-td:nth-child(3) {
-    text-align: left;
-}
-td:nth-child(4) {
-    text-align: right;
-}
 
 .product-list th, .product-list td {
     height: 25px;
@@ -189,7 +176,6 @@ td:nth-child(4) {
     margin: 0px;
     padding: 15px;
     width: 100%;
-    
 }
 
 .page-buttons {

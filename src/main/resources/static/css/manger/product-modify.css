@@ -104,8 +104,8 @@ textarea {
     position: relative;
 }
 
-.product-img {
-    width: 100%;
+img{
+    width: 100px;
 }
 
 .fa-xmark {
