@@ -18,6 +18,8 @@ const userEmail = location.pathname.substring(location.pathname.lastIndexOf("/")
 const accountOkBtn = document.querySelector(".account-ok-btn");
 const passwordOkBtn = document.querySelector(".password-click-btn");
 
+
+
 //url에 저 문자가 포함되있는가 확인
 if(location.pathname.indexOf("auth/signin") != -1) {
 	accountOkBtn.onclick = () => {
@@ -60,7 +62,9 @@ if(location.pathname.indexOf("auth/signin") != -1) {
 	    findPasswordInfoArea.classList.add("visible");
 	}
 }else {
-	passwordOkBtn.onclick = updateUserPassword;	
+	passwordOkBtn.onclick = updateUserPassword;
+	
+		
 }
 
 //이메일 보내기
@@ -104,7 +108,7 @@ function updateUserPassword() {
 	      success: (response) => {
 	         if(response.data){
 				alert("변경 완료")
-		
+				location.href = "/auth/signin";
 	         }else {
 				alert("변경 중 오류")
 			}

@@ -88,11 +88,13 @@ public class ProductServiceImpl implements ProductService {
 
 	//<<<상품 조회>>>
 	@Override
-	public List<GetProductListDto> getProductList(int page) throws Exception {
+	public List<GetProductListDto> getProductList(int page, int productCategoryCode, String searchText) throws Exception {
 		int index = (page - 1) * 10;
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("index", index);
+		map.put("product_category_code", productCategoryCode);
+		map.put("search_text", searchText);
 		
 		List<GetProductListDto> list = new ArrayList<GetProductListDto>();
 		

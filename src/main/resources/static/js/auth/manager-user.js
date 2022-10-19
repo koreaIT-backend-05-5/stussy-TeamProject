@@ -50,7 +50,7 @@ function getUserList(userList) {
                <td>${user.userEmail}</td>
                <td>${user.userPhone}</td>
                <td>${user.createDate}</td>
-               <td><button type="button" class="delete-button">삭제</button></td>
+               <td><button type="button" class="list-button delete-button"><i class="fa-regular fa-trash-can"></i></button></td> 
            </tr>
         `;
     });

@@ -44,6 +44,28 @@
     text-decoration-line: underline;
 }
 
+
+.list-button {
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    width: 40px;
+    height: 30px;
+}
+
+.detail-button {
+    color: rgb(0, 200, 255);
+}
+
+.delete-button {
+    color: rgb(255, 64, 0);
+}
+
+.list-button .fa-regular {
+    font-size: 14px;
+}
+
 /*===========<< manager-content >>===========*/
 .manager-content {
     width: 976px;

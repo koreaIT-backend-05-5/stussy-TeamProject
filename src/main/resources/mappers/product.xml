@@ -59,6 +59,22 @@
 													count(*) as total_product_count
 												from
 													product_mst) tc on(1 = 1)
+			<if test="product_category_code != 0 or search_text != ''">
+				where
+					<if test="product_category_code != 0">
+					
+							cm.category_code = #{product_category_code}
+							
+					</if>
+					<if test="search_text != ''">
+					
+							<if test="product_category_code != 0">
+								and
+							</if>
+							
+							pm.product_name like concat("%", #{search_text}, "%")
+					</if>
+			</if>
 			order by
 				product_code asc
 			limit #{index}, 10;		
@@ -156,7 +172,6 @@
 				
 			set
 				pm.product_code = #{product_code},
-				pf.product_category = #{product_category},
 				pm.product_name = #{product_name},
 				pm.product_price = #{product_price},
 				pm.product_info = #{product_info},

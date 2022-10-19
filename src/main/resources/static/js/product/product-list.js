@@ -1,4 +1,9 @@
+const categorySelectInput = document.querySelector(".category-select .product-input");
+const searchInput = document.querySelector(".product-search .product-input");
+const searchButton = document.querySelector(".search-button"); 
 
+let category = 0;
+let searchText = null;
 let nowPage = 1;
 
 load(nowPage);
@@ -6,10 +11,12 @@ load(nowPage);
 //db 데이터 불러오는 ajax
 function load(nowPage) {
 	
+	setCategoryCodeAndSearchText();
+	
 	$.ajax({
 		async: false,
 		type: "get",
-		url: "/api/v1/manager/product-list/" + nowPage,
+		url: `/api/v1/manager/product-list/${nowPage}?productCategoryCode=${category}&searchText=${searchText}`,
 		
 		dataType: "json",
 		success: (response) => {
@@ -26,6 +33,35 @@ function load(nowPage) {
 		}		
 	});
 	
+}
+
+categorySelectInput.onchange = () => {
+    nowPage = 1;
+    clearInputValue(searchInput)
+    load(nowPage);
+}
+
+
+searchInput.onkeyup = () => {
+    if(window.event.keyCode == 13) {
+        searchButton.click();
+    }
+}
+
+searchButton.onclick = () => {
+    nowPage = 1;
+    load(nowPage);
+}
+
+
+// 카테고리 코드, 검색 키워드 값 세팅
+function setCategoryCodeAndSearchText() {
+	category = categorySelectInput.value == "none" ? 0 : categorySelectInput.value;
+    searchText = searchInput.value;
+}
+
+function clearInputValue(input) {
+	input.value = "";
 }
 
 

@@ -38,9 +38,9 @@ function getModify(productDetailData){
     		 <section>
               	 <select class="product_category product-input">
                     <option value="0">ALL</option>
-                    <option value="1">TOPS & SHIRTS</option>
-                    <option value="2">BOTTOMS</option>
-                    <option value="3">HEADWEAR</option>
+                    <option value="1">SHIRTS</option>
+                    <option value="2">PANTS</option>
+                    <option value="3">CAP</option>
                     <option value="4">ACCESSORIES</option>
                 </select>
 
@@ -67,17 +67,26 @@ function getModify(productDetailData){
         		</form>
         	
                 <div class="product-images">
-                  <div class="img-box">
-	                <i class="fa-solid fa-xmark"></i>
-	                <img src="/image/product/${productDetailData.fileName}">
-	            </div>
-                    
+                 	 <div class="img-box">
+		                <i class="fa-solid fa-xmark"></i>
+		                <img src="/image/product/${productDetailData.fileName}">
+	            	</div>
                 </div>
                 
                 
                 <button type="button" class="submit-button product-button black-button">수정하기</button>
             </section>
 		`;
+		
+	const deleteButton = document.querySelector(".fa-xmark");
+    
+    deleteButton.onclick = () => {
+        if(confirm("상품 이미지를 지우시겠습니까?")) {
+            fileObject = null;
+            getImagePreview(fileObject);
+    	}
+	};
+	
 
 	//수정 버튼
 	const modifyAddButton = document.querySelector(".modify-button");
@@ -88,57 +97,61 @@ function getModify(productDetailData){
 	}	
 	
 	fileInput.onchange = () => {
-    const formData = new FormData(document.querySelector("form"));
-    let changeFlge = false;
-
-    formData.forEach((value) => {
-        if(value.size != 0) {
-            fileObject = value;
-            changeFlge = true;
-        }
-    });
-    
-        if(changeFlge){
-        getImagePreview(fileObject);
-        fileInput.value = null;
-	    }
-	}
+	    const formData = new FormData(document.querySelector("form"));
+	    let changeFlge = false;
+	
+	    formData.forEach((value) => {
+	        if(value.size != 0) {
+	            fileObject = value;
+	            changeFlge = true;
+	        }
+	    });
+	    
+	        if(changeFlge){
+	        getImagePreview(fileObject);
+	        fileInput.value = null;
+		    }
+		}
 	
 	function getImagePreview(fileObject) {
-    const productImages = document.querySelector(".product-images");
-
-    productImages.innerHTML = "";
-    
-    if(fileObject != null) {
-		modifyAddButton.disabled = true;
-		modifyAddButton.classList.toggle("selected-image");
-		
-	}else {
-		modifyAddButton.disabled = false;
-		modifyAddButton.classList.toggle("selected-image");
-		
-		}
+	    const productImages = document.querySelector(".product-images");
+	
+	    productImages.innerHTML = "";
+	    
+	    if(fileObject != null) {
+			modifyAddButton.disabled = true;
+			modifyAddButton.classList.toggle("selected-image");
+			
+	    	const reader = new FileReader();
+	    
+		    reader.onload = (e) => {
+		        productImages.innerHTML += `
+		            <div class="img-box">
+		                <i class="fa-solid fa-xmark"></i>
+		                <img class="product-img" src="${e.target.result}">
+		            </div>
+		        `;
+				const deleteButton = document.querySelector(".fa-xmark");
+			    
+			    deleteButton.onclick = () => {
+			        if(confirm("상품 이미지를 지우시겠습니까?")) {
+			            fileObject = null;
+			            getImagePreview(fileObject);
+		        	}
+		    	};
+			}
+		        
+		    if(fileObject != null) {
+		    	reader.readAsDataURL(fileObject);
+			}
+			
+		}else {
+			modifyAddButton.disabled = false;
+			modifyAddButton.classList.toggle("selected-image");
+			
+			}
     }   
-    const reader = new FileReader();
-    
  
-	const deleteButton = document.querySelector(".fa-xmark");
-    
-    deleteButton.onclick = () => {
-        if(confirm("상품 이미지를 지우시겠습니까?")) {
-            fileObject = null;
-            getImagePreview(fileObject);
-    	}
-	};
-}
-        
-    if(fileObject != null) {
-    	reader.readAsDataURL(fileObject);
-	}
-	
-
-
-	
 	
 //리스트에서 select value 값 들고 가기
 const categorySelect = document.querySelectorAll(".product_category option");
@@ -202,4 +215,5 @@ let submitButton = document.querySelector(".submit-button");
 			
 				}		
 			});
-		}		
+		}
+	}	

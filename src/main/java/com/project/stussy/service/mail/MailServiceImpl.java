@@ -31,7 +31,8 @@ public class MailServiceImpl implements MailService{
            // HTML Layout
            String htmlContent = "<p>" + mailDto.getUserName() + "고객님의 스투시 계정 비밀번호 변경을 요청했습니다.<br> \r\n"
            		+ "고객님 본인이 요청한 경우 아래 버튼을 눌러 비밀번호를 새로 설정할 수 있습니다.<br> \r\n "
-           		+ "<button type=button><a href='http://localhost:8005/auth/resetPassword/" + mailDto.getAddress() + "'> <br> RESET PASSWORD</a></button> <br> \r\n"
+           		+ "<button type=button><a href='http://localhost:8005/auth/resetPassword/" + mailDto.getAddress() + "'> "
+           		+ "RESET PASSWORD</a></button> <br> \r\n"
            		+ "비밀번호를 재설정 후 로그인하는 것이 안전합니다.<br>\r\n"
            		+ "본인이 요칭하신 게 아니라면 SUPPORT@STUSSY.CO.KR 로 문의 부탁드립니다.<br>\r\n"
            		+ "의심스러운 비밀번호 재설정 요청에 관해 자세히 알아보세요.</p>";

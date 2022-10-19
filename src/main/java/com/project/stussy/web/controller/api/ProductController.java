@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.stussy.service.product.ProductService;
@@ -51,11 +52,13 @@ public class ProductController {
 
 	//모든 상품 조회
 	@GetMapping("/product-list/{page}")
-	public ResponseEntity<?> getProductLsit(@PathVariable int page) {
+	public ResponseEntity<?> getProductLsit(@PathVariable int page, @RequestParam int productCategoryCode, @RequestParam String searchText) {
 		List<GetProductListDto> listDto = null;
 		
+		System.out.println(searchText);
+		
 		try {
-			listDto = productService.getProductList(page);
+			listDto = productService.getProductList(page, productCategoryCode, searchText);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1,"database error",listDto));

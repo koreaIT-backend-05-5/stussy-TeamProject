@@ -26,11 +26,11 @@
 				um.user_password,
 				um.user_roles,
 				
-				ud.user_address,
-				ud.user_phone
+				om.road_address,
+				om.user_phone
 			from
 				user_mst um
-				left outer join user_dtl ud on(ud.user_code = um.user_code)
+				left outer join order_info_mst om on(om.user_code = um.user_code)
 			where
 				um.user_email = #{useremail}
   		</select>
@@ -41,13 +41,13 @@
 				um.user_code,
 				um.user_name,
 				um.user_email,
-				ud.user_phone,
+				om.user_phone,
 				um.create_date,
 				(select
 			   		count(*) 
 				from
 			   		user_mst um
-			   		left outer join user_dtl ud on(um.user_code = ud.user_code)
+			   		left outer join order_info_mst om on(om.user_code = um.user_code)
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
@@ -65,7 +65,7 @@
 				) as total_user_count
 			FROM
 				user_mst um
-				LEFT OUTER JOIN user_dtl ud ON(ud.user_code = um.user_code)
+				left outer join order_info_mst om on(om.user_code = um.user_code)
 				<choose>
 				  <when test='search_flag == "number"'>
 				  	where
@@ -81,7 +81,7 @@
 				  </when>
 				</choose> 
 			order by
-				user_code desc
+				user_code asc
 			limit #{index}, 10;		
   		</select>
   		
@@ -94,7 +94,7 @@
   		    user_code = #{user_code}
   		</delete>
   		
-  		<!-- 비밀번호 변경 완료 -->
+  		<!-- 메인페이지 비밀번호 변경 완료 -->
   		<update id="updatePassword" parameterType="hashmap">
   			update 
   				user_mst

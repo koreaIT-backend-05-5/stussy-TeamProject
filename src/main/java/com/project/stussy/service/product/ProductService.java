@@ -15,7 +15,7 @@ public interface ProductService {
 	//<<조회>>
 	//1. 상품 리스트 조회
 
-	public List<GetProductListDto> getProductList(int page) throws Exception;
+	public List<GetProductListDto> getProductList(int page, int productCategoryCode, String searchText) throws Exception;
 	
 	//2. 수정 할 상품 조회
 	public GetProductResponesDto getProductDetail(int productCode) throws Exception;
