@@ -17,6 +17,7 @@ public class GetProductResponesDto { //원영이형
 	private String categoryName;
 	private String productName;
 	private String productPrice;
+	private String productCount;
 	private String productSize;
 	private String productInfo;
 	private MultipartFile file;
@@ -29,7 +30,7 @@ public class GetProductResponesDto { //원영이형
 		.product_name(productName)
 		.product_price(productPrice)
 		.product_size(productSize)
-
+		.product_count(productCount)
 		.product_info(productInfo)
 		
 		.file_name(createFileName())

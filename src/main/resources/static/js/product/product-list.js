@@ -72,11 +72,12 @@ function getList(list){
 	
 	list.forEach(product => {
 		tbody.innerHTML += `
-			<tr>
+			<tr class="productList-${product.productCode}">
                 <td>${product.productCode}</td>
                 <td>${product.categoryName}</td>
                 <td>${product.productName}</td>
                 <td>${product.productPrice}</td>
+                <td>${product.productCount}</td>
                 <td>${product.productSize}</td>
                 <td><button type="button" class="list-button detail-button"><i class="fa-regular fa-file-lines"></i></button></td>
             	<td><button type="button" class="list-button delete-button"><i class="fa-regular fa-trash-can"></i></button></td>             
@@ -89,6 +90,7 @@ function getList(list){
 	
 		for(let i = 0; i < deleteBtns.length; i++) {
 		deleteBtns[i].onclick = () => {
+			console.log(list[i]);
 			$.ajax({
 				async: false,
 				type: "delete",
@@ -103,6 +105,12 @@ function getList(list){
 					console.log(error);
 			}
 		});
+		
+//새로고침 안되고 바로 삭제
+//		const productList = document.querySelector(`.productList-${list[i].productCode}`);
+//		console.log(productList)
+//		
+//		productList.remove();
 	}
 }
 

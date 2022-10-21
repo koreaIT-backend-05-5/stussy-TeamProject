@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/v1/manager")
 @RequiredArgsConstructor
 @Slf4j
-public class ProductController {
+public class ProductRestController {
 	
 	private final ProductService productService;
 	
@@ -41,7 +41,7 @@ public class ProductController {
 			productCode = productService.addProduct(addProductReqDto);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "add Failed", productService));
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "add Failed", productCode));
 		}
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "completing add", productCode));

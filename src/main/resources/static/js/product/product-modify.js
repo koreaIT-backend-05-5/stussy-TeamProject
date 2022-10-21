@@ -33,7 +33,7 @@ function getModify(productDetailData){
 	
 	console.log(productDetailData);
 	console.log(productDetailData.fileName)
-	
+
 		productDetailDataInput.innerHTML += `
     		 <section>
               	 <select class="product_category product-input">
@@ -46,6 +46,7 @@ function getModify(productDetailData){
 
                 <input type="text" class="product-input" value="${productDetailData.productName}" placeholder="상품명을 입력하세요">
                 <input type="text" class="product-input" value="${productDetailData.productPrice}" placeholder="가격을 입력하세요">
+                <input type="text" class="product-input" value="${productDetailData.productCount}" placeholder="수량을 입력하세요">
                 
                 <div class="product-option">
                     <select class="product_size product-input">
@@ -158,7 +159,7 @@ const categorySelect = document.querySelectorAll(".product_category option");
 const sizeSelect = document.querySelectorAll(".product_size option");
 
 categorySelect.forEach(option => {
-	if(option.value == productDetailData.productCategory) {
+	if(option.textContent == productDetailData.categoryName) {
 		option.setAttribute("selected", true);
 	};
 })
@@ -185,8 +186,9 @@ let submitButton = document.querySelector(".submit-button");
 		formData.append("categoryCode",productInput[0].value);
 		formData.append("productName",productInput[1].value);
 		formData.append("productPrice",productInput[2].value);
-		formData.append("productSize",productInput[3].value);
-		formData.append("productInfo",productInput[4].value);
+		formData.append("productCount",productInput[3].value);
+		formData.append("productSize",productInput[4].value);
+		formData.append("productInfo",productInput[5].value);
 		formData.append("file", fileObject);
 				
 		

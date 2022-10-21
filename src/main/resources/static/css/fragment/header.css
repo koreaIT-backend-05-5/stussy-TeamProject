@@ -1,7 +1,3 @@
-header{
-   width: 100%;
- }
- 
  .top-info {
    width: 100%;
    height: 33px;
@@ -19,7 +15,6 @@ header{
    font-family: "Helvetica Neue",Arial,sans-serif;
    font-size: 11px;
    display: flex;
-   /* position: fixed; */
  }
  
  .logo {
@@ -94,8 +89,8 @@ header{
  .top-right{
     display:flex;
     justify-content: flex-end;
-   align-items: center;
-   width: 100%;
+   	align-items: center;
+   	width: 100%;
  }
  
  .top-right ul {
@@ -119,3 +114,91 @@ header{
    font-size: 12px;
    font-weight: 400;
  }
+ 
+ 
+ /* 장밥구니 */
+
+ .bag-arae {
+ 	width: 380px;
+ 	position: absolute;
+ 	right: 0px;
+ 	background-color: white;
+ 	opacity: 1;
+ 	z-index: 10;
+ 	
+ }
+ 
+ .bag-header {
+ 	padding: 20px;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	border-bottom: 1px solid #dbdbdb;
+	 
+ }
+ 
+ .bag-title {
+	 font-size: 11px;
+	 font-weight: 700;
+ }
+ 
+ .product-name {
+ 	font-size: 11px;
+ }
+ 
+ .bag-cancle-button{
+ 	width: 20px;
+ 	background-color: white;
+ 	border: none;
+ }
+ 
+ .bag-container {
+ 
+ 	padding: 20px 10px;
+ 	display: flex;
+ }
+ 
+ .bag-img {
+ 	width: 110px;
+ 	background: red;
+ }
+
+ .bag-product-name {
+ 	margin: 0 0 15px 20px;
+ 	font-size: 11px;	
+ }
+ 
+ .bag-product-size {
+  	margin: 0 0 30px 20px;
+ 	font-size: 11px;	
+ }
+ .bag-row {
+	padding: 10px;
+	margin: 15px 0 0 20px;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	align-items: center;
+ }
+ 
+ .product-quantity {
+ 	width:100px;
+ 	display: flex; 	
+ 	 justify-content: space-between;
+ 	background-color: white;
+ 	border: none;
+ 	font-size: 15px;
+ }
+ 
+ .product-quantity-button {
+ 	display: flex;
+ 	font-size: 15px;
+ 	border: none;
+ 	background-color: white;
+ 	
+ }
+ 
+ .product-quantity-input {
+ 	text-align:center;
+	width: 30px;
+ }
+

@@ -12,6 +12,7 @@ public class GetDetailRepDto {
 	private String productPrice;
 	private String productSize;
 	private String productInfo;
+	private String productCount;
 	
 	private String fileName;
 

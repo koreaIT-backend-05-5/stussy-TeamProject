@@ -28,7 +28,7 @@ public class Product {
 	private String product_info;
 	
 	private String product_size; //상품사이즈
-	private int product_count; //페이지.
+	private String product_count; //상품 수량
 	
 	
 	private int file_code;
@@ -51,6 +51,7 @@ public class Product {
 				.categoryName(category_name)
 				.productPrice(product_price)
 				.productSize(product_size)
+				.productCount(product_count)
 				.productInfo(product_info)
 				.totalProductCount(total_product_count)
 				.build();
@@ -64,6 +65,7 @@ public class Product {
 				.productName(product_name)
 				.productPrice(product_price)
 				.productSize(product_size)
+				.productCount(product_count)
 				.productInfo(product_info)
 				
 				.fileName(file_name)
@@ -79,6 +81,7 @@ public class Product {
 				.productPrice(product_price)
 				.productSize(product_size)
 				.productInfo(product_info)
+				.productCount(product_count)
 				
 				.fileName(file_name)
 				.build();

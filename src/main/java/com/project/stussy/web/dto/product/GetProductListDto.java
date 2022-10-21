@@ -12,6 +12,7 @@ public class GetProductListDto {
 	private String categoryName;
 	private String productName;
 	private String productPrice;
+	private String productCount;
 	private String productSize;
 	private String productInfo;
 	private int totalProductCount;

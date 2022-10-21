@@ -79,8 +79,9 @@ submitButton.onclick = () => {
     formData.append("categoryCode", productInputs[0].value);
     formData.append("productName", productInputs[1].value);
     formData.append("productPrice", productInputs[2].value);
-    formData.append("productSize", productInputs[3].value);
-    formData.append("productInfo", productInputs[4].value);
+    formData.append("productCount", productInputs[3].value);
+    formData.append("productSize", productInputs[4].value);
+    formData.append("productInfo", productInputs[5].value);
 	formData.append("file", fileObject);
 
    
@@ -100,6 +101,7 @@ function request(formData) {
         dataType: "json",
         success: (response) => {
             alert("상품 등록 완료");
+            location.href = "/manager/product-list";
         },
         error: (error) => {
             alert("상품 등록 실패");

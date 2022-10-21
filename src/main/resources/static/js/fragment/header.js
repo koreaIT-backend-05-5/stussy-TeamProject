@@ -1,6 +1,11 @@
 const menuLi = document.querySelectorAll('.category');
 const subbox = document.querySelector('.subbox');
+
 const topRight = document.querySelector(".top-right");
+
+const bagButton = document.querySelector(".bag-button");
+const bagArea = document.querySelector(".bag-arae");
+const bagdeleteButton = document.querySelector(".bag-delete-button");
 
 // let categoryCode = 0;
 
@@ -15,6 +20,20 @@ subbox.onmouseleave = () => {
     subbox.classList.add("subbox-visible");
     
 }
+
+bagButton.onclick = () => {
+	bagArea.classList.remove("visible");
+}
+
+bagdeleteButton.onclick = () => {
+	bagArea.classList.add("visible");
+}
+
+
+
+
+
+
 
 
 function setCategoryTagClickEvent() {
@@ -101,32 +120,8 @@ function getShopList(productList){
       }
       
    }
-   //alert(page)
 
 }
-
-// console.log("전체 높이: " + collectionProducts.clientHeight) //전체높이
-// console.log("현제 보이는 높이: " + collectionBody.offsetHeight) //바디높이
-// console.log("스크롤 최상단 위치: " + collectionBody.scrollTop) //scrollTOP
-/*
-body.onscroll = () => {   
-   const de = document.documentElement;
-   let checkNum = de.offsetHeight - de.clientHeight - de.scrollTop;
-
-   console.log("결과: " + checkNum);
-   console.log(page);
-   console.log(totalPage);
-   if(checkNum < 200 && checkNum > -1 && page < totalPage){
-      //alert("새로운 리스트 가져오기")   
-      console.log(page);
-      console.log(totalPage);
-      page++;
-      load(page);
-   }
-}
-
-*/
-
 
 function getPrincipal() {
 	let user = null;

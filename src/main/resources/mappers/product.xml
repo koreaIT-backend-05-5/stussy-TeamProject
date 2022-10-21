@@ -47,6 +47,7 @@
 					pm.product_price,
 					pm.product_size,
 					pm.product_info,
+					pm.product_count,
 					
 					cm.category_name,
 					
@@ -153,6 +154,7 @@
 				pm.product_name,
 				pm.product_price,
 				pm.product_info,
+				pm.product_count,
 				pf.file_name,
 				
 				cm.category_name
@@ -169,13 +171,15 @@
 			update
 				product_mst pm
 				left outer join product_file pf on(pf.product_code = pm.product_code)
-				
+
 			set
 				pm.product_code = #{product_code},
 				pm.product_name = #{product_name},
 				pm.product_price = #{product_price},
+				pm.product_count = #{product_count},
 				pm.product_info = #{product_info},
 				pm.product_size = #{product_size}
+				
 				<if test="file_name != null">
 					,
 					pf.file_name = #{file_name}

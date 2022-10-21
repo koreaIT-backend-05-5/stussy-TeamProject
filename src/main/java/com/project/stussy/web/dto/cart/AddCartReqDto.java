@@ -1,6 +1,6 @@
 package com.project.stussy.web.dto.cart;
 
-import java.util.List;
+import com.project.stussy.domain.cart.Cart;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,15 +8,20 @@ import lombok.Data;
 @Builder
 @Data
 public class AddCartReqDto {
-	private int productCode;
-	private String userEmail;
 	private int cartCode;
-	private int cartCount; 
-	private String cartTotalPrice;
-	private String productName;
-	private String productPrice;
-	private int fileCode;
-	private String fileName;
+	private int userCode;
+	private int productCode;
+	private String bagProductSize;
 	
-	private List<Integer> productCodes;
+	public Cart toCartEntity() {
+		 return Cart.builder()
+			.cart_code(getCartCode())
+			.user_code(getUserCode())
+			.product_code(getProductCode())
+			.bag_product_size(getBagProductSize())
+			.build();
+
+
+	}
 }
+
