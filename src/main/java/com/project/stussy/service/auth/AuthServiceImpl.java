@@ -42,7 +42,6 @@ public class AuthServiceImpl implements AuthService{
 	//비밀번호변경
 	@Override
 		public boolean updatePassword(String email, String password) throws Exception {
-		System.out.println(password);
 		Map<String, String> map = new HashMap<String, String>();
 			map.put("user_email", email);
 			map.put("user_password", new BCryptPasswordEncoder().encode(password));

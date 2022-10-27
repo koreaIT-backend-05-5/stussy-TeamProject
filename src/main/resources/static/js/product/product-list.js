@@ -106,11 +106,6 @@ function getList(list){
 			}
 		});
 		
-//새로고침 안되고 바로 삭제
-//		const productList = document.querySelector(`.productList-${list[i].productCode}`);
-//		console.log(productList)
-//		
-//		productList.remove();
 	}
 }
 

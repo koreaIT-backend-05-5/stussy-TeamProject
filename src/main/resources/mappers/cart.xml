@@ -4,24 +4,65 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.project.stussy.domain.cart.CartRepository">
-
-
-		<select id="getCartList" parameterType="hashmap" resultType="com.project.stussy.domain.cart.Cart">
+		<insert id="saveCart" parameterType="com.project.stussy.domain.cart.Cart">
+  			insert into
+  				cart_mst
+  			values(
+  					0,
+  			#{user_code},
+  			#{product_code},
+			#{bag_product_size},
+			1,
+			now(),
+			now()
+  			)
+  		</insert>
+  		
+ 		<select id="getCart" parameterType="HashMap" resultType="com.project.stussy.domain.cart.Cart">
 		    SELECT 
-		      pm.product_code, 
-		      um.user_name,
+		   	  cart_code
+		    FROM
+		      cart_mst
+		    where
+		    	user_code = #{user_code}
+		    	and bag_product_size = #{bag_product_size}
+		    	and product_code = #{product_code};
+		</select>
+  		
+
+		<select id="getCartList" parameterType="Integer" resultType="com.project.stussy.domain.cart.Cart">
+		    SELECT 
 		      cm.cart_code,
-		      cm.cart_count,
-		      cm.cart_total_price,
-		      pm.product_name,
+		      cm.bag_amount,
+		      cm.bag_product_size,
+		      
 		      pm.product_price,
-		      fm.file_code,
-		      fm.file_name
+		      pm.product_name,
+		      
+		      pf.file_name
 		    FROM
 		      cart_mst cm
 		      left outer join product_mst pm on(pm.product_code = cm.product_code)
 		      left outer join product_file pf on(pf.product_code = cm.product_code)
 		    where
+		    	cm.user_code = #{user_code};
 		    
 		</select>
+		
+		<update id="updateAmount" parameterType="Integer">
+			update
+				cart_mst
+			set
+				bag_amount = #{amount}
+			where
+				cart_code = #{cart_code};			
+		</update>
+		
+		<delete id="deleteCart"  parameterType="Integer">
+			delete
+			from
+				cart_mst
+			where
+				cart_code = #{cart_code};
+		</delete>
 </mapper>

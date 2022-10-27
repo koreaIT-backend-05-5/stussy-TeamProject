@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/product/product-detail.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    
     <title>상세페이지</title>
     <th:block th:replace="fragment/head"></th:block>
     <th:block th:replace="fragment/footer-head"></th:block>
@@ -39,11 +42,11 @@
                         <button type="button" class="size-button">XXL</button>
                     </div>
                     <div class="product-button">
-                        <button type="submit" class="add-btn" href="/account">
-                            <a href="/account"><span class="add-btn-span">ADD TO BAG</span></a>
+                        <button type="submit" class="add-btn" >
+                          <span class="add-btn-span">ADD TO BAG</span>
                         </button>
                         <button type="submit" class="buy-btn">
-                            <a href="/buy"><span class="buy-btn-span">BUY NOW</span></a>
+                            <a href="#"><span class="buy-btn-span">BUY NOW</span></a>
                         </button>
                     </div>
                     <div class="product-details">

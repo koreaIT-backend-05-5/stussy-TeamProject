@@ -23,17 +23,14 @@ subbox.onmouseleave = () => {
 
 bagButton.onclick = () => {
 	bagArea.classList.remove("visible");
+	
+	cartListLoad();// 장바구니 목록 가져오기
+	setTotalPriceData(); // 최종금액 세팅
 }
 
 bagdeleteButton.onclick = () => {
 	bagArea.classList.add("visible");
 }
-
-
-
-
-
-
 
 
 function setCategoryTagClickEvent() {

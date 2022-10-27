@@ -99,7 +99,6 @@ function getShopList(productList){
       }
       
    }
-   //alert(page)
 
 }
 
