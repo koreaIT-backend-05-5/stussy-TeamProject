@@ -1,49 +1,39 @@
-#wrap {
-    width: 100%;
-}
-
-.manager-user-main{
-    width: 1260px;
-    height: 594px;
-    margin: 0 auto;
-}
-
-.manager-user-main > h2 {
+.admin-title {
     text-align: center;
-    margin-bottom: 15px;
-    padding: 0 10px;
     font-size: 15px;
+    margin-bottom: 30px;
 }
 
 .manager-box {
-    width: 1260px;
-    height: 567px;
-    display: flex;
-    text-align: center;
+   display: flex;
     justify-content: center;
+
+    margin: 0px auto;
 }
 
 .menu-list {
-    float: left;
-    width: 244px;
-    height: 567px;
-    padding: 0 10px;
-    /* background-color: rebeccapurple; */
+    width: 264px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 0px 10px;
 }
 
 .menu-list li {
-    text-align: left;
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
     margin-bottom: 10px;
-    box-sizing: border-box;
-    font-size: 11px;
+    border-bottom: 1px solid #7f7f7f;
+    padding-bottom: 10px;
 }
-
+.menu-list li a {
+	font-size: 11px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+}
 .menu-list li a:hover {
     text-decoration-line: underline;
 }
-
 
 .list-button {
     margin: 0;
@@ -52,10 +42,6 @@
     padding: 0;
     width: 40px;
     height: 30px;
-}
-
-.detail-button {
-    color: rgb(0, 200, 255);
 }
 
 .delete-button {
@@ -67,60 +53,78 @@
 }
 
 /*===========<< manager-content >>===========*/
-.manager-content {
-    width: 976px;
-    /* height: 567px; */
-    /* background-color: aqua; */
+.list-header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.manager-header {
-    width: 350px;
+.customer-search {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: 10px 580px;
+    width: 280px;
 }
 
 .search-select {
-    margin-left: 5px;
+    margin-left: 700px;
     border: 1px solid #141414;
     outline: none;
     padding: 0px 5px;
-    height: 25px;
+	height: 40px;
 }
 
-.search-input { 
-    margin-left: 5px;
-    border: 1px solid #141414;
-    outline: none;
-    padding: 0px 5px;
-    height: 25px;
+
+.search-input, button {
+    margin: 0px 0px 15px 10px;
+    padding: 10px;
 }
 
-.search-button {
-    width: 70px;
-    height: 26px;
-    font-weight: 600;
+.black-button {
+	width:60px;
+	height: 40px;
+    padding: 10px;
+    margin: -15px 0 0 0;
+    color: white;
+    background-color: black;
+    animation: black-button-fadeout 0.1s linear forwards;
 }
+
 
 table {
-    margin: 0 auto;
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
-    border: 0.5px solid #141414;
+    border: 1px solid rgb(198, 198, 198);
 }
 
-th {
+th, td {
+    border: 1px solid rgb(198, 198, 198);
+    padding: 5px 5px;
     font-size: 11px;
-    height: 30px;
-    border: 0.5px solid #141414;
-    padding: 5px;
+    text-align: center;
 }
 
-td {
-    font-size: 11px;
-    height: 20px;
-    border: 0.5px solid #141414;
-    padding: 5px;
+th:nth-child(1) {
+    width: 70px;
+}
+th:nth-child(2) {
+    width: 120px;
+}
+th:nth-child(3) {
+    width: 250px;
+}
+th:nth-child(4) {
+    width: 150px;
+}
+th:nth-child(5) {
+    width: 100px;
+}
+th:nth-child(6) {
+	margin:0;
+    width: 100px;
+}
+
+.customer-list th, .customer-list td {
+    height: 25px;
 }
 
 .list-btn {
@@ -131,8 +135,12 @@ td {
 	width: 100%;
 }
 
+.delete-btn {
+    color: rgb(255, 64, 0);
+}
 
 .page-buttons {
+	margin-left: 400px;
     padding: 15px;
     width: 70%;
 }

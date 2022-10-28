@@ -1,3 +1,14 @@
+.admin-title {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.manager-title {
+	margin: 0 auto;
+	font-size: 11px;
+}
+
 .product{
     display: flex;
     justify-content: center;

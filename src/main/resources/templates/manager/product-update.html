@@ -7,16 +7,16 @@
 
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/manger/product-update.css">
-    <title>product-write</title>
+    <title>상품 등록</title>
     <th:block th:replace="fragment/head"></th:block>
     <th:block th:replace="fragment/footer-head"></th:block>
 </head>
 <body>
     <th:block th:replace="fragment/header"></th:block>
     <div>
-        <h2 class="manager-title">관리자페이지</h2>
         <div class="product">
             <nav class="menu-list">
+			    <h2  class="admin-title">관리자 페이지</h2>
                 <ul>
                     <li><a href="/manager/customer">회원 관리</a></li>
                     <li><a href="/manager/product-update">상품 등록</a></li>
@@ -26,6 +26,7 @@
                 </ul>
             </nav>
                 <section>
+                	<h2  class="admin-title">상품 등록</h2>
                     <select class="product_category product-input">
                         <option value="none" selected>상품 종류</option>
                         <option value="0">ALL</option>

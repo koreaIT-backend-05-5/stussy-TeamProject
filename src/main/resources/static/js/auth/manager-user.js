@@ -44,13 +44,12 @@ function getUserList(userList) {
     userList.forEach(user => {
         tbody.innerHTML += `
            <tr class = "user-content">
-               <td><input type="checkbox"></td>
                <td>${user.userCode}</td>
                <td>${user.userName}</td>
                <td>${user.userEmail}</td>
                <td>${user.userPhone}</td>
                <td>${user.createDate}</td>
-               <td><button type="button" class="list-button delete-button"><i class="fa-regular fa-trash-can"></i></button></td> 
+               <td><button type="button" class="list-button delete-btn"><i class="fa-regular fa-trash-can"></i></button></td> 
            </tr>
         `;
     });
@@ -152,20 +151,4 @@ function deleteUser(userContent, userCode) {
         }
    })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
