@@ -1,26 +1,30 @@
 # stussy-TeamProject
+ 
+> ### 컨셉
 
-팀 프로젝트로 스투시 쇼핑몰 웹사이트를 클론 코딩하였습니다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현대 의류 쇼핑몰
 
-해당 사이트에서 구현한 주요 기능은 다음과 같습니다.
+> ### 기능
 
-* 회원관리
-  * 회원가입/로그인/정보수정
+* 사용자
+  * 회원 가입 및 로그인
   * 아이디 찾기
   * 비밀번호 재설정
-   
-* 회원 서비스 관리
-  * 카테고리 별 상품 상세 페이지 조회 기능
-  * 상품 장바구니 등록
-  * 문의사항(작성/조회/수정/삭제)
-  * 상품 구매
+  * 메인 페이지
+  * 문의글 작성
+  * 상품 카트에 등록
+  * 상품 상세보기 페이지
+  * 카테고리별 상품 목록 페이지
   
-  
-* 관리자페이지
-  * 제품등록/제품수정/제품삭제/회원관리
+* 관리자
+  * 로그인
+  * 회원 목록 조회
   * 문의사항 관리
+  * 상품 등록
+  * 상품 목록 조회, 관리 
   
-# 기술 스택
+  
+> ### 기술 스택
   
 ![image](https://user-images.githubusercontent.com/105491928/199874651-764f2fed-3586-4835-b7ee-b7ca6bde5a24.png)
 ![image](https://user-images.githubusercontent.com/105491928/199874726-c6ac589a-4003-4367-ab39-b8c6914f4211.png)
@@ -33,22 +37,4 @@
 ![image](https://user-images.githubusercontent.com/105491928/199874843-78c9d17b-74bc-4eb2-9982-618f661e2265.png)
 ![image](https://user-images.githubusercontent.com/105491928/199874851-12e4cd72-53ac-4d3c-a420-daeb37db2fb7.png)
 
-
-#  주요 구현 기능
-
-### [회원 가입, 비밀번호 찾기]
-
-![회원가입 메인페이지](https://user-images.githubusercontent.com/105491928/199888211-c37daff1-b0b4-4966-8398-abe64e0bd6a1.PNG)
-
-<img src="https://user-images.githubusercontent.com/105491928/199888271-5fc63551-4e51-4036-8e85-b082cacd6243.PNG" width="40%" height="30%" alt="신규회원가입"></img>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/105491928/199939180-246000b5-7d7d-4e03-bd6e-046d12e08ac8.PNG" width="40%" height="30%" alt="비밀번호 찾기"></img>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/105491928/199890490-4873cc00-33f3-49c9-a0ba-53ef91170c86.PNG" width="40%" height="30%" alt="비밀번호 찾기 이메일 보내기"></img>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/105491928/199891499-1d07c456-4362-44b8-b17c-3c45fc6668e6.PNG" width="40%" height="30%" alt="비밀번호 재설정"></img>
-
-***
-### [회원 서비스 관리]
 
