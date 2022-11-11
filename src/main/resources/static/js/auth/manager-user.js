@@ -55,7 +55,7 @@ function getUserList(userList) {
     });
     
     const userContentItems = document.querySelectorAll(".user-content");
-   const deleteButtons = document.querySelectorAll(".delete-button");
+   const deleteButtons = document.querySelectorAll(".delete-btn");
    
    addDeleteButtonClickEvent(deleteButtons, userList, userContentItems);
 }
@@ -143,6 +143,7 @@ function deleteUser(userContent, userCode) {
       dataType: "json",
       success: (response) => {
          if(response.data) {
+			alert("삭제 완료");
             userContentList.removeChild(userContent);
          }
       },
