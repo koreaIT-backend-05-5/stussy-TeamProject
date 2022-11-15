@@ -45,8 +45,8 @@
 
 
 > ## 사용자 페이지 
-<img src="https://user-images.githubusercontent.com/105491928/201860406-a264baf8-e679-4102-a7bf-27352e43f62f.jpg" width="490px" height="340px" alt="로그인"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/105491928/201850088-707623d5-c87d-40db-94de-828df856b2b3.jpg" width="490px" height="340px" alt="장바구니"></img><br/>
+<img src="https://user-images.githubusercontent.com/105491928/201860406-a264baf8-e679-4102-a7bf-27352e43f62f.jpg" width="480px" height="340px" alt="로그인"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/105491928/201850088-707623d5-c87d-40db-94de-828df856b2b3.jpg" width="480px" height="340px" alt="장바구니"></img><br/>
 ***
 <img src="https://user-images.githubusercontent.com/105491928/201851023-e02a8523-dcb9-4a3c-a2c4-bed9ed96c24c.jpg" width="490px" height="340px" alt="장바구니"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/105491928/201856030-202655f1-3dbe-40d2-9738-eae1c508433d.jpg" width="490px" height="340px" alt="결제"></img>
