@@ -59,6 +59,6 @@
 ***
 <img src="https://user-images.githubusercontent.com/105491928/201860835-56cd6599-3267-4988-b3a6-b0f9ad831fa6.jpg" width="490px" height="340px" alt="문의사항관리"></img>
 
-[프로젝트 바로 가기](15.164.153.223:8005/main/)
+[프로젝트 바로 가기](http://15.164.153.223:8005/main)
 
 [네이버 바로가기](http://www.naver.com/)
