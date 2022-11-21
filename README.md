@@ -12,7 +12,6 @@
   * 회원 가입 및 로그인
   * 아이디 찾기
   * 비밀번호 재설정
-
   * 메인 페이지
   * 문의글 작성
   * 상품 카트에 등록
@@ -25,7 +24,7 @@
   * 문의사항 관리
   * 상품 등록
   * 상품 목록 조회, 관리 
-  
+
   
 > ### 기술 스택
   
@@ -39,6 +38,12 @@
 
 ![image](https://user-images.githubusercontent.com/105491928/199874843-78c9d17b-74bc-4eb2-9982-618f661e2265.png)
 ![image](https://user-images.githubusercontent.com/105491928/199874851-12e4cd72-53ac-4d3c-a420-daeb37db2fb7.png)
+
+
+> ### 배포 주소
+&nbsp;&nbsp;&nbsp; 1. [기존 사이트 바로 가기](https://www.stussy.co.kr/) <br>
+&nbsp;&nbsp;&nbsp; 2. [프로젝트 바로 가기](http://15.164.153.223:8005/main)
+  
 
 > ## DB설계 및 구조도 설계 
 <img src="https://user-images.githubusercontent.com/105491928/201848442-a76ff010-0d1b-428f-9fd7-c18fc4fa6f51.jpg" width="100%" height="90%" alt="개발환경"></img><br/>
@@ -62,4 +67,4 @@
 ***
 <img src="https://user-images.githubusercontent.com/105491928/201860835-56cd6599-3267-4988-b3a6-b0f9ad831fa6.jpg" width="90%" height="90%" alt="문의사항관리"></img>
 
-[프로젝트 바로 가기](http://15.164.153.223:8005/main)
+
