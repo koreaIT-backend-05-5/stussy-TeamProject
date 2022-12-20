@@ -42,7 +42,7 @@
 
 > ### 배포 주소
 &nbsp;&nbsp;&nbsp; 1. [기존 사이트 바로 가기](https://www.stussy.co.kr/) <br>
-&nbsp;&nbsp;&nbsp; 2. [프로젝트 바로 가기](http://15.164.153.223:8005/main)
+&nbsp;&nbsp;&nbsp; 2. [프로젝트 바로 가기](http://15.164.153.223:8005/main) 
   
 
 > ## DB설계 및 구조도 설계 
